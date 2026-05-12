@@ -1,55 +1,54 @@
 ---
-title: "Syntax & Error Highlighting"
+title: "语法与错误高亮"
 description: >-
-  Color-code commands and underline errors in real time as you type in Warp's
-  input editor.
+  在 Warp 输入编辑器中输入时，实时对命令进行颜色编码并在错误处显示下划线。
 sidebar:
   label: "Syntax & error highlighting"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## What is syntax highlighting
+## 什么是语法高亮
 
-Warp supports Syntax Highlighting in the [Input Editor.](/terminal/editor/) It colors each part of a command to help differentiate between sub-commands, options/flags, arguments, and variables.
+Warp 的[输入编辑器](/terminal/editor/)支持语法高亮功能。它会对命令的各个部分进行着色，帮助区分子命令、选项/标志、参数和变量。
 
 :::caution
-Newly installed apps or newly created aliases will not trigger syntax highlighting until you open a new Warp session (new window, tab, or pane), even if you `source` the RC files in the current session.
+新安装的应用或新创建的别名在你打开新的 Warp 会话（新窗口、标签页或分屏）之前不会触发语法高亮，即使你在当前会话中 `source` 了 RC 文件也不例外。
 :::
 
-### How to access syntax highlighting
+### 如何访问语法高亮
 
-When Syntax Highlighting is enabled, Warp's [Input Editor](/terminal/editor/) automatically recognizes each part of the command as you type it into the Input Editor, and syntactically highlight them.
+启用语法高亮后，Warp 的[输入编辑器](/terminal/editor/)会在你输入命令时自动识别命令的各个部分，并对其进行语法高亮。
 
-### How to enable/disable syntax highlighting
+### 如何启用/禁用语法高亮
 
-Syntax highlighting is enabled by default, to toggle it:
+语法高亮默认启用，切换方式如下：
 
-* Through the [Command Palette](/terminal/command-palette/), search for the "Syntax Highlighting" option and click it (or press enter) to enable/disable.
-* Through **Settings** > **Features** > **Terminal Input** , toggle "Syntax highlighting for commands"
+* 通过 [Command Palette](/terminal/command-palette/)，搜索 "Syntax Highlighting" 选项并点击（或按回车）以启用/禁用。
+* 通过 **Settings** > **Features** > **Terminal Input**，切换 "Syntax highlighting for commands"。
 
-### How syntax highlighting works
+### 语法高亮的工作原理
 
 <VideoEmbed url="https://www.loom.com/share/87b15de13ee9407b98a24f1a31835784?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Syntax Highlighting Demo" />
 
-## What is error underlining
+## 什么是错误下划线
 
-Warp highlights errors in commands that are typed within the [Input Editor](/terminal/editor/) e.g. if the binary for the command you've typed does not exist.
+Warp 会高亮显示在[输入编辑器](/terminal/editor/)中输入的命令中的错误，例如当你输入的命令二进制文件不存在时。
 
 :::caution
-Newly installed apps or newly created aliases will trigger error underlining until you open a new Warp session (new window, tab, or pane), even if you `source` the RC files in the current session.
+新安装的应用或新创建的别名在你打开新的 Warp 会话（新窗口、标签页或分屏）之前会触发错误下划线，即使你在当前会话中 `source` 了 RC 文件也不例外。
 :::
 
-### How to access error underlining
+### 如何访问错误下划线
 
-When Error Underlining is enabled, Warp automatically underlines any invalid commands with a dashed red underline.
+启用错误下划线后，Warp 会自动用红色虚线下划线标记无效命令。
 
-### How to enable/disable error underlining
+### 如何启用/禁用错误下划线
 
-Error underlining is enabled by default, to toggle it:
+错误下划线默认启用，切换方式如下：
 
-* Through the [Command Palette](/terminal/command-palette/), search for the "Syntax Highlighting" option and click it (or press enter) to enable/disable.
-* Through **Settings** > **Features** > **Terminal Input** , toggle "Error underlining for commands"
+* 通过 [Command Palette](/terminal/command-palette/)，搜索 "Syntax Highlighting" 选项并点击（或按回车）以启用/禁用。
+* 通过 **Settings** > **Features** > **Terminal Input**，切换 "Error underlining for commands"。
 
-### How error underlining works
+### 错误下划线的工作原理
 
 <VideoEmbed url="https://www.loom.com/share/7721e06ed4aa4e1380abae4f5827ef6f?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Error Underlining Demo" />

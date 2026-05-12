@@ -1,19 +1,18 @@
 ---
-title: Terminal comparisons overview
+title: 终端对比概览
 description: >-
-  Compare Warp's performance and terminal feature support against other
-  popular terminal emulators like iTerm2, Alacritty, and WezTerm.
+  将 Warp 的性能和终端功能支持与其他流行终端模拟器（如 iTerm2、Alacritty 和 WezTerm）进行比较。
 ---
 
-Warp is a modern terminal built in Rust with GPU rendering, agent support, and a code-editor-style input. Use this section to see how Warp stacks up against other popular terminals on raw performance and feature coverage.
+Warp 是一款使用 Rust 构建、支持 GPU 渲染、具备 Agent 支持和代码编辑器式输入的现代终端。本节展示 Warp 在原始性能和功能覆盖方面与其他流行终端的对比情况。
 
-## How Warp differs
+## Warp 的不同之处
 
-* **Open source under AGPL v3** — Warp's client lives at [`warpdotdev/warp`](https://github.com/warpdotdev/warp). You can read the code, build from source, and contribute. See [Contributing to Warp](/support-and-community/community/contributing/) for the flow.
-* **Built-in agents** — Warp ships with Warp Agent (powered by Oz) and supports third-party CLI agents like Claude Code, Codex, and Gemini CLI from the same terminal.
-* **Modern editing** — Cursor placement, multi-line input, block-based output, and integrated code review work like a text editor instead of a traditional terminal emulator.
-* **Cross-platform Rust core** — Warp ships on macOS, Linux, and Windows from a single Rust + GPU-rendered codebase.
+* **AGPL v3 开源** — Warp 的客户端代码位于 [`warpdotdev/warp`](https://github.com/warpdotdev/warp)。你可以阅读代码、从源码构建并贡献代码。参见 [贡献 Warp](/support-and-community/community/contributing/) 了解流程。
+* **内置 Agent** — Warp 内置了 Warp Agent（由 Oz 驱动），并支持来自同一终端的第三方 CLI Agent，如 Claude Code、Codex 和 Gemini CLI。
+* **现代编辑体验** — 光标定位、多行输入、基于 Block 的输出和集成代码审查的工作方式更像文本编辑器，而非传统终端模拟器。
+* **跨平台 Rust 核心** — Warp 在 macOS、Linux 和 Windows 上均可运行，共享同一个 Rust + GPU 渲染代码库。
 
-## Benchmarks
+## 基准测试
 
-* [Performance benchmarks](/terminal/comparisons/performance/) — VTE and Termbench results comparing Warp against Terminal.app, iTerm2, Alacritty, and WezTerm.
+* [性能基准测试](/terminal/comparisons/performance/) — 将 Warp 与 Terminal.app、iTerm2、Alacritty 和 WezTerm 进行 VTE 和 Termbench 对比测试结果。

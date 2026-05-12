@@ -1,42 +1,41 @@
 ---
-title: Command Search
+title: 命令搜索
 description: >-
-  Search command history, Workflows, Prompts, and agent conversations with
-  fuzzy matching.
+  使用模糊匹配搜索命令历史、工作流、提示词和 Agent 对话。
 sidebar:
   label: "Command search"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-The Command Search panel provides unified search across all your terminal inputs, saved commands, and [Terminal and Agent modes](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/) conversation history. Use it to quickly find and reuse commands, workflows, or past agent interactions.
+命令搜索面板提供跨所有终端输入、已保存命令和[终端与 Agent 模式](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)对话历史的统一搜索。使用它可以快速查找和复用命令、工作流或过去的 Agent 交互记录。
 
-![Command Search Panel](../../../../assets/terminal/command-search-panel.png)
-
-:::note
-Tailor your Command Search experience by toggling off "Show Global Workflows" in **Settings** > **Features** > **Workflows**. When disabled, your search will exclusively encompass YAML and Warp Drive Workflows.
-:::
-
-## Quickstart
-
-1. Press `CTRL-R` to open the Command Search Panel
-2. Type your search query in the input box
-3. Press `ENTER` to input the selected command into Warp's Input Editor
-
-## Search Filters
-
-You can filter your search results by prepending your search term with any of the following:
-
-<table><thead><tr><th width="215.78436279296875">Filter</th><th>Shortcuts</th></tr></thead><tbody><tr><td>Command History</td><td><code>history:</code>, <code>h:</code>, or <code>H-TAB</code></td></tr><tr><td>Prompts</td><td><code>prompts:</code>, <code>p:</code>, or <code>P-TAB</code></td></tr><tr><td><a href="/agent-platform/local-agents/interacting-with-agents/">Agent Mode</a> History</td><td><code>ai_history:</code>, <code>a:</code>, or <code>A-TAB</code></td></tr></tbody></table>
+![命令搜索面板](../../../../assets/terminal/command-search-panel.png)
 
 :::note
-When a filter is activated, it will be bolded and italicized in the search panel.
+你可以通过在 **Settings** > **Features** > **Workflows** 中关闭 "Show Global Workflows" 来定制命令搜索体验。禁用后，搜索将仅包含 YAML 和 Warp Drive 工作流。
 :::
 
-## Additional Features
+## 快速开始
 
-* You can expand the menu horizontally by dragging the right edge
-* The panel supports fuzzy search and ranks results by relevance
+1. 按 `CTRL-R` 打开命令搜索面板
+2. 在输入框中输入搜索词
+3. 按 `ENTER` 将选中的命令输入到 Warp 的输入编辑器中
 
-## How it works
+## 搜索过滤器
+
+在搜索词前加上以下任意前缀可以过滤搜索结果：
+
+<table><thead><tr><th width="215.78436279296875">过滤器</th><th>快捷方式</th></tr></thead><tbody><tr><td>命令历史</td><td><code>history:</code>、<code>h:</code> 或 <code>H-TAB</code></td></tr><tr><td>提示词</td><td><code>prompts:</code>、<code>p:</code> 或 <code>P-TAB</code></td></tr><tr><td><a href="/agent-platform/local-agents/interacting-with-agents/">Agent Mode</a> 历史</td><td><code>ai_history:</code>、<code>a:</code> 或 <code>A-TAB</code></td></tr></tbody></table>
+
+:::note
+激活过滤器后，它会在搜索面板中以粗体和斜体显示。
+:::
+
+## 附加功能
+
+* 你可以通过拖动右边缘横向展开菜单
+* 面板支持模糊搜索，并按相关性对结果进行排序
+
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/21a6f58a33754ee7913edbff6d33d8d1?hideEmbedTopBar=true&hide_owner=true&hide_share=true&hide_title=true" title="Command Search Demo" />

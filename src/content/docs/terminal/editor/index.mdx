@@ -1,51 +1,50 @@
 ---
-title: Modern text editing overview
+title: 现代文本编辑概览
 description: >-
-  Unlike other terminals, Warp’s input editor operates out of the box like a
-  modern IDE and the text editors we’re used to.
+  与其他终端不同，Warp 的输入编辑器开箱即用，操作方式与我们熟悉的现代 IDE 和文本编辑器一致。
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
 :::note
-Text Editor Input also works for [SSH sessions](/terminal/warpify/ssh/).
+文本编辑器输入同样适用于 [SSH 会话](/terminal/warpify/ssh/)。
 :::
 
-### Soft Wrapping
+### 软换行
 
-Warp supports soft wrapping in the input editor. If an autosuggestion goes off-screen, the input editor will be horizontally scrollable to make it visible. Some operations treat soft-wrapped lines like a logical line (`TRIPLE-CLICK`) while other operations treat soft wrapped lines like visible different lines (`UP`/`DOWN`, `SHIFT-UP`/`SHIFT-DOWN`).
+Warp 的输入编辑器支持软换行。如果自动建议内容超出屏幕范围，输入编辑器将支持水平滚动以便查看。某些操作将软换行行视为逻辑行（`TRIPLE-CLICK`），而其他操作则将软换行行视为视觉上不同的行（`UP`/`DOWN`、`SHIFT-UP`/`SHIFT-DOWN`）。
 
-### Copy on Select
+### 选中即复制
 
-Warp supports copy on select for selectable text within [Blocks](/terminal/blocks/).
+Warp 支持对 [Blocks](/terminal/blocks/) 中可选文本的选中即复制功能。
 
-* Toggle this feature **Settings** > **Features** > **Terminal** or search for "Copy on select" in the [Command Palette](/terminal/command-palette/).
+* 在 **Settings** > **Features** > **Terminal** 中切换此功能，或在 [Command Palette](/terminal/command-palette/) 中搜索 "Copy on select"。
 
-### Autocomplete quotes, parentheses, and brackets
+### 自动补全引号、括号和方括号
 
-Warp can automatically complete quotes, brackets, and parentheses like you're used to in IDEs.
+Warp 可以像 IDE 一样自动补全引号、括号和方括号。
 
-* Toggle this feature **Settings** > **Features** > **Text Editing** or search for "Autocomplete quotes" in the [Command Palette](/terminal/command-palette/).
+* 在 **Settings** > **Features** > **Text Editing** 中切换此功能，或在 [Command Palette](/terminal/command-palette/) 中搜索 "Autocomplete quotes"。
 
-## How to use it
+## 如何使用
 
 <Tabs>
   <TabItem label="macOS">
-    <table><thead><tr><th width="317">Keyboard binding</th><th>Shortcut description</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>Closes the input suggestions or history menu</td></tr><tr><td><code>CTRL-L</code></td><td>Clears the terminal</td></tr><tr><td><code>CTRL-H</code></td><td>Backspace</td></tr><tr><td><code>CTRL-C</code></td><td>Clear the entire editor buffer</td></tr><tr><td><code>CTRL-U</code></td><td>Copy and Clear the current line</td></tr><tr><td><code>CMD-SHIFT-K</code></td><td>Clear selected lines</td></tr><tr><td><code>CMD-C</code>, <code>CMD-X</code>, <code>CMD-V</code></td><td>Copy, cut, paste</td></tr><tr><td><code>CTRL-W</code> / <code>OPT-D</code></td><td>Cut the word to the left / right of the cursor</td></tr><tr><td><code>OPT-BACKSPACE</code> / <code>OPT-D</code></td><td>Delete the word to the left / right of the cursor</td></tr><tr><td><code>CTRL-K CMD-DELETE</code></td><td>Delete everything to the right of the cursor</td></tr><tr><td><code>OPT-LEFT</code> / <code>OPT-RIGHT</code></td><td>Move to the beginning of the previous / next word</td></tr><tr><td><code>CTRL-OPT-LEFT</code> / <code>CTRL-OPT-RIGHT</code></td><td>Move backward / forward by one subword</td></tr><tr><td><code>CMD-LEFT</code> <code>CTRL-A</code>/ <code>CTRL-E</code> <code>CMD-DOWN</code> <code>CMD-RIGHT</code></td><td>Move the cursor to the start / end of the line</td></tr><tr><td><code>SHIFT-LEFT</code> / <code>SHIFT-RIGHT</code></td><td>Select the character to the left / right of the cursor</td></tr><tr><td><code>OPT-SHIFT-LEFT</code> / <code>OPT-SHIFT-RIGHT</code></td><td>Select the word to the left / right of the cursor</td></tr><tr><td><code>CMD-SHIFT-LEFT</code> / <code>CMD-SHIFT-RIGHT</code></td><td>Select everything to the left / right of the cursor</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>Select everything above / below the cursor</td></tr><tr><td><code>CMD-A</code></td><td>Select the entire editor buffer</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>OPT-ENTER</code></td><td>Insert newline</td></tr><tr><td><code>CTRL-R</code></td><td>Command Search</td></tr><tr><td><code>CMD-D</code></td><td>Split pane</td></tr></tbody></table>
+    <table><thead><tr><th width="317">键盘绑定</th><th>快捷键说明</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>关闭输入建议或历史菜单</td></tr><tr><td><code>CTRL-L</code></td><td>清除终端</td></tr><tr><td><code>CTRL-H</code></td><td>退格</td></tr><tr><td><code>CTRL-C</code></td><td>清除整个编辑器缓冲区</td></tr><tr><td><code>CTRL-U</code></td><td>复制并清除当前行</td></tr><tr><td><code>CMD-SHIFT-K</code></td><td>清除选中行</td></tr><tr><td><code>CMD-C</code>、<code>CMD-X</code>、<code>CMD-V</code></td><td>复制、剪切、粘贴</td></tr><tr><td><code>CTRL-W</code> / <code>OPT-D</code></td><td>剪切光标左侧/右侧的单词</td></tr><tr><td><code>OPT-BACKSPACE</code> / <code>OPT-D</code></td><td>删除光标左侧/右侧的单词</td></tr><tr><td><code>CTRL-K CMD-DELETE</code></td><td>删除光标右侧的所有内容</td></tr><tr><td><code>OPT-LEFT</code> / <code>OPT-RIGHT</code></td><td>移动到上一个/下一个单词的开头</td></tr><tr><td><code>CTRL-OPT-LEFT</code> / <code>CTRL-OPT-RIGHT</code></td><td>向后/向前移动一个子词</td></tr><tr><td><code>CMD-LEFT</code> <code>CTRL-A</code>/ <code>CTRL-E</code> <code>CMD-DOWN</code> <code>CMD-RIGHT</code></td><td>将光标移动到行首/行尾</td></tr><tr><td><code>SHIFT-LEFT</code> / <code>SHIFT-RIGHT</code></td><td>选择光标左侧/右侧的字符</td></tr><tr><td><code>OPT-SHIFT-LEFT</code> / <code>OPT-SHIFT-RIGHT</code></td><td>选择光标左侧/右侧的单词</td></tr><tr><td><code>CMD-SHIFT-LEFT</code> / <code>CMD-SHIFT-RIGHT</code></td><td>选择光标左侧/右侧的所有内容</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>选择光标上方/下方的所有内容</td></tr><tr><td><code>CMD-A</code></td><td>选择整个编辑器缓冲区</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>OPT-ENTER</code></td><td>插入换行符</td></tr><tr><td><code>CTRL-R</code></td><td>命令搜索</td></tr><tr><td><code>CMD-D</code></td><td>分屏</td></tr></tbody></table>
   </TabItem>
   <TabItem label="Windows">
-    <table><thead><tr><th width="317">Keyboard binding</th><th>Shortcut description</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>Closes the input suggestions or history menu</td></tr><tr><td><code>CTRL-L</code></td><td>Clears the terminal</td></tr><tr><td><code>CTRL-H</code></td><td>Backspace</td></tr><tr><td><code>CTRL-C</code></td><td>Clear the entire editor buffer</td></tr><tr><td><code>CTRL-U</code></td><td>Copy and Clear the current line</td></tr><tr><td><code>CTRL-SHIFT-K</code></td><td>Clear selected lines</td></tr><tr><td><code>CTRL-C</code>, <code>CTRL-X</code>, <code>CTRL-V</code></td><td>Copy, cut, paste</td></tr><tr><td><code>CTRL-W</code> / <code>ALT-D</code></td><td>Cut the word to the left / right of the cursor</td></tr><tr><td><code>ALT-BACKSPACE</code> / <code>ALT-D</code></td><td>Delete the word to the left / right of the cursor</td></tr><tr><td><code>CTRL-K</code></td><td>Delete everything to the right of the cursor</td></tr><tr><td><code>ALT-LEFT</code> / <code>ALT-RIGHT</code></td><td>Move to the beginning of the previous / next word</td></tr><tr><td><code>CTRL-LEFT</code> / <code>CTRL-RIGHT</code></td><td>Move backward / forward by one subword</td></tr><tr><td><code>CTRL-A</code>/ <code>CTRL-E</code></td><td>Move the cursor to the start / end of the line</td></tr><tr><td></td><td>Select the character to the left / right of the cursor</td></tr><tr><td><code>META-SHIFT-B</code> / <code>META-SHIFT-F</code></td><td>Select the word to the left / right of the cursor</td></tr><tr><td></td><td>Select everything to the left / right of the cursor</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>Select everything above / below the cursor</td></tr><tr><td><code>CTRL-A</code></td><td>Select the entire editor buffer</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>ALT-ENTER</code></td><td>Insert newline</td></tr><tr><td><code>CTRL-R</code></td><td>Command Search</td></tr><tr><td><code>CTRL-SHIFT-D</code></td><td>Split pane</td></tr></tbody></table>
+    <table><thead><tr><th width="317">键盘绑定</th><th>快捷键说明</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>关闭输入建议或历史菜单</td></tr><tr><td><code>CTRL-L</code></td><td>清除终端</td></tr><tr><td><code>CTRL-H</code></td><td>退格</td></tr><tr><td><code>CTRL-C</code></td><td>清除整个编辑器缓冲区</td></tr><tr><td><code>CTRL-U</code></td><td>复制并清除当前行</td></tr><tr><td><code>CTRL-SHIFT-K</code></td><td>清除选中行</td></tr><tr><td><code>CTRL-C</code>、<code>CTRL-X</code>、<code>CTRL-V</code></td><td>复制、剪切、粘贴</td></tr><tr><td><code>CTRL-W</code> / <code>ALT-D</code></td><td>剪切光标左侧/右侧的单词</td></tr><tr><td><code>ALT-BACKSPACE</code> / <code>ALT-D</code></td><td>删除光标左侧/右侧的单词</td></tr><tr><td><code>CTRL-K</code></td><td>删除光标右侧的所有内容</td></tr><tr><td><code>ALT-LEFT</code> / <code>ALT-RIGHT</code></td><td>移动到上一个/下一个单词的开头</td></tr><tr><td><code>CTRL-LEFT</code> / <code>CTRL-RIGHT</code></td><td>向后/向前移动一个子词</td></tr><tr><td><code>CTRL-A</code>/ <code>CTRL-E</code></td><td>将光标移动到行首/行尾</td></tr><tr><td></td><td>选择光标左侧/右侧的字符</td></tr><tr><td><code>META-SHIFT-B</code> / <code>META-SHIFT-F</code></td><td>选择光标左侧/右侧的单词</td></tr><tr><td></td><td>选择光标左侧/右侧的所有内容</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>选择光标上方/下方的所有内容</td></tr><tr><td><code>CTRL-A</code></td><td>选择整个编辑器缓冲区</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>ALT-ENTER</code></td><td>插入换行符</td></tr><tr><td><code>CTRL-R</code></td><td>命令搜索</td></tr><tr><td><code>CTRL-SHIFT-D</code></td><td>分屏</td></tr></tbody></table>
   </TabItem>
   <TabItem label="Linux">
-    <table><thead><tr><th width="317">Keyboard binding</th><th>Shortcut description</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>Closes the input suggestions or history menu</td></tr><tr><td><code>CTRL-L</code></td><td>Clears the terminal</td></tr><tr><td><code>CTRL-H</code></td><td>Backspace</td></tr><tr><td><code>CTRL-C</code></td><td>Clear the entire editor buffer</td></tr><tr><td><code>CTRL-U</code></td><td>Copy and Clear the current line</td></tr><tr><td><code>CTRL-SHIFT-K</code></td><td>Clear selected lines</td></tr><tr><td><code>CTRL-C</code>, <code>CTRL-X</code>, <code>CTRL-V</code></td><td>Copy, cut, paste</td></tr><tr><td><code>CTRL-W</code> / <code>ALT-D</code></td><td>Cut the word to the left / right of the cursor</td></tr><tr><td><code>ALT-BACKSPACE</code> / <code>ALT-D</code></td><td>Delete the word to the left / right of the cursor</td></tr><tr><td><code>CTRL-K</code></td><td>Delete everything to the right of the cursor</td></tr><tr><td><code>ALT-LEFT</code> / <code>ALT-RIGHT</code></td><td>Move to the beginning of the previous / next word</td></tr><tr><td><code>CTRL-LEFT</code> / <code>CTRL-RIGHT</code></td><td>Move backward / forward by one subword</td></tr><tr><td><code>CTRL-A</code>/ <code>CTRL-E</code></td><td>Move the cursor to the start / end of the line</td></tr><tr><td></td><td>Select the character to the left / right of the cursor</td></tr><tr><td><code>META-SHIFT-B</code> / <code>META-SHIFT-F</code></td><td>Select the word to the left / right of the cursor</td></tr><tr><td></td><td>Select everything to the left / right of the cursor</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>Select everything above / below the cursor</td></tr><tr><td><code>CTRL-A</code></td><td>Select the entire editor buffer</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>ALT-ENTER</code></td><td>Insert newline</td></tr><tr><td><code>CTRL-R</code></td><td>Command Search</td></tr><tr><td><code>CTRL-SHIFT-D</code></td><td>Split pane</td></tr></tbody></table>
+    <table><thead><tr><th width="317">键盘绑定</th><th>快捷键说明</th></tr></thead><tbody><tr><td><code>ESCAPE</code></td><td>关闭输入建议或历史菜单</td></tr><tr><td><code>CTRL-L</code></td><td>清除终端</td></tr><tr><td><code>CTRL-H</code></td><td>退格</td></tr><tr><td><code>CTRL-C</code></td><td>清除整个编辑器缓冲区</td></tr><tr><td><code>CTRL-U</code></td><td>复制并清除当前行</td></tr><tr><td><code>CTRL-SHIFT-K</code></td><td>清除选中行</td></tr><tr><td><code>CTRL-C</code>、<code>CTRL-X</code>、<code>CTRL-V</code></td><td>复制、剪切、粘贴</td></tr><tr><td><code>CTRL-W</code> / <code>ALT-D</code></td><td>剪切光标左侧/右侧的单词</td></tr><tr><td><code>ALT-BACKSPACE</code> / <code>ALT-D</code></td><td>删除光标左侧/右侧的单词</td></tr><tr><td><code>CTRL-K</code></td><td>删除光标右侧的所有内容</td></tr><tr><td><code>ALT-LEFT</code> / <code>ALT-RIGHT</code></td><td>移动到上一个/下一个单词的开头</td></tr><tr><td><code>CTRL-LEFT</code> / <code>CTRL-RIGHT</code></td><td>向后/向前移动一个子词</td></tr><tr><td><code>CTRL-A</code>/ <code>CTRL-E</code></td><td>将光标移动到行首/行尾</td></tr><tr><td></td><td>选择光标左侧/右侧的字符</td></tr><tr><td><code>META-SHIFT-B</code> / <code>META-SHIFT-F</code></td><td>选择光标左侧/右侧的单词</td></tr><tr><td></td><td>选择光标左侧/右侧的所有内容</td></tr><tr><td><code>SHIFT-UP</code> / <code>SHIFT-UP</code></td><td>选择光标上方/下方的所有内容</td></tr><tr><td><code>CTRL-A</code></td><td>选择整个编辑器缓冲区</td></tr><tr><td><code>SHIFT-ENTER</code> <code>CTRL-ENTER</code> <code>ALT-ENTER</code></td><td>插入换行符</td></tr><tr><td><code>CTRL-R</code></td><td>命令搜索</td></tr><tr><td><code>CTRL-SHIFT-D</code></td><td>分屏</td></tr></tbody></table>
   </TabItem>
 </Tabs>
 
-## How it Works
+## 工作原理
 
 <VideoEmbed url="https://loom.com/share/1517049fefc34227bf1abaf19cc7e6ea?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Text Editor Input Demo" />
 
 <figure>
-![soft wrapping text in Warp input editor](../../../../assets/terminal/soft-wrapping.png)
-<figcaption>Soft wrapping applied to long lines in the editor.</figcaption>
+![Warp 输入编辑器中的软换行](../../../../assets/terminal/soft-wrapping.png)
+<figcaption>编辑器中长行的软换行效果。</figcaption>
 </figure>

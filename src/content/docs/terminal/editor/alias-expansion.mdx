@@ -1,44 +1,44 @@
 ---
-title: Alias Expansion
+title: 别名展开
 description: >-
-  Warp will automatically expand your aliases as you type in the input editor.
+  Warp 会在输入编辑器中自动展开你输入的别名。
 sidebar:
   label: "Alias expansion"
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## How to use it
+## 如何使用
 
 <Tabs>
   <TabItem label="macOS">
-    When Alias Expansion is enabled, type an alias and then hit `SPACE` will expand the alias.
+    启用别名展开后，输入别名然后按 `SPACE` 即可展开该别名。
 
-    To insert a space without expanding an alias, the default keybinding is `OPT-SPACE`.
+    若要插入空格而不展开别名，默认快捷键为 `OPT-SPACE`。
   </TabItem>
   <TabItem label="Windows">
-    When Alias Expansion is enabled, type an alias and then hit `SPACE` will expand the alias.
+    启用别名展开后，输入别名然后按 `SPACE` 即可展开该别名。
 
-    To insert a space without expanding an alias, the default keybinding is `ALT-SPACE`.
+    若要插入空格而不展开别名，默认快捷键为 `ALT-SPACE`。
   </TabItem>
   <TabItem label="Linux">
-    When Alias Expansion is enabled, type an alias and then hit `SPACE` will expand the alias.
+    启用别名展开后，输入别名然后按 `SPACE` 即可展开该别名。
 
-    To insert a space without expanding an alias, the default keybinding is `ALT-SPACE`.
+    若要插入空格而不展开别名，默认快捷键为 `ALT-SPACE`。
   </TabItem>
 </Tabs>
 
 :::note
-Aliases will not be expanded when the command in the expanded form is the same as the alias itself. e.g. if you have an alias `ls='ls -G'`, `ls` will not be expanded in the input editor.
+当展开后的命令与别名本身相同时，别名将不会被展开。例如，如果你有别名 `ls='ls -G'`，则 `ls` 在输入编辑器中不会被展开。
 :::
 
-## How to access it
+## 如何访问
 
-Alias expansion is disabled by default. There are two ways to toggle this on and off:
+别名展开默认禁用。有两种方式可以切换开关：
 
-* From Settings: Navigate to **Settings** > **Features** > **Terminal Input** and toggle “Expand aliases as you type”.
-* From the [Command Palette](/terminal/command-palette/#windows): Search for the “Enable/disable alias expansion” option and hit `ENTER`.
+* 通过设置：进入 **Settings** > **Features** > **Terminal Input**，切换 "Expand aliases as you type"。
+* 通过 [Command Palette](/terminal/command-palette/#windows)：搜索 "Enable/disable alias expansion" 选项并按 `ENTER`。
 
-## How it works
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/2267657c033e482890eea75a8a6c5373?hideEmbedTopBar=true&hide_owner=true&hide_share=true&hide_title=true" title="Alias Expansion Demo" />

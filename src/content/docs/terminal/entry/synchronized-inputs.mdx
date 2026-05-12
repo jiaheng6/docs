@@ -1,55 +1,55 @@
 ---
-title: Synchronized Inputs
+title: 同步输入
 description: >-
-  Type a command once and sync it to multiple panes simultaneously.
+  输入一次命令，同时同步到多个窗格。
 sidebar:
   label: "Synchronized inputs"
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-### Synchronized inputs vs. broadcast input
+### 同步输入与广播输入的区别
 
-Synchronized inputs in Warp work similarly to “broadcast input” settings in other terminals, but there are some differences.
+Warp 的同步输入与其他终端中的"广播输入"设置类似，但有一些区别。
 
-With Warp’s synchronized inputs, whatever command you enter in one session will sync to the other sessions in its entirety. Whereas, "broadcast input" typically allows you to "broadcast" individual keystrokes, which may be more suitable for editing parts of commands.
+使用 Warp 的同步输入时，你在一个会话中输入的任何命令都将完整地同步到其他会话。而"广播输入"通常允许你"广播"单个按键，这对于编辑命令的部分内容可能更合适。
 
-## How to access it
+## 如何访问
 
-There are three ways to access controls to synchronize inputs:
+有三种方式可以访问同步输入控制：
 
-* [Command Palette](/terminal/command-palette/) in Warp: Search for “synchronize”
-* macOS menus for the Warp app: `Edit > Synchronize Input`
+* Warp 中的 [Command Palette](/terminal/command-palette/)：搜索 "synchronize"
+* Warp 应用的 macOS 菜单：`Edit > Synchronize Input`
 
-## How to use it
+## 如何使用
 
 <Tabs>
   <TabItem label="macOS">
-    There are two modes available to scope how input is synchronized and one to stop any synchronization:
+    有两种模式可用于设定输入同步的范围，以及一种停止同步的模式：
 
-    * Synchronize All Panes in All Tabs
-    * Synchronize All Panes in Current Tab `OPT-CMD-I`
-    * Stop Synchronizing Any Panes `OPT-CMD-I`
+    * 同步所有标签页中的所有窗格
+    * 同步当前标签页中的所有窗格 `OPT-CMD-I`
+    * 停止同步任何窗格 `OPT-CMD-I`
   </TabItem>
   <TabItem label="Windows">
-    There are two modes available to scope how input is synchronized and one to stop any synchronization:
+    有两种模式可用于设定输入同步的范围，以及一种停止同步的模式：
 
-    * Synchronize All Panes in All Tabs
-    * Synchronize All Panes in Current Tab `CTRL-ALT-I`
-    * Stop Synchronizing Any Panes `CTRL-ALT-I`
+    * 同步所有标签页中的所有窗格
+    * 同步当前标签页中的所有窗格 `CTRL-ALT-I`
+    * 停止同步任何窗格 `CTRL-ALT-I`
   </TabItem>
   <TabItem label="Linux">
-    There are two modes available to scope how input is synchronized and one to stop any synchronization:
+    有两种模式可用于设定输入同步的范围，以及一种停止同步的模式：
 
-    * Synchronize All Panes in All Tabs
-    * Synchronize All Panes in Current Tab `CTRL-ALT-I`
-    * Stop Synchronizing Any Panes `CTRL-ALT-I`
+    * 同步所有标签页中的所有窗格
+    * 同步当前标签页中的所有窗格 `CTRL-ALT-I`
+    * 停止同步任何窗格 `CTRL-ALT-I`
   </TabItem>
 </Tabs>
 
-When inputs are synchronized, you can start typing in one input editor and that same input will be entered into all of the input editors for all panes in your current tab or all tabs, depending on the scope you selected.
+同步输入启用后，你在一个输入编辑器中开始输入，相同的内容将被输入到当前标签页或所有标签页中所有窗格的输入编辑器（取决于你选择的范围）。
 
-If you are working in an alternative editor mode (like vim), synchronized inputs will only apply to all tabs with that same editor type running.
+如果你在使用其他编辑器模式（如 vim），同步输入只会应用于所有运行相同编辑器类型的标签页。
 
-When you get done, you can select “Stop Synchronizing Any Panes” to end the synchronization.
+完成后，你可以选择"停止同步任何窗格"来结束同步。
 
-## How it works
+## 工作原理

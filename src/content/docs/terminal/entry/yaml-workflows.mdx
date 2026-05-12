@@ -1,7 +1,7 @@
 ---
-title: YAML Workflows
+title: YAML 工作流
 description: >-
-  Workflows are an easier way to execute and share commands within Warp.
+  工作流是在 Warp 中执行和共享命令的更便捷方式。
 sidebar:
   label: "YAML workflows"
 ---
@@ -9,43 +9,43 @@ import DemoVideo from '@components/DemoVideo.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 :::danger
-You can continue to use YAML-based workflows, but we recommend using new [workflows in Warp Drive](/knowledge-and-collaboration/warp-drive/workflows/) instead for a better editing experience.
+你可以继续使用基于 YAML 的工作流，但我们推荐改用 [Warp Drive 中的新工作流](/knowledge-and-collaboration/warp-drive/workflows/)，以获得更好的编辑体验。
 :::
 
-## What is it
+## 功能介绍
 
-Workflows are easily parameterized and searchable by name, description, or command arguments. [Common Workflows](https://github.com/warpdotdev/workflows) sourced by the Warp team and community are readily available within the app. Additionally, you can create and scope Workflows locally or to a Git repository.
+工作流支持简便的参数化，并可按名称、描述或命令参数进行搜索。由 Warp 团队和社区整理的[常用工作流](https://github.com/warpdotdev/workflows)可在应用中直接使用。此外，你还可以在本地或 Git 仓库范围内创建和管理工作流。
 
-## How to use it
+## 如何使用
 
-* Open the [Command Search](/terminal/entry/command-search/) or Workflow Search `CTRL-SHIFT-R` panel to find Workflows.
-* Once inside the menu, start typing in the search bar to filter the existing Workflows. (e.g. git, android, npm, etc.)
-* When a Workflow is selected with `ENTER`, you can use `SHIFT-TAB` to cycle through the arguments.
-* You can also expand the menu horizontally with the mouse by dragging it on the right edge.
+* 打开[命令搜索](/terminal/entry/command-search/)或工作流搜索 `CTRL-SHIFT-R` 面板来查找工作流。
+* 进入菜单后，在搜索框中开始输入以过滤现有工作流（例如 git、android、npm 等）。
+* 按 `ENTER` 选中工作流后，可使用 `SHIFT-TAB` 循环切换参数。
+* 也可以用鼠标拖动右边缘来横向展开菜单。
 
 :::note
-Tailor your [Command Search](/terminal/entry/command-search/) experience by toggling off "Show Global Workflows" in **Settings** > **Features** > **Workflows**. When disabled, your search will exclusively encompass YAML and Warp Drive Workflows.
+你可以通过在 **Settings** > **Features** > **Workflows** 中关闭 "Show Global Workflows" 来定制[命令搜索](/terminal/entry/command-search/)体验。禁用后，搜索将仅包含 YAML 和 Warp Drive 工作流。
 :::
 
-## How it works
+## 工作原理
 
 <DemoVideo src="/assets/terminal/yaml_workflows_demo.mp4" label="YAML Workflows Demo" />
 
-### How is this different from aliases?
+### 与别名有何不同？
 
-Workflows solve some major pain points with aliases, specifically the:
+工作流解决了别名的一些主要痛点，具体包括：
 
-1. need to context switch
-   1. leave vim, source dotfiles, or reset shell
-2. difficulty with attaching documentation
-3. inability to easily search or share
-4. inability to easily parameterize
+1. 需要切换上下文
+   1. 退出 vim、source dotfiles 或重置 shell
+2. 难以附加文档说明
+3. 无法轻松搜索或共享
+4. 无法轻松参数化
 
-## Creating custom workflows
+## 创建自定义工作流
 
-### How to create a workflow with YAML
+### 如何使用 YAML 创建工作流
 
-You can store local workflows (scoped to your machine) in:
+你可以将本地工作流（仅限当前机器）保存在：
 
 <Tabs>
   <TabItem label="macOS">
@@ -65,29 +65,29 @@ You can store local workflows (scoped to your machine) in:
   </TabItem>
 </Tabs>
 
-Or, you can share them with your team by saving them in `{{path_to_git_repo}}/.warp/workflows/`. Local and repository Workflows can be accessed under the "My Workflows" and "Repository Workflows" tab of the Workflows menu, respectively.
+或者，你可以将工作流保存在 `{{path_to_git_repo}}/.warp/workflows/` 中与团队共享。本地和仓库工作流分别可在工作流菜单的 "My Workflows" 和 "Repository Workflows" 标签页下访问。
 
-See the existing Workflow spec within the [Workflows repo](https://github.com/warpdotdev/Workflows/tree/main/specs) for examples. Additionally, we outline the file format below:
+有关示例，请查看 [Workflows 仓库](https://github.com/warpdotdev/Workflows/tree/main/specs)中的工作流规范。文件格式说明如下：
 
 <details>
 
-<summary><a href="https://github.com/warpdotdev/Workflows/blob/main/FORMAT.md">Workflow File Format</a></summary>
+<summary><a href="https://github.com/warpdotdev/Workflows/blob/main/FORMAT.md">工作流文件格式</a></summary>
 
-The Workflow file format is a [yaml](https://yaml.org/) file and must have either a \`.yml \` or \`yaml\` extension. If you're new to YAML and want to learn more, see [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/).
+工作流文件格式为 [yaml](https://yaml.org/) 文件，必须具有 \`.yml \` 或 \`yaml\` 扩展名。如果你是 YAML 新手并想了解更多，请参阅 [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)。
 
 ---
 
 **`name`**
 
-The name of the Workflow. Required.
+工作流的名称。必填。
 
 **`command`**
 
-The command that is executed when the Workflow is selected. Required.
+选中工作流时执行的命令。必填。
 
 **`tags`**
 
-An array of tags that are useful to categorize the Workflow. Optional.
+用于对工作流进行分类的标签数组。可选。
 
 ```yaml
 tags: ["git", "GitHub"]
@@ -95,31 +95,31 @@ tags: ["git", "GitHub"]
 
 **`description`**
 
-The description of the Workflow and what it does. Optional.
+工作流的描述及其用途。可选。
 
 **`source_url`**
 
-The URL from where the Workflow was originally generated from. This is surfaced in [commands.dev](https://www.commands.dev/) for attribution purposes. Optional.
+工作流最初生成来源的 URL。此字段在 [commands.dev](https://www.commands.dev/) 中用于注明出处。可选。
 
 **`author`**
 
-The original author of the Workflow. For example, if this Workflow was generated from StackOverflow, the `author` would be the `author` of the StackOverflow post. This is surfaced in [commands.dev](https://www.commands.dev/) for attribution purposes. Optional.
+工作流的原始作者。例如，如果此工作流来自 StackOverflow，则 `author` 为该 StackOverflow 帖子的作者。此字段在 [commands.dev](https://www.commands.dev/) 中用于注明出处。可选。
 
 **`author_url`**
 
-The URL of original author of the Workflow. For example, if this Workflow was generated from StackOverflow, the `author_url` would be the StackOverflow author's profile page. This is surfaced in [commands.dev](https://www.commands.dev/) for attribution purposes. Optional.
+工作流原始作者的 URL。例如，如果此工作流来自 StackOverflow，则 `author_url` 为该 StackOverflow 作者的个人主页。此字段在 [commands.dev](https://www.commands.dev/) 中用于注明出处。可选。
 
 **`shells`**
 
-The list of shells where this Workflow is valid. If not specified, the Workflow is assumed to be valid in all shells. This must be one of `zsh`, `bash`, or `fish`.
+此工作流有效的 shell 列表。如果未指定，则假定在所有 shell 中均有效。必须是 `zsh`、`bash` 或 `fish` 之一。
 
 **`arguments`**
 
-A Workflow can have parameterized arguments to specify pieces of the Workflow that need to be filled in by the user.
+工作流可以包含参数化参数，以指定需要由用户填写的工作流部分。
 
-You can specify which part of the Workflow command maps to an argument by surrounding it with two curly braces (`{{<argument>}}`).
+你可以通过用两个花括号（`{{<argument>}}`）包裹来指定工作流命令中的哪个部分对应一个参数。
 
-For example the Workflow command:
+例如工作流命令：
 
 ```bash
 for {{variable}} in {{sequence}}; do
@@ -127,11 +127,11 @@ for {{variable}} in {{sequence}}; do
 done
 ```
 
-Includes 3 arguments: `variable`, `sequence`, and `command`.
+包含 3 个参数：`variable`、`sequence` 和 `command`。
 
 **`arguments.name`**
 
-The name of the argument. The argument name is used within the command to specify the ranges of the argument. Required.
+参数的名称。参数名称在命令中用于指定参数的范围。必填。
 
 ```yaml
 name: Example Workflow
@@ -143,53 +143,53 @@ arguments:
 
 **`arguments.description`**
 
-The description of the argument. This is surfaced in both [commands.dev](https://www.commands.dev/) and Warp to help users fill in Workflow arguments. Optional
+参数的描述。此字段在 [commands.dev](https://www.commands.dev/) 和 Warp 中均有展示，以帮助用户填写工作流参数。可选。
 
 **`arguments.default_value`**
 
-The default value for the argument. If specified, the `default_value` replaces the argument name within the command. Optional
+参数的默认值。如果指定，则 `default_value` 会替换命令中的参数名称。可选。
 
 ---
 
 </details>
 
-### Where to save workflows
+### 工作流的保存位置
 
-Local Workflows are scoped to your machine. Repository Workflows are scoped to a Git repository and can be accessed by anyone who has cloned the repo.
+本地工作流仅限当前机器使用。仓库工作流的范围为某个 Git 仓库，克隆该仓库的所有人均可访问。
 
 <Tabs>
   <TabItem label="macOS">
     ```bash
-    # Local Workflow Path
+    # 本地工作流路径
     $HOME/.warp/workflows/
 
-    # Repository Workflow Path
+    # 仓库工作流路径
     {{path_to_git_repo}}/.warp/workflows
     ```
   </TabItem>
   <TabItem label="Windows">
     ```powershell
-    # Local Workflow Path
+    # 本地工作流路径
     $env:APPDATA\warp\Warp\data\workflows\
 
-    # Repository Workflow Path
+    # 仓库工作流路径
     {{path_to_git_repo}}\.warp\workflows
     ```
   </TabItem>
   <TabItem label="Linux">
     ```bash
-    # Local Workflow Path
+    # 本地工作流路径
     ${XDG_DATA_HOME:-$HOME/.local/share}/warp-terminal/workflows/
 
-    # Repository Workflow Path
+    # 仓库工作流路径
     {{path_to_git_repo}}/.warp/workflows
     ```
   </TabItem>
 </Tabs>
 
-#### Local Workflows
+#### 本地工作流
 
-To start, create a Workflow subdirectory within
+首先，在以下目录中创建工作流子目录：
 
 <Tabs>
   <TabItem label="macOS">
@@ -209,13 +209,13 @@ To start, create a Workflow subdirectory within
   </TabItem>
 </Tabs>
 
-Add your Workflow’s `.yaml` file to this directory; if the file format is valid Warp should automatically load it into the Workflows menu.
+将工作流的 `.yaml` 文件添加到此目录；如果文件格式有效，Warp 会自动将其加载到工作流菜单中。
 
 `cp ~/path/to/my_awesome_workflow.yaml {{path_to_local_workflow_folder}}`
 
-#### Repository Workflows
+#### 仓库工作流
 
-You can add a repository Workflow similarly to how you added a local Workflow. Create a Workflows folder in a repository’s root directory and save your `.yaml` file like so:
+添加仓库工作流的方式与添加本地工作流类似。在仓库根目录中创建 Workflows 文件夹，并按如下方式保存 `.yaml` 文件：
 
 ```
 cd {{repository_path}}
@@ -223,6 +223,6 @@ mkdir -p .warp/workflows/
 cp ~/path/to/my_awesome_workflow.yaml {{path_to_local_workflow_folder}}
 ```
 
-#### Global Workflows
+#### 全局工作流
 
-You can contribute Workflows that will be made available to other Warp users by forking the [Workflows repo](https://github.com/warpdotdev/workflows/tree/main/specs) and opening a pull request. See the [Contributing](https://github.com/warpdotdev/workflows#contributing) section for more details.
+你可以通过 fork [Workflows 仓库](https://github.com/warpdotdev/workflows/tree/main/specs)并提交 pull request 来贡献对其他 Warp 用户可用的工作流。详情请参阅 [Contributing](https://github.com/warpdotdev/workflows#contributing) 部分。

@@ -1,56 +1,55 @@
 ---
-title: Command Corrections
+title: 命令纠错
 description: >-
-  Command Corrections provides auto-correct suggestions on previously run
-  commands to catch typos and forgotten flags, and fix general console errors.
+  命令纠错功能可对之前运行的命令提供自动纠正建议，以捕捉拼写错误、遗漏的标志，并修复常规控制台错误。
 sidebar:
   label: "Command corrections"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## What is it
+## 功能介绍
 
-This feature was built on top of the open-source project [nvdn/thefuck](https://github.com/nvbn/thefuck). Here are some examples that the Warp team usually finds Command Corrections useful for:
+此功能基于开源项目 [nvdn/thefuck](https://github.com/nvbn/thefuck) 构建。以下是 Warp 团队通常认为命令纠错有用的一些示例：
 
-* Misspelled commands
+* 拼写错误的命令
   * `gti checkout myBranchName` -> `git checkout myBranchName`
   * `cd ap/sorce/executtor` -> `cd app/source/executor`
-* Missing flags
+* 缺少标志
   * `git push` -> `git push –set-upstream myBranchName`
-* Add permissions
+* 添加权限
   * `./script` -> `chmod +x ./script && ./script`
 
-## How to access it
+## 如何访问
 
-* Command Corrections is enabled by default. You can disable Command Corrections by going to **Settings** > **Features** > **Terminal Input** > toggle “Suggest corrected commands”.
-* After an incorrect command is run, a panel with the corrected command suggestion appears above the Input Editor. `CLICK` or press the `RIGHT` arrow to insert the suggestion.
+* 命令纠错默认启用。你可以通过 **Settings** > **Features** > **Terminal Input** > 切换 "Suggest corrected commands" 来禁用。
+* 运行错误命令后，输入编辑器上方会出现一个显示纠正建议的面板。`点击`或按 `RIGHT` 方向键插入建议。
 
-## How it works
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/180e1dc8d1504ec39c00694d9fd71b7c?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Command Corrections Demo" />
 
-#### Command correction rules:
+#### 命令纠错规则：
 
-| Command                                                       |
-| ------------------------------------------------------------- |
-| brew                                                          |
-| cargo                                                         |
-| cat                                                           |
-| cd                                                            |
-| chmod                                                         |
-| conda                                                         |
-| cp                                                            |
-| docker                                                        |
-| generic (command agnostic, e.g. mis-spelling executable name) |
-| git                                                           |
-| go                                                            |
-| grep                                                          |
-| java                                                          |
-| ls                                                            |
-| mkdir                                                         |
-| npm                                                           |
-| pip                                                           |
-| python                                                        |
-| sed                                                           |
-| sudo                                                          |
-| yarn                                                          |
+| 命令                                                    |
+| ----------------------------------------------------- |
+| brew                                                  |
+| cargo                                                 |
+| cat                                                   |
+| cd                                                    |
+| chmod                                                 |
+| conda                                                 |
+| cp                                                    |
+| docker                                                |
+| generic（与命令无关，例如拼写错误的可执行文件名）                |
+| git                                                   |
+| go                                                    |
+| grep                                                  |
+| java                                                  |
+| ls                                                    |
+| mkdir                                                 |
+| npm                                                   |
+| pip                                                   |
+| python                                                |
+| sed                                                   |
+| sudo                                                  |
+| yarn                                                  |

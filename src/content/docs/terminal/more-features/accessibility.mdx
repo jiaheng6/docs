@@ -1,58 +1,57 @@
 ---
-title: Accessibility
+title: 无障碍访问
 description: >-
-  Warp's accessibility features include VoiceOver support, voice input, and
-  configurable verbosity.
+  Warp 的无障碍功能包括 VoiceOver 支持、语音输入和可配置的详细程度。
 ---
 
 :::note
-Note that currently, these instructions are for macOS only. Warp doesn't support screen readers on Linux or Windows and it's being tracked here: [https://github.com/warpdotdev/Warp/issues/3847](https://github.com/warpdotdev/Warp/issues/3847)
+请注意，目前这些说明仅适用于 macOS。Warp 在 Linux 或 Windows 上不支持屏幕阅读器，相关追踪问题在此：[https://github.com/warpdotdev/Warp/issues/3847](https://github.com/warpdotdev/Warp/issues/3847)
 :::
 
-We recognize the need to improve the experience for those visually impaired, as - to our best knowledge - other terminal emulator apps didn't do a good job in this area. This doc summarizes what we've done so far, how Warp works with VoiceOver, and outlines the main changes from the typical workflow. For the features documentation and its keyboard shortcuts, please go to the feature-specific page in the documentation.
+我们认识到需要改善视障用户的体验——据我们所知，其他终端模拟器应用在这一领域做得并不好。本文档总结了我们迄今为止的工作、Warp 与 VoiceOver 的配合方式，并概述了与典型工作流的主要差异。有关功能文档及其键盘快捷键，请前往文档中对应功能的专属页面。
 
-**Keep in mind that this is a work-in-progress and the current state is not a final state of accessibility in Warp**.
+**请注意，这项工作仍在进行中，当前状态并非 Warp 无障碍访问的最终形态**。
 
-## How to use Warp with Voice Over?
+## 如何配合 VoiceOver 使用 Warp？
 
-The best way to start working with Warp & VoiceOver is to install it using Homebrew:
+使用 Homebrew 安装 Warp 是开始配合 VoiceOver 使用的最佳方式：
 
 `brew install warp`
 
-This will ensure that you can receive all future updates automatically, without the need to go through a macOS standard drag-and-drop installation process.
+这将确保你可以自动接收所有未来更新，无需经历 macOS 标准的拖放安装流程。
 
-From there, Warp should seamlessly work with VoiceOver and start announcing what's happening on the screen and what actions you can take. This may be a major difference from other apps - as Warp announces stuff on its own, letting you know what's going on. There's currently no way to navigate between different UI elements using VO key combinations.
+安装完成后，Warp 应与 VoiceOver 无缝协作，开始通告屏幕上发生的事情以及你可以执行的操作。这可能与其他应用有很大不同——Warp 会主动通告内容，让你了解正在发生的事情。目前暂不支持使用 VO 快捷键在不同 UI 元素之间导航。
 
-Once installed, it will ask you to log in. Warp also sends telemetry that we use to improve the overall user experience. You can find out more about that in the [privacy section](/support-and-community/privacy-and-security/privacy/).
+安装后，系统会要求你登录。Warp 还会发送遥测数据，我们用于改善整体用户体验。你可以在[隐私部分](/support-and-community/privacy-and-security/privacy/)了解更多相关信息。
 
-The login flow will require you to navigate between the app and your browser. The last step before you can start enjoying our new terminal app is filling up the onboarding survey.
+登录流程需要你在应用和浏览器之间切换。在开始享受我们的新终端应用之前，最后一步是填写引导调查问卷。
 
-The main terminal window is not that different from other terminals - there's a place to type commands (Command Input) and a list of the previously executed commands and their outputs. Warp groups those together - each command and output create a Block. You can navigate blocks with your keyboard to easily check what was the command, learn whether it was successful or not, and what was the output, as well as more easily copy the command, output, or both for further processing.
+主终端窗口与其他终端没有太大区别——有一个输入命令的地方（Command Input）和一个之前执行的命令及其输出列表。Warp 将这些内容分组——每个命令和输出构成一个 Block。你可以使用键盘导航 Block，以便轻松查看命令内容、了解是否成功执行以及查看输出，同时也更方便地复制命令、输出或两者以供进一步处理。
 
-A main entry point for discovering new features and actions is our Command Palette, which you can access by executing the cmd-p shortcut.
+发现新功能和操作的主要入口是我们的 Command Palette，你可以通过 cmd-p 快捷键访问。
 
-## Differences from the regular VoiceOver workflow
+## 与常规 VoiceOver 工作流的区别
 
-As you may notice, typical Voice Over navigation keys or settings do not currently work in Warp. In short - it's related to how our UI Framework is currently implemented and that as of now we don't yet offer a keyboard-accessible way to navigate the UI elements.
+你可能会注意到，典型的 VoiceOver 导航键或设置目前在 Warp 中无法使用。简而言之，这与我们的 UI 框架目前的实现方式有关，我们目前尚未提供使用键盘导航 UI 元素的方式。
 
-Instead, whenever you perform an action and/or something happens in the background, Warp announces it to you, letting you know what's going on and what possible actions you can take. Since it's a terminal, we care about all user actions being keyboard accessible from the start, so pretty much all our features have the assigned keybindings already. You can adjust the default keybindings following the guide from this GitHub repository: [https://github.com/warpdotdev/keysets](https://github.com/warpdotdev/keysets). You can also always fall back to using cmd-p to check the keybinding or execute the specific action.
+相反，每当你执行某个操作和/或后台发生某些事情时，Warp 都会向你通告，让你了解正在发生的事情以及你可以采取的可能操作。由于这是一个终端，我们从一开始就关注所有用户操作的键盘可访问性，因此几乎所有功能都已分配了键盘绑定。你可以按照此 GitHub 仓库的指南调整默认键盘绑定：[https://github.com/warpdotdev/keysets](https://github.com/warpdotdev/keysets)。你也可以随时使用 cmd-p 检查键盘绑定或执行特定操作。
 
-### A11y specific actions
+### 无障碍相关操作
 
-Some a11y-specific settings are available through the Command Palette. For example, you can adjust the verbosity level of messages. Simply enter the [Command Palette](/terminal/command-palette/) and type "a11y" to discover related options and their keybindings.
+一些无障碍特定设置可通过 Command Palette 访问。例如，你可以调整消息的详细程度级别。只需进入 [Command Palette](/terminal/command-palette/) 并输入 "a11y" 即可发现相关选项及其键盘绑定。
 
-### Voice Input
+### 语音输入
 
-Warp supports voice input as an alternative way to interact with your terminal. This can be especially helpful for users who prefer or require voice commands over typing. You can use voice input to:
+Warp 支持语音输入作为与终端交互的替代方式。这对于偏好或需要使用语音命令而非打字的用户特别有帮助。你可以使用语音输入来：
 
-* Issue terminal commands
-* Ask questions about command usage
-* Perform complex multi-step operations
+* 执行终端命令
+* 询问关于命令用法的问题
+* 执行复杂的多步骤操作
 
-Voice input can be enabled in **Settings** > **Agents** > **Warp Agent** > **Voice**. For detailed information about voice features and setup, see our [Voice documentation](/agent-platform/local-agents/interacting-with-agents/voice/).
+语音输入可在 **Settings** > **Agents** > **Warp Agent** > **Voice** 中启用。有关语音功能和设置的详细信息，请参阅我们的[语音文档](/agent-platform/local-agents/interacting-with-agents/voice/)。
 
-## Future work
+## 未来工作
 
-While not all Warp features are accessible yet, we've implemented a process around releasing new features and changes to the main app, to ensure that all new code provides proper a11y announcements.
+虽然 Warp 的功能并非全部都已具备无障碍支持，但我们已建立了围绕向主应用发布新功能和更改的流程，以确保所有新代码都提供适当的无障碍通告。
 
-This is not the ideal and final implementation. We're happy to hear your thoughts and ideas on how we can improve. The biggest milestone for this work is to add support for navigating the UI elements using the keyboard. Give Warp a try, and please, do not hesitate to [share your feedback](/support-and-community/troubleshooting-and-support/sending-us-feedback/).
+这不是理想的最终实现。我们很乐意听取你关于如何改进的想法和意见。这项工作最重要的里程碑是添加对使用键盘导航 UI 元素的支持。欢迎试用 Warp，并请毫不犹豫地[分享你的反馈](/support-and-community/troubleshooting-and-support/sending-us-feedback/)。

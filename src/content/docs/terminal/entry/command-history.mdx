@@ -1,29 +1,29 @@
 ---
-title: Command History
+title: 命令历史
 description: >-
-  Command History helps you quickly find previously run commands.
+  命令历史可帮助你快速找到之前运行过的命令。
 sidebar:
   label: "Command history"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## What is it
+## 功能介绍
 
-While running, Warp isolates the history of each shell session e.g. if you have two Split Panes open, commands created in one pane do not populate the history of the other. Warp combines the history upon closing.
+运行时，Warp 会隔离每个 shell 会话的历史记录。例如，如果你打开了两个分屏窗格，在一个窗格中创建的命令不会出现在另一个窗格的历史记录中。Warp 在关闭时会合并历史记录。
 
-Command History also provides rich information like exit code, directory, thread, time to finish running, last run, etc.
+命令历史还提供丰富的信息，例如退出码、目录、线程、运行完成时间、上次运行时间等。
 
 <figure>
-![Command History rich information](../../../../assets/terminal/command-history-rich.png)
-<figcaption>Command history with rich metadata.</figcaption>
+![命令历史的丰富信息](../../../../assets/terminal/command-history-rich.png)
+<figcaption>带有丰富元数据的命令历史。</figcaption>
 </figure>
 
-## How to access it
+## 如何访问
 
-* Hitting `UP` in the [Input Editor](/terminal/editor/) brings up your history and performs a prefix search based on input.
-* Pressing `CTRL-R` opens the [Command Search](/terminal/entry/command-search/) panel and initiates a search of your Command History. To navigate the Command Search panel:
-  * Start typing and Warp will automatically filter using fuzzy search. Warp bolds matching text when filtering with fuzzy search.
+* 在[输入编辑器](/terminal/editor/)中按 `UP` 方向键可调出历史记录，并根据输入进行前缀搜索。
+* 按 `CTRL-R` 可打开[命令搜索](/terminal/entry/command-search/)面板，并开始搜索命令历史。在命令搜索面板中：
+  * 开始输入，Warp 会自动使用模糊搜索进行过滤。使用模糊搜索过滤时，Warp 会加粗匹配的文本。
 
-## How it works
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/8119beca8d794b06859c5dea1b1377bb?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Command History Demo" />

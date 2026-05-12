@@ -1,18 +1,18 @@
 ---
-title: Performance benchmarks
+title: 性能基准测试
 description: >-
-  This is a short comparison of different terminals and their performance.
+  各终端的简短性能对比。
 ---
 
-## Terminal apps selected for these benchmarks
+## 基准测试中选择的终端应用
 
-We chose to benchmark Warp against 4 other terminal emulator applications, based on their popularity as well as language and principles. Here is the list of the applications we chose for this comparison together with the explanation as to why we decided to include it in our comparison:
+我们选择了另外 4 款终端模拟器应用与 Warp 进行基准对比，选择依据是它们的流行程度以及使用的语言和设计理念。以下是参与对比的应用列表，并说明了选择原因：
 
-* Terminal.app - the default terminal app available on the macOS;
-* ITerm2 - one of the most popular terminal emulators used by macOS users;
-* Alacritty & WezTerm - both of those terminals are written in Rust and are well-known for their speed and overall performance, things that Warp is aiming for.
+* Terminal.app - macOS 上默认的终端应用；
+* ITerm2 - macOS 用户最常用的终端模拟器之一；
+* Alacritty & WezTerm - 这两款终端均使用 Rust 编写，以速度和整体性能著称，这也是 Warp 的目标。
 
-### Versions & settings used during the comparison
+### 对比中使用的版本和设置
 
 | Terminal     | Version                        | Terminal size (cols / rows, window is identical pixel-wise) |
 | ------------ | ------------------------------ | ----------------------------------------------------------- |
@@ -22,17 +22,17 @@ We chose to benchmark Warp against 4 other terminal emulator applications, based
 | Alacritty    | alacritty 0.10.1 (2844606)     | 286 cols / 102 rows                                         |
 | Wezterm      | 20220319-142410-0fcdea07       | 243 cols / 80 rows                                          |
 
-### About benchmarks
+### 关于基准测试
 
-We link the source code of each benchmark used, so you can easily reproduce the tests with other terminal apps. Please, note that those benchmarks are not exhaustive. Comparing terminal emulators with each other is not an easy task - right now we're checking how each of the apps behaves when dealing with lots of input and/or output.
+我们提供了每项基准测试所用源码的链接，方便你在其他终端应用上自行复现测试。请注意，这些基准测试并不全面。比较不同终端模拟器并非易事——目前我们关注的是各应用在处理大量输入和/或输出时的表现。
 
-Ideally, the benchmarks would also cover the latency (time between pressing a key and the character showing on the screen, but also a delay between the user's input and communication with the shell). We may include tests that account for that in the future.
+理想情况下，基准测试还应涵盖延迟（按键到字符显示在屏幕上的时间，以及用户输入与 shell 通信之间的延迟）。我们可能会在未来加入相关测试。
 
 ## VTE benchmark
 
 Benchmark code can be found [here](https://github.com/alacritty/vtebench) with the specific commit we used in our comparison: `93bcc32b6e0f7560e9b1a5a8b0998c04fbf9b50d`. Results in milliseconds.
 
-### Average time for each of the benchmark tests
+### 各基准测试的平均时间
 
 |                                  | Warp avg (ms) | Terminal.app avg (ms) | iTerm avg | Alacritty avg | WezTerm avg |
 | -------------------------------- | ------------- | --------------------- | --------- | ------------- | ----------- |
@@ -47,7 +47,7 @@ Benchmark code can be found [here](https://github.com/alacritty/vtebench) with t
 
 ![VTEbench average results (logarithmic scale )](../../../../assets/terminal/vtebench_avg.png)
 
-### P90 of the results
+### 结果的 P90
 
 |                                  | Warp p90 | Terminal.app p90 | iTerm p90 | Alacritty p90 | WezTerm p90 |
 | -------------------------------- | -------- | ---------------- | --------- | ------------- | ----------- |
@@ -64,11 +64,11 @@ Benchmark code can be found [here](https://github.com/alacritty/vtebench) with t
 
 ## Termbench
 
-Benchmark code can be found [here](https://github.com/cmuratori/termbench) with the specific commit we used in our comparison: `82afbc69256b4e22de913f0f02f82e0480f3dac5`.
+基准测试代码可在[此处](https://github.com/cmuratori/termbench)找到，我们对比时使用的具体提交为：`82afbc69256b4e22de913f0f02f82e0480f3dac5`。
 
-Below you'll find results for small and regular test sizes. Note that Terminal.app only participated in the small test. Results in seconds.
+以下为小规模和常规测试规模的结果。注意 Terminal.app 仅参与了小规模测试。结果单位为秒。
 
-### Small test sizes
+### 小规模测试
 
 |                | Warp small (s) | Terminal.app small (s) | iTerm small (s) | Alacritty small | WezTerm small |
 | -------------- | -------------- | ---------------------- | --------------- | --------------- | ------------- |
@@ -80,7 +80,7 @@ Below you'll find results for small and regular test sizes. Note that Terminal.a
 
 ![Termbench small results (logarithmic scale )](../../../../assets/terminal/termbench_small.png)
 
-### Regular test size
+### 常规测试规模
 
 |                | Warp regular (s) | iTerm regular (s) | Alacritty regular (s) | WezTerm regular |
 | -------------- | ---------------- | ----------------- | --------------------- | --------------- |
