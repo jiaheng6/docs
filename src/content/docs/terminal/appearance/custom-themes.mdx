@@ -1,30 +1,29 @@
 ---
-title: Custom Themes
+title: 自定义主题
 description: >-
-  Warp supports Custom Themes which can be created manually or downloaded from
-  our repo.
+  Warp 支持自定义主题，可以手动创建或从我们的仓库下载。
 sidebar:
-  label: "Custom themes"
+  label: "自定义主题"
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
 :::note
-Examples and a collection of themes can be found in the [Warp themes repository](https://github.com/warpdotdev/themes).
+主题示例和主题合集可以在 [Warp 主题仓库](https://github.com/warpdotdev/themes) 中找到。
 :::
 
-## Warp's custom theme repository
+## Warp 的自定义主题仓库
 
-We have a [repository of themes hosted on GitHub.](https://github.com/warpdotdev/themes)
+我们在 GitHub 上托管了一个[主题仓库](https://github.com/warpdotdev/themes)。
 
-Each theme has a preview generated in the README.
+每个主题在 README 中都有预览图。
 
-The main difference between "standard" and "base16" themes is that "standard" themes follow the typical color setup, while "base16" themes follow the framework suggested by [@chriskempson](https://github.com/chriskempson/base16).
+"standard"主题和"base16"主题的主要区别在于："standard"主题遵循典型的颜色设置，而"base16"主题遵循 [@chriskempson](https://github.com/chriskempson/base16) 提出的框架。
 
-There are 2 ways to install a theme from this repo.
+从该仓库安装主题有两种方式：
 
-1. Download a single file and follow the steps in the section below.
-2. Clone the entire repo into the appropriate location based on your OS below:
+1. 下载单个文件，然后按照下方步骤操作。
+2. 根据你的操作系统，将整个仓库克隆到对应位置：
 
 <Tabs>
   <TabItem label="macOS">
@@ -50,13 +49,13 @@ There are 2 ways to install a theme from this repo.
   </TabItem>
 </Tabs>
 
-Here is a step-by-step YouTube video that goes through these 2 steps for an example theme. Note the location for the files is based on macOS.
+以下是一个逐步讲解这两个步骤的 YouTube 视频，以一个示例主题为例。请注意，文件位置基于 macOS。
 
 <VideoEmbed url="https://www.youtube.com/watch?v=UTYgwD-cLbk" title="Adding a Custom Theme to Warp" />
 
-## How do I use a custom theme in Warp?
+## 如何在 Warp 中使用自定义主题？
 
-1. To start, create the following directory:
+1. 首先，创建以下目录：
 
 <Tabs>
   <TabItem label="macOS">
@@ -77,24 +76,24 @@ Here is a step-by-step YouTube video that goes through these 2 steps for an exam
 </Tabs>
 
 :::note
-It may take several minutes for Warp to initially discover the new themes directory. You can either wait or restart Warp. After that step, all future changes to the directory will be reflected within seconds.
+Warp 最初可能需要几分钟时间才能发现新的主题目录。你可以等待或重启 Warp。之后，对目录的所有更改将在几秒内生效。
 :::
 
-2. Add your new custom theme yaml file to this directory:
+2. 将新的自定义主题 yaml 文件添加到此目录：
 
 ```bash
 cp ~/Downloads/my_awesome_theme.yaml {{path_to_your_themes_directory_from_step1}}
 ```
 
-Your new theme should now be visible on the list of available themes.
+你的新主题现在应该出现在可用主题列表中。
 
-## Create your custom theme, manually
+## 手动创建自定义主题
 
-Warp supports creating custom themes using .yaml files.
+Warp 支持使用 .yaml 文件创建自定义主题。
 
-The format is subject to change, but we do our best to avoid breaking changes and maintain forward compatibility. We also plan to support sharing and creating custom themes directly within Warp.
+格式可能会有所变化，但我们会尽力避免破坏性更改并保持向前兼容性。我们也计划支持直接在 Warp 内分享和创建自定义主题。
 
-A custom theme in Warp has the following `.yaml` structure:
+Warp 自定义主题的 `.yaml` 结构如下：
 
 ```yaml
 name: Custom Theme # Name for the theme
@@ -125,40 +124,40 @@ terminal_colors: # Ansi escape colors
 ```
 
 :::note
-Each color is represented in hex and must start with `#`.
+每种颜色均以十六进制表示，且必须以 `#` 开头。
 :::
 
-* `name`: Name for the theme, will show up in the Theme picker.
-* `accent`: Color used for highlights in Warp's UI
-* `cursor`: Color for the input cursor (optional; defaults to accent color if omitted)
-* `background`: Color of background
-* `foreground`: Color of foreground
-* `details`: Color used for detailing options
-  * `darker`: Color used for dark theme
-  * `lighter`: Color used for light-mode theme
-* `terminal_colors`: Collection of normal & bright colors (16 total) known for other terminal themes (ANSI colors)
+* `name`：主题名称，将显示在主题选择器中。
+* `accent`：用于 Warp 界面高亮的颜色
+* `cursor`：输入光标颜色（可选；省略时默认使用强调色）
+* `background`：背景颜色
+* `foreground`：前景颜色
+* `details`：用于细节选项的颜色
+  * `darker`：深色主题使用的颜色
+  * `lighter`：浅色主题使用的颜色
+* `terminal_colors`：普通色和高亮色的集合（共 16 种），与其他终端主题（ANSI 颜色）相同
 
-## Create your custom theme, automatically
+## 自动创建自定义主题
 
-Automatically create new themes based on a background image. Click the **+** button in the theme picker **Settings** > **Appearance** > **Themes** or search `Open Theme Picker` within the [Command Palette](/terminal/command-palette/).
+基于背景图片自动创建新主题。点击主题选择器中的 **+** 按钮，路径为 **Settings** > **Appearance** > **Themes**，或在 [Command Palette](/terminal/command-palette/) 中搜索 `Open Theme Picker`。
 
-## Browse themes and use the theme creator
+## 浏览主题并使用主题创建器
 
-Browse Warp's [theme repository](https://github.com/warpdotdev/themes) for ready-made themes, or use the in-app theme creator to generate the appropriate RGB values for your custom theme. Once the YAML file is created, you can edit the file to add the background images or gradients.
+浏览 Warp 的[主题仓库](https://github.com/warpdotdev/themes)获取现成主题，或使用应用内主题创建器为你的自定义主题生成合适的 RGB 值。创建 YAML 文件后，你可以编辑该文件以添加背景图片或渐变效果。
 
-## Background images and gradients
+## 背景图片和渐变
 
-To add a background image you can use this attribute: `background_image:` with the name of the image you want to use as the background.
+要添加背景图片，可以使用以下属性：`background_image:`，并设置你想用作背景的图片名称。
 
 :::note
-Note: Warp currently only supports images with the _.jpg_ file format:
+注意：Warp 目前仅支持 _.jpg_ 格式的图片：
 
 * `.jpeg`
 * `.jpg`
 * `.JPEG`
 :::
 
-A `.yaml` config looks like this:
+`.yaml` 配置示例如下：
 
 ```yaml
 name: Custom Theme
@@ -198,10 +197,10 @@ terminal_colors:
     yellow: '#b58900'
 ```
 
-To set up a gradient, create a sublevel under accent with two key-value pairs:
+要设置渐变，在 accent 下创建一个子级，包含两个键值对：
 
-* "left" and "right" or
-* "top" and "bottom".
+* "left"（左）和"right"（右），或
+* "top"（上）和"bottom"（下）。
 
 ```yaml
 accent:
@@ -215,7 +214,7 @@ accent:
    right: '#fedcba'
 ```
 
-Warp also supports setting a gradient for the background.
+Warp 还支持为背景设置渐变。
 
 ```yaml
 # accent has a gradient
@@ -228,16 +227,16 @@ background:
   bottom: '#ffffff'
 ```
 
-### Contributing
+### 贡献
 
-Contributions to this repo are greatly appreciated!
+非常欢迎向此仓库贡献！
 
-1. Fork the project
-2. Create your branch with `git checkout -b theme/AwesomeTheme`
-3. Regenerate thumbnails
-4. Commit and open a pull request
+1. Fork 该项目
+2. 使用 `git checkout -b theme/AwesomeTheme` 创建你的分支
+3. 重新生成缩略图
+4. 提交并发起 pull request
 
-Run this script to generate the thumbnails.
+运行以下脚本来生成缩略图。
 
 ```bash
 # Assuming you're adding the theme to the `standard` directory:
@@ -245,21 +244,21 @@ python3 ./scripts/gen_theme_previews.py standard
 ```
 
 :::note
-Note: We cannot accept pull requests that include custom background images because:
+注意：我们无法接受包含自定义背景图片的 pull request，原因如下：
 
-* Licensing restrictions
-* Trying to keep the binary size of the repo as small as possible (only the yaml files)
+* 许可限制
+* 尽量保持仓库的二进制体积尽可能小（仅保留 yaml 文件）
 
-If your theme has an intended custom background image, include a comment in the yaml with a link to where people should download it.
+如果你的主题有预期的自定义背景图片，请在 yaml 文件中添加注释，附上图片的下载链接。
 :::
 
-## Community
+## 社区
 
-All other Warp-related things can be discussed, please [contact us](/support-and-community/troubleshooting-and-support/sending-us-feedback/).
+欢迎讨论所有与 Warp 相关的话题，请[联系我们](/support-and-community/troubleshooting-and-support/sending-us-feedback/)。
 
-## Open source dependencies
+## 开源依赖
 
-We'd like to call out a few of the open-source themes and repositories that helped bootstrap the set of themes for Warp:
+我们想特别感谢以下几个帮助启动 Warp 主题集合的开源主题和仓库：
 
 * [iTerm colors pencil](https://github.com/mattly/iterm-colors-pencil)
 * [Alacritty-theme](https://github.com/eendroroy/alacritty-theme)

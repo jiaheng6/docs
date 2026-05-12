@@ -1,33 +1,33 @@
 ---
-title: Background Blocks
+title: 后台 Blocks
 description: >-
-  How Blocks interact with background process output.
+  Blocks 如何与后台进程输出进行交互。
 sidebar:
-  label: "Background blocks"
+  label: "后台 Blocks"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## What is it
+## 这是什么
 
-Commands can start background processes that continue even after they exit. You can also start a background process directly from the shell, such as by running it with `&`.
+命令可以启动后台进程，这些进程在命令退出后仍会继续运行。你也可以直接从 shell 启动后台进程，例如使用 `&` 运行。
 
-If Warp receives output that is likely from a background process, the output goes into a _background block_. Background blocks act like regular blocks, except that they don't have an associated command.
+如果 Warp 收到可能来自后台进程的输出，该输出会进入一个_后台 Block_。后台 Blocks 的行为与普通 Blocks 类似，但没有关联的命令。
 
-This lets you use all of Warp's block features with background output, such as sharing and bookmarking.
+这样你就可以对后台输出使用 Warp 的所有 Block 功能，例如分享和书签标记。
 
-## How to use it
+## 如何使用
 
-Background blocks are automatically created as needed, in between regular blocks running. If you run commands while a background process is still producing output, that output gets split into multiple blocks interleaved with your commands.
+后台 Blocks 会根据需要自动创建，穿插在运行的普通 Blocks 之间。如果你在后台进程仍在产生输出时运行命令，该输出会被拆分成多个 Block，与你的命令交错出现。
 
-## How it works
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/55bbbd9a8cbf495189260756c717cfb2?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Create Background Blocks" />
 
-## Troubleshooting background blocks
+## 后台 Blocks 故障排除
 
-There are some limitations, because Warp doesn't know _which_ process any given output came from:
+由于 Warp 不知道_哪个_进程产生了特定的输出，因此存在一些限制：
 
-* If a background process writes output while a foreground command is running in a regular block, the output goes into that block.
-* If there are multiple background processes running at the same time, their output may be mixed together.
+* 如果后台进程在前台命令运行于普通 Block 中时写入输出，该输出会进入那个 Block。
+* 如果同时有多个后台进程在运行，它们的输出可能会混在一起。
 
-In addition, if you start entering a command while another one is running (typeahead), in some cases Warp will mistake the partial command for background output. The most common cause is editing typeahead when using bash versions older than 4.0 (for example, deleting and re-typing part of it).
+此外，如果你在另一个命令运行时开始输入命令（预输入），在某些情况下 Warp 会将未完成的命令误认为后台输出。最常见的原因是在使用低于 4.0 版本的 bash（例如，删除并重新输入部分内容）时编辑预输入内容。

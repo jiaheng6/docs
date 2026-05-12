@@ -1,121 +1,121 @@
 ---
-title: Terminal Block Basics
+title: 终端 Block 基础
 description: >-
-  The basics of creating, selecting, and navigating between Blocks.
+  创建、选择和在 Blocks 之间导航的基础知识。
 sidebar:
-  label: "Block basics"
+  label: "Block 基础"
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## The basics
+## 基础知识
 
-* Blocks group your command and command output
-* The Input Editor can pin to the bottom, pin to the top, or start at the top.
-* Blocks grow from the bottom to the top.
-* Blocks are color-coded. Blocks that quit with a non-zero exit code have a red background and red sidebar.
+* Blocks 将你的命令和命令输出分组在一起
+* 输入编辑器可以固定在底部、固定在顶部，或从顶部开始。
+* Blocks 从底部向上增长。
+* Blocks 有颜色标记。以非零退出码退出的 Blocks 有红色背景和红色侧边栏。
 
 :::note
-Try it yourself!\
-Type `xyz` (or some other command that doesn’t exist) and hit `ENTER`
+自己试试吧！\
+输入 `xyz`（或其他不存在的命令）并按 `ENTER`
 :::
 
-## Create a block
+## 创建 Block
 
-1. Execute a command (type `ls` and hit `ENTER`) in the Input Editor at the bottom of the screen.
-2. Your command and output are grouped into a Block.
-3. Try executing a different command (type `echo hello` and hit `ENTER`).
-4. Warp adds your newly created Block to the bottom (directly above the input editor).
+1. 在屏幕底部的输入编辑器中执行命令（输入 `ls` 并按 `ENTER`）。
+2. 你的命令和输出会被组合到一个 Block 中。
+3. 尝试执行另一个命令（输入 `echo hello` 并按 `ENTER`）。
+4. Warp 将你新创建的 Block 添加到底部（直接在输入编辑器上方）。
 
 <VideoEmbed url="https://www.loom.com/share/4b435c78344d4dc0bb92af5d1da5e219?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Create a Block" />
 
-## Select a single block
+## 选择单个 Block
 
 <Tabs>
   <TabItem label="macOS">
-    * Using your mouse: click on a Block.
-    * Or using your keyboard: hit `CMD-UP` (or `CMD-DOWN` if input as pinned up top) to select the most recently executed Block and use the `UP ↑` and `DOWN ↓` arrow keys to navigate to the desired Block.
-    * For long Blocks:
-      * You can click "Jump to the bottom of this block".
-      * You can press `SHIFT-CMD-UP`/`SHIFT-CMD-DOWN` to Scroll to the top/bottom of the selected block.
-      * From the [Command Palette](/terminal/command-palette/), you can also "Scroll to the top/bottom of selected block".
+    * 使用鼠标：点击一个 Block。
+    * 或使用键盘：按 `CMD-UP`（如果输入固定在顶部则按 `CMD-DOWN`）选择最近执行的 Block，然后使用 `UP ↑` 和 `DOWN ↓` 方向键导航到目标 Block。
+    * 对于较长的 Blocks：
+      * 可以点击"Jump to the bottom of this block"。
+      * 可以按 `SHIFT-CMD-UP`/`SHIFT-CMD-DOWN` 滚动到选中 Block 的顶部/底部。
+      * 从 [Command Palette](/terminal/command-palette/) 也可以"Scroll to the top/bottom of selected block"。
   </TabItem>
   <TabItem label="Windows">
-    * Using your mouse: Click on a Block.
-    * Or using your keyboard: hit `CTRL-UP` (or `CTRL-DOWN` if input as pinned up top) to select the most recently executed Block and use the `UP ↑` and `DOWN ↓` arrow keys to navigate to the desired Block.
-    * For long Blocks:
-      * You can click "Jump to the bottom of this block".
-      * You can press `CTRL-SHIFT-UP`/`CTRL-SHIFT-DOWN` to Scroll to the top/bottom of the selected block.
-      * From the [Command Palette](/terminal/command-palette/), you can also "Scroll to the top/bottom of selected block".
+    * 使用鼠标：点击一个 Block。
+    * 或使用键盘：按 `CTRL-UP`（如果输入固定在顶部则按 `CTRL-DOWN`）选择最近执行的 Block，然后使用 `UP ↑` 和 `DOWN ↓` 方向键导航到目标 Block。
+    * 对于较长的 Blocks：
+      * 可以点击"Jump to the bottom of this block"。
+      * 可以按 `CTRL-SHIFT-UP`/`CTRL-SHIFT-DOWN` 滚动到选中 Block 的顶部/底部。
+      * 从 [Command Palette](/terminal/command-palette/) 也可以"Scroll to the top/bottom of selected block"。
   </TabItem>
   <TabItem label="Linux">
-    * Using your mouse: Click on a Block.
-    * Or using your keyboard: hit `CTRL-UP` (or `CTRL-DOWN` if input as pinned up top) to select the most recently executed Block and use the `UP ↑` and `DOWN ↓` arrow keys to navigate to the desired Block.
-    * For long Blocks:
-      * You can click "Jump to the bottom of this block".
-      * You can press `CTRL-SHIFT-UP`/`CTRL-SHIFT-DOWN` to Scroll to the top/bottom of the selected block.
-      * From the [Command Palette](/terminal/command-palette/), you can also "Scroll to the top/bottom of selected block".
+    * 使用鼠标：点击一个 Block。
+    * 或使用键盘：按 `CTRL-UP`（如果输入固定在顶部则按 `CTRL-DOWN`）选择最近执行的 Block，然后使用 `UP ↑` 和 `DOWN ↓` 方向键导航到目标 Block。
+    * 对于较长的 Blocks：
+      * 可以点击"Jump to the bottom of this block"。
+      * 可以按 `CTRL-SHIFT-UP`/`CTRL-SHIFT-DOWN` 滚动到选中 Block 的顶部/底部。
+      * 从 [Command Palette](/terminal/command-palette/) 也可以"Scroll to the top/bottom of selected block"。
   </TabItem>
 </Tabs>
 
 <VideoEmbed url="https://www.loom.com/share/1cf8546daad548fbbe056c35edb23cdc?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Select a Single Block" />
 
-## Select multiple blocks
+## 选择多个 Block
 
 <Tabs>
   <TabItem label="macOS">
-    * Click another Block while holding `CMD` to toggle the selection of that Block, or
-    * Click another Block while holding `SHIFT` to select a range of Block, or
-    * Use `SHIFT-UP ↑` or `SHIFT-DOWN ↓` to expand the active selection (the Block with the thicker border) up or down, respectively.
+    * 按住 `CMD` 点击另一个 Block 以切换该 Block 的选中状态，或
+    * 按住 `SHIFT` 点击另一个 Block 以选择一个 Block 范围，或
+    * 使用 `SHIFT-UP ↑` 或 `SHIFT-DOWN ↓` 向上或向下扩展当前选区（带较粗边框的 Block）。
   </TabItem>
   <TabItem label="Windows">
-    * Click another Block while holding `CTRL-SHIFT` to toggle the selection of that Block, or
-    * Click another Block while holding `SHIFT` to select a range of Block, or
-    * Use `SHIFT-UP ↑` or `SHIFT-DOWN ↓` to expand the active selection (the Block with the thicker border) up or down, respectively.
+    * 按住 `CTRL-SHIFT` 点击另一个 Block 以切换该 Block 的选中状态，或
+    * 按住 `SHIFT` 点击另一个 Block 以选择一个 Block 范围，或
+    * 使用 `SHIFT-UP ↑` 或 `SHIFT-DOWN ↓` 向上或向下扩展当前选区（带较粗边框的 Block）。
   </TabItem>
   <TabItem label="Linux">
-    * Click another Block while holding `CTRL-SHIFT` to toggle the selection of that Block, or
-    * Click another Block while holding `SHIFT` to select a range of Block, or
-    * Use `SHIFT-UP ↑` or `SHIFT-DOWN ↓` to expand the active selection (the Block with the thicker border) up or down, respectively.
+    * 按住 `CTRL-SHIFT` 点击另一个 Block 以切换该 Block 的选中状态，或
+    * 按住 `SHIFT` 点击另一个 Block 以选择一个 Block 范围，或
+    * 使用 `SHIFT-UP ↑` 或 `SHIFT-DOWN ↓` 向上或向下扩展当前选区（带较粗边框的 Block）。
   </TabItem>
 </Tabs>
 
 <VideoEmbed url="https://www.loom.com/share/5058ab0dc3d244d4a2ce576331440821?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Select Multiple Blocks" />
 
-## Navigate blocks
+## 在 Blocks 之间导航
 
 <Tabs>
   <TabItem label="macOS">
-    * **Mouse or scrollbar** - Scroll using your mouse, trackpad, or the scrollbar.
-    * **Arrow keys** - Select a Block and use `UP ↑` and `DOWN ↓` to move between Blocks.
-    * **Page scrolling** - Press `PAGE UP` or `PAGE DOWN` to scroll by one page.
-    * **Jump to top or bottom** - Press `HOME` or `END` to scroll to the top or bottom of terminal output.
-    * **Scroll within a selected Block** - Press `SHIFT-CMD-UP` or `SHIFT-CMD-DOWN` to scroll to the top or bottom of the selected Block.
-    * **Scroll one line at a time** - "Scroll Terminal output up/down one line" can be configured with a keyboard shortcut in Settings > Keyboard shortcuts or accessed from the [Command Palette](/terminal/command-palette/).
-    * When the output of a command is cut off, Warp keeps the [Sticky Command Header](/terminal/blocks/sticky-command-header/) pinned at the top that displays the command the Block corresponds to. Clicking the header will scroll the screen to the start of the Block.
+    * **鼠标或滚动条** - 使用鼠标、触控板或滚动条进行滚动。
+    * **方向键** - 选中一个 Block 后使用 `UP ↑` 和 `DOWN ↓` 在 Blocks 之间移动。
+    * **翻页滚动** - 按 `PAGE UP` 或 `PAGE DOWN` 按页滚动。
+    * **跳转到顶部或底部** - 按 `HOME` 或 `END` 滚动到终端输出的顶部或底部。
+    * **在选中的 Block 内滚动** - 按 `SHIFT-CMD-UP` 或 `SHIFT-CMD-DOWN` 滚动到选中 Block 的顶部或底部。
+    * **每次滚动一行** - 可以在 Settings > Keyboard shortcuts 中配置"Scroll Terminal output up/down one line"的键盘快捷键，或从 [Command Palette](/terminal/command-palette/) 访问。
+    * 当命令的输出被截断时，Warp 会将[固定命令标题](/terminal/blocks/sticky-command-header/)固定在顶部，显示该 Block 对应的命令。点击标题将滚动屏幕到 Block 的开头。
   </TabItem>
   <TabItem label="Windows">
-    * **Mouse or scrollbar** - Scroll using your mouse, trackpad, or the scrollbar.
-    * **Arrow keys** - Select a Block and use `UP ↑` and `DOWN ↓` to move between Blocks.
-    * **Page scrolling** - Press `PAGE UP` or `PAGE DOWN` to scroll by one page.
-    * **Jump to top or bottom** - Press `HOME` or `END` to scroll to the top or bottom of terminal output.
-    * **Scroll within a selected Block** - Press `CTRL-SHIFT-UP` or `CTRL-SHIFT-DOWN` to scroll to the top or bottom of the selected Block.
-    * **Scroll one line at a time** - "Scroll Terminal output up/down one line" can be configured with a keyboard shortcut in Settings > Keyboard shortcuts or accessed from the [Command Palette](/terminal/command-palette/).
-    * When the output of a command is cut off, Warp keeps the [Sticky Command Header](/terminal/blocks/sticky-command-header/) pinned at the top that displays the command the Block corresponds to. Clicking the header will scroll the screen to the start of the Block.
+    * **鼠标或滚动条** - 使用鼠标、触控板或滚动条进行滚动。
+    * **方向键** - 选中一个 Block 后使用 `UP ↑` 和 `DOWN ↓` 在 Blocks 之间移动。
+    * **翻页滚动** - 按 `PAGE UP` 或 `PAGE DOWN` 按页滚动。
+    * **跳转到顶部或底部** - 按 `HOME` 或 `END` 滚动到终端输出的顶部或底部。
+    * **在选中的 Block 内滚动** - 按 `CTRL-SHIFT-UP` 或 `CTRL-SHIFT-DOWN` 滚动到选中 Block 的顶部或底部。
+    * **每次滚动一行** - 可以在 Settings > Keyboard shortcuts 中配置"Scroll Terminal output up/down one line"的键盘快捷键，或从 [Command Palette](/terminal/command-palette/) 访问。
+    * 当命令的输出被截断时，Warp 会将[固定命令标题](/terminal/blocks/sticky-command-header/)固定在顶部，显示该 Block 对应的命令。点击标题将滚动屏幕到 Block 的开头。
   </TabItem>
   <TabItem label="Linux">
-    * **Mouse or scrollbar** - Scroll using your mouse, trackpad, or the scrollbar.
-    * **Arrow keys** - Select a Block and use `UP ↑` and `DOWN ↓` to move between Blocks.
-    * **Page scrolling** - Press `PAGE UP` or `PAGE DOWN` to scroll by one page.
-    * **Jump to top or bottom** - Press `HOME` or `END` to scroll to the top or bottom of terminal output.
-    * **Scroll within a selected Block** - Press `CTRL-SHIFT-UP` or `CTRL-SHIFT-DOWN` to scroll to the top or bottom of the selected Block.
-    * **Scroll one line at a time** - "Scroll Terminal output up/down one line" can be configured with a keyboard shortcut in Settings > Keyboard shortcuts or accessed from the [Command Palette](/terminal/command-palette/).
-    * When the output of a command is cut off, Warp keeps the [Sticky Command Header](/terminal/blocks/sticky-command-header/) pinned at the top that displays the command the Block corresponds to. Clicking the header will scroll the screen to the start of the Block.
+    * **鼠标或滚动条** - 使用鼠标、触控板或滚动条进行滚动。
+    * **方向键** - 选中一个 Block 后使用 `UP ↑` 和 `DOWN ↓` 在 Blocks 之间移动。
+    * **翻页滚动** - 按 `PAGE UP` 或 `PAGE DOWN` 按页滚动。
+    * **跳转到顶部或底部** - 按 `HOME` 或 `END` 滚动到终端输出的顶部或底部。
+    * **在选中的 Block 内滚动** - 按 `CTRL-SHIFT-UP` 或 `CTRL-SHIFT-DOWN` 滚动到选中 Block 的顶部或底部。
+    * **每次滚动一行** - 可以在 Settings > Keyboard shortcuts 中配置"Scroll Terminal output up/down one line"的键盘快捷键，或从 [Command Palette](/terminal/command-palette/) 访问。
+    * 当命令的输出被截断时，Warp 会将[固定命令标题](/terminal/blocks/sticky-command-header/)固定在顶部，显示该 Block 对应的命令。点击标题将滚动屏幕到 Block 的开头。
   </TabItem>
 </Tabs>
 
 :::note
-During long-running or full-screen commands, `PAGE UP`, `PAGE DOWN`, `HOME`, and `END` are forwarded to the running program. See the full list of scrolling shortcuts on the [Keyboard Shortcuts](/getting-started/keyboard-shortcuts/) page.
+在长时间运行或全屏命令期间，`PAGE UP`、`PAGE DOWN`、`HOME` 和 `END` 会被转发给正在运行的程序。请在[键盘快捷键](/getting-started/keyboard-shortcuts/)页面查看完整的滚动快捷键列表。
 :::
 
 <VideoEmbed url="https://www.loom.com/share/21ebb0a79c1248a98846cba12a4b7020?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Navigate between Blocks" />

@@ -1,10 +1,9 @@
 ---
-title: Terminal themes
+title: 终端主题
 description: >-
-  Warp includes several themes (out-of-box) and also supports setting custom
-  themes.
+  Warp 内置多种主题，同时也支持设置自定义主题。
 sidebar:
-  label: "Themes"
+  label: "主题"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 import ImageGrid from '@components/ImageGrid.astro';
@@ -31,37 +30,37 @@ import themePhenomenon from '../../../../assets/terminal/phenomenon.png';
 import themeSolarFlare from '../../../../assets/terminal/solar-flare.png';
 import themeAdeberry from '../../../../assets/terminal/adeberry.png';
 
-### Theme Picker
+### 主题选择器
 
-The Theme Picker can be accessed by:
+主题选择器可通过以下方式访问：
 
-1. Navigating to **Settings** > **Appearance**.
-2. Clicking the Custom Themes (shaded) box.
-3. Upon selecting a theme, Warp's appearance will update accordingly.
-4. Press the checkmark to save the selection, or the X to revert.
+1. 前往 **Settings** > **Appearance**。
+2. 点击自定义主题（阴影）框。
+3. 选择主题后，Warp 的外观将相应更新。
+4. 按勾选标记保存选择，或按 X 撤销。
 
 :::note
-The Theme setting persists, meaning Warp will open with the same settings in the next session.
+主题设置会持久保存，即 Warp 在下次会话中将以相同的设置启动。
 :::
 
-### Theme Creator
+### 主题创建器
 
-Automatically create new themes based on a background image.
+基于背景图片自动创建新主题。
 
-1. Go to **Settings** > **Appearance** > **Themes** or search "Open theme picker" within the [Command Palette](/terminal/command-palette/).
-2. Click the **+** button in the theme picker.
-3. Upload the image and select the background color.
-4. Click "Create Theme" to save and accept the new theme.
+1. 前往 **Settings** > **Appearance** > **Themes**，或在 [Command Palette](/terminal/command-palette/) 中搜索"Open theme picker"。
+2. 点击主题选择器中的 **+** 按钮。
+3. 上传图片并选择背景颜色。
+4. 点击"Create Theme"保存并应用新主题。
 
-### OS Theme Sync
+### OS 主题同步
 
-Warp supports synchronizing your theme with the OS’s light and dark themes. To enable this:
+Warp 支持将主题与操作系统的浅色和深色主题同步。启用此功能：
 
-1. Open the **Settings** > **Appearance** dialog.
-2. Click the toggle "Sync with OS".
-3. You will then be able to select a specific theme for when the OS is in light mode and dark mode.
+1. 打开 **Settings** > **Appearance** 对话框。
+2. 点击"Sync with OS"开关。
+3. 然后你可以分别为操作系统处于浅色模式和深色模式时选择特定主题。
 
-## How it works
+## 工作原理
 
 <DemoVideo src="/assets/terminal/theme-picker.mp4" label="Theme picker demo" />
 
@@ -69,9 +68,9 @@ Warp supports synchronizing your theme with the OS’s light and dark themes. To
 
 <DemoVideo src="/assets/terminal/theme-sync-demo.mp4" label="theme os sync demo" />
 
-## Default Themes
+## 默认主题
 
-By default, Warp ships with these themes:
+默认情况下，Warp 附带以下主题：
 
 <ImageGrid>
   <ImageGridItem src={themeWarpDark} label="Warp Dark" />

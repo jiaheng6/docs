@@ -32,27 +32,27 @@
 ## terminal（终端）
 
 ### appearance（外观）
-- [ ] terminal/appearance/index.mdx
-- [ ] terminal/appearance/app-icons.mdx
-- [ ] terminal/appearance/blocks-behavior.mdx
-- [ ] terminal/appearance/custom-themes.mdx
-- [ ] terminal/appearance/input-position.mdx
-- [ ] terminal/appearance/pane-dimming.mdx
-- [ ] terminal/appearance/prompt.mdx
-- [ ] terminal/appearance/size-opacity-blurring.mdx
-- [ ] terminal/appearance/tabs-behavior.mdx
-- [ ] terminal/appearance/text-fonts-cursor.mdx
-- [ ] terminal/appearance/themes.mdx
+- [x] terminal/appearance/index.mdx
+- [x] terminal/appearance/app-icons.mdx
+- [x] terminal/appearance/blocks-behavior.mdx
+- [x] terminal/appearance/custom-themes.mdx
+- [x] terminal/appearance/input-position.mdx
+- [x] terminal/appearance/pane-dimming.mdx
+- [x] terminal/appearance/prompt.mdx
+- [x] terminal/appearance/size-opacity-blurring.mdx
+- [x] terminal/appearance/tabs-behavior.mdx
+- [x] terminal/appearance/text-fonts-cursor.mdx
+- [x] terminal/appearance/themes.mdx
 
 ### blocks（块）
-- [ ] terminal/blocks/index.mdx
-- [ ] terminal/blocks/background-blocks.mdx
-- [ ] terminal/blocks/block-actions.mdx
-- [ ] terminal/blocks/block-basics.mdx
-- [ ] terminal/blocks/block-filtering.mdx
-- [ ] terminal/blocks/block-sharing.mdx
-- [ ] terminal/blocks/find.mdx
-- [ ] terminal/blocks/sticky-command-header.mdx
+- [x] terminal/blocks/index.mdx
+- [x] terminal/blocks/background-blocks.mdx
+- [x] terminal/blocks/block-actions.mdx
+- [x] terminal/blocks/block-basics.mdx
+- [x] terminal/blocks/block-filtering.mdx
+- [x] terminal/blocks/block-sharing.mdx
+- [x] terminal/blocks/find.mdx
+- [x] terminal/blocks/sticky-command-header.mdx
 
 ### command-completions（命令补全）
 - [ ] terminal/command-completions/index.mdx

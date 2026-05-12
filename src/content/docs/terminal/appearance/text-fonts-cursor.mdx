@@ -1,59 +1,57 @@
 ---
-title: "Text, Fonts, & Cursor"
+title: "文本、字体与光标"
 description: >-
-  Warp supports customizing the font and how text is displayed. This can help
-  improve readability and usability. Warp also supports disabling the blinking
-  cursor.
+  Warp 支持自定义字体和文本显示方式，有助于提高可读性和可用性。Warp 还支持禁用闪烁光标。
 sidebar:
-  label: "Text, fonts, & cursor"
+  label: "文本、字体与光标"
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
 :::note
-Once a new font is installed in your system, you need to restart Warp for it to show on the list of options. You may also need to check "View all available system fonts" to see the new font.
+在系统中安装新字体后，需要重启 Warp 才能在选项列表中显示该字体。你可能还需要勾选"View all available system fonts"才能看到新字体。
 :::
 
-## How to use it
+## 如何使用
 
-### Text and Fonts
+### 文本和字体
 
-To access it, go to **Settings** > **Appearance** > **Text**
+前往 **Settings** > **Appearance** > **Text** 进行设置。
 
-From there you can customize:
+你可以自定义：
 
-* Font type
-* Font weight
-* Font size
-* Line height
-* Use thin strokes
-  * The default setting prevents text from being blurry on low-DPI displays.
+* 字体类型
+* 字体粗细
+* 字体大小
+* 行高
+* 使用细笔画
+  * 默认设置可防止文本在低 DPI 显示屏上模糊。
 
 :::caution
-On Linux, Warp does not support the "Use thin stroke" feature.
+在 Linux 上，Warp 不支持"Use thin stroke"功能。
 :::
 
-* Enforce minimum contrast
-  * The default setting tweaks named colors to meet accessibility standards.
-* Show ligatures in terminal
+* 强制最低对比度
+  * 默认设置会调整命名颜色以符合无障碍标准。
+* 在终端中显示连字
 
 :::note
-Enabling ligatures can reduce performance. Warps default font, Hack, doesn't yet have ligature support. We recommend font that supports ligatures (e.g. [Fira Code](https://github.com/tonsky/FiraCode)) as a stopgap.
+启用连字可能会降低性能。Warp 的默认字体 Hack 尚不支持连字。我们推荐使用支持连字的字体（例如 [Fira Code](https://github.com/tonsky/FiraCode)）作为临时替代方案。
 :::
 
-### Cursor
+### 光标
 
-To access it, go to **Settings** > **Appearance** > **Cursor**
+前往 **Settings** > **Appearance** > **Cursor** 进行设置。
 
-From there you can customize:
+你可以自定义：
 
-* Select the Cursor type to Bar, Block, or Underline.
-* Toggle the Blinking cursor or from the [Command Palette](/terminal/command-palette/), type "Cursor blink" and toggle the setting.
+* 选择光标类型：竖线（Bar）、块状（Block）或下划线（Underline）。
+* 切换光标闪烁，或从 [Command Palette](/terminal/command-palette/) 中输入"Cursor blink"并切换该设置。
 
 :::note
-Cursor type preference is disabled while [Vim keybindings](/terminal/editor/vim/) (vim mode) is active.
+使用 [Vim 键绑定](/terminal/editor/vim/)（vim 模式）时，光标类型偏好设置将被禁用。
 :::
 
-## How it works
+## 工作原理
 
 <VideoEmbed url="https://www.loom.com/share/be2fa6ab10a3494a8c57a5431966905b?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Text and Fonts Demo" />
 

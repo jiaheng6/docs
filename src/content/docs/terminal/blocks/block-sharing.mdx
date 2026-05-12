@@ -1,64 +1,64 @@
 ---
-title: Block Sharing
+title: Block 分享
 description: >-
-  Share Blocks with your team as permalinks or embeddable HTML snippets.
+  以永久链接或可嵌入的 HTML 代码片段的形式与团队分享 Blocks。
 sidebar:
-  label: "Block sharing"
+  label: "Block 分享"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
 :::note
-This action sends command information to our server and is explicitly opt-in. Read more about privacy at Warp on [our privacy page](https://www.warp.dev/privacy).
+此操作会将命令信息发送到我们的服务器，需要明确选择启用。在 [我们的隐私页面](https://www.warp.dev/privacy) 上了解更多关于 Warp 隐私的信息。
 :::
 
-Share your blocks with a permalink or HTML embed. You can get started with shared blocks by opening the context menu and copying the command, output, or prompt.
+通过永久链接或 HTML 嵌入方式分享你的 Blocks。你可以通过打开上下文菜单并复制命令、输出或提示符来开始使用共享 Blocks。
 
-## How to share blocks
+## 如何分享 Blocks
 
 <Tabs>
   <TabItem label="macOS">
-    To share your blocks, follow these steps:
+    按照以下步骤分享你的 Blocks：
 
-    1. On a finished block, click the context menu and select **Share...** or select the block and hit `CMD-SHIFT-S`.
-    2. A modal will pop up that lets you title your block and customize it by selecting which parts of the block you want to share (e.g. command, output, prompt, etc.).
-    3. Click either "Create link" or "Get embed" depending on how you want to share your block.
-    4. The link or embed snippet will be copied to your clipboard.
+    1. 在已完成的 Block 上，点击上下文菜单并选择 **Share...**，或选中该 Block 后按 `CMD-SHIFT-S`。
+    2. 弹出一个模态框，让你为 Block 命名，并通过选择要分享的 Block 部分（如命令、输出、提示符等）进行自定义。
+    3. 根据分享方式点击"Create link"或"Get embed"。
+    4. 链接或嵌入代码片段将被复制到剪贴板。
   </TabItem>
   <TabItem label="Windows">
-    To share your blocks, follow these steps:
+    按照以下步骤分享你的 Blocks：
 
-    1. On a finished block, click the context menu and select **Share...** or by setting up a key bind for Share Block in **Settings** > **Keyboard shortcuts**.
-    2. A modal will pop up that lets you title your block and customize it by selecting which parts of the block you want to share (e.g. command, output, prompt, etc.).
-    3. Click either "Create link" or "Get embed" depending on how you want to share your block.
-    4. The link or embed snippet will be copied to your clipboard.
+    1. 在已完成的 Block 上，点击上下文菜单并选择 **Share...**，或在 **Settings** > **Keyboard shortcuts** 中设置 Share Block 的键绑定。
+    2. 弹出一个模态框，让你为 Block 命名，并通过选择要分享的 Block 部分（如命令、输出、提示符等）进行自定义。
+    3. 根据分享方式点击"Create link"或"Get embed"。
+    4. 链接或嵌入代码片段将被复制到剪贴板。
   </TabItem>
   <TabItem label="Linux">
-    To share your blocks, follow these steps:
+    按照以下步骤分享你的 Blocks：
 
-    1. On a finished block, click the context menu and select **Share...** or by setting up a key bind for Share Block in **Settings** > **Keyboard shortcuts**.
-    2. A modal will pop up that lets you title your block and customize it by selecting which parts of the block you want to share (e.g. command, output, prompt, etc.).
-    3. Click either "Create link" or "Get embed" depending on how you want to share your block.
-    4. The link or embed snippet will be copied to your clipboard.
+    1. 在已完成的 Block 上，点击上下文菜单并选择 **Share...**，或在 **Settings** > **Keyboard shortcuts** 中设置 Share Block 的键绑定。
+    2. 弹出一个模态框，让你为 Block 命名，并通过选择要分享的 Block 部分（如命令、输出、提示符等）进行自定义。
+    3. 根据分享方式点击"Create link"或"Get embed"。
+    4. 链接或嵌入代码片段将被复制到剪贴板。
   </TabItem>
 </Tabs>
 
 :::note
-If you experience any issues with block sharing, please see our known issues for [troubleshooting steps](/support-and-community/troubleshooting-and-support/known-issues/#online-features-dont-work).
+如果你在分享 Block 时遇到问题，请查看我们已知问题中的[故障排除步骤](/support-and-community/troubleshooting-and-support/known-issues/#online-features-dont-work)。
 :::
 
 <DemoVideo src="/assets/terminal/block-sharing-embed.mp4" label="Block Sharing & Embed Demo" />
 
-## Permalink
+## 永久链接
 
-Create and share a permalink to your blocks to collaborate with teammates. Here is the [web permalink](https://app.warp.dev/block/vzFATak939iqGWfNh7wsAP) of the block depicted below.
+创建并分享 Block 的永久链接，与队友协作。以下是下图所示 Block 的[网页永久链接](https://app.warp.dev/block/vzFATak939iqGWfNh7wsAP)。
 
 ![Shared Block](../../../../assets/terminal/shared_block.png)
 
-## Embedded blocks
+## 嵌入 Blocks
 
-Create and embed your blocks on web pages to help your readers follow along with technical writing. Readers can interact with an embedded block as they would with a block in Warp, with a context menu and styling. When you click "Get embed", Warp will copy an `iframe` to your clipboard. Here's an example `iframe`:
+创建并将 Block 嵌入到网页中，帮助读者跟随技术文档操作。读者可以像在 Warp 中操作 Block 一样与嵌入的 Block 交互，支持上下文菜单和样式。点击"Get embed"后，Warp 会将 `iframe` 复制到剪贴板。以下是一个示例 `iframe`：
 
 ```html
 <iframe src="https://app.warp.dev/block/embed/qn0g1CqQnkYjEafPH5HCVT"
@@ -66,20 +66,20 @@ title="server script error" style="width: 712px; height: 397px; border:0;
 overflow:hidden;" allow="clipboard-read; clipboard-write"></iframe>
 ```
 
-#### Embedded block example on web page
+#### 网页上嵌入 Block 的示例
 
 ![Embedded Block Example](../../../../assets/terminal/embed.png)
 
-## Managing shared blocks
+## 管理已分享的 Blocks
 
-You can unshare a block by navigating to **Settings** > **Shared blocks**. Currently, shared blocks are accessible to anyone with the link.
+你可以通过前往 **Settings** > **Shared blocks** 来取消分享 Block。目前，已分享的 Block 任何持有链接的人都可以访问。
 
-## Link previews
+## 链接预览
 
-Shared permalinks will also display a preview of your code for quick context on each link.
+共享的永久链接还会显示你代码的预览，让每个链接都能快速了解上下文。
 
 :::note
-Compatible with any platform that supports Open Graph or Twitter meta tags. For example Slack, Twitter, Facebook, Telegram, Notion, and more ...
+兼容任何支持 Open Graph 或 Twitter meta 标签的平台。例如 Slack、Twitter、Facebook、Telegram、Notion 等……
 :::
 
 <VideoEmbed url="https://www.loom.com/share/a78147fee8804c00b08a1decbc0d4e72?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Share and Unfurl a Block Preview" />

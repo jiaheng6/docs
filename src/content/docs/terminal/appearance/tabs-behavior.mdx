@@ -1,51 +1,50 @@
 ---
-title: Tabs Behavior
+title: 标签页行为
 description: >-
-  Customize tab behavior in Warp, including tab indicators, tab bar
-  visibility, and close button position.
+  自定义 Warp 中的标签页行为，包括标签页指示器、标签栏可见性和关闭按钮位置。
 sidebar:
-  label: "Tabs behavior"
+  label: "标签页行为"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 
-## Tab indicators
+## 标签页指示器
 
-Tab indicators provide visual cues in the tab bar under certain specific conditions: When the current pane is maximized, when panes or tabs are synchronized, and when a command exits with an error. These indicators serve as quick references.
+标签页指示器在特定条件下在标签栏中提供视觉提示：当前面板被最大化时、面板或标签页同步时，以及命令以错误退出时。这些指示器可作为快速参考。
 
-### How to toggle tab indicators
+### 如何切换标签页指示器
 
-* Navigate to **Settings** > **Appearance** > **Tabs**, and switch the "Show tab indicators" option.
-* Utilize the [Command Palette](/terminal/command-palette/), then search for "Tab indicators" to toggle the tab indicators.
+* 前往 **Settings** > **Appearance** > **Tabs**，切换"Show tab indicators"选项。
+* 使用 [Command Palette](/terminal/command-palette/)，然后搜索"Tab indicators"来切换标签页指示器。
 
 <DemoVideo src="/assets/terminal/tab-indicator-demo.mp4" label="Tab Indicator Demo" />
 
-## Tab bar
+## 标签栏
 
-The tab bar provides easy navigation between open tabs. By default, the tab bar is visible in windowed mode but hides in fullscreen. To access the tab bar when hidden, hover near the top of the window. You can customize its visibility based on your preferences.
+标签栏提供在打开的标签页之间轻松导航的功能。默认情况下，标签栏在窗口模式下可见，但在全屏模式下会隐藏。隐藏时，将鼠标悬停在窗口顶部附近即可访问标签栏。你可以根据个人喜好自定义其可见性。
 
-### How to configure the tab bar
+### 如何配置标签栏
 
-* Navigate to **Settings** > **Appearance** > **Tabs** > **Show the tab bar** to toggle the visibility of the tab bar. Choose from the following options:
-  * Always – Keeps the tab bar visible at all times.
-  * Only on hover – Hides the tab bar in both modes.
-  * When windowed – Displays the tab bar only in windowed mode.
-* Block dividers
+* 前往 **Settings** > **Appearance** > **Tabs** > **Show the tab bar** 切换标签栏的可见性。从以下选项中选择：
+  * Always（始终）——始终保持标签栏可见。
+  * Only on hover（仅悬停时）——在两种模式下均隐藏标签栏。
+  * When windowed（窗口模式时）——仅在窗口模式下显示标签栏。
+* Block 分隔线
 
 :::note
-On macOS, traffic lights will not be shown when in windowed mode if the tab bar is set to show only on hover.
+在 macOS 上，如果标签栏设置为仅在悬停时显示，则在窗口模式下不会显示交通灯按钮。
 :::
 
 <DemoVideo src="/assets/terminal/tab-bar-demo.mp4" label="Tab Bar Demo" />
 
-## Tab close button
+## 标签页关闭按钮
 
-You can configure the position of the tab close button to be either on the left or right side of the tab.
+你可以将标签页关闭按钮的位置配置在标签页的左侧或右侧。
 
-### How to configure the tab close button
+### 如何配置标签页关闭按钮
 
-Navigate to **Settings** > **Appearance** > **Tabs** > **Tab close button position**, then choose from the following options:
+前往 **Settings** > **Appearance** > **Tabs** > **Tab close button position**，然后从以下选项中选择：
 
-* Left - the close button will be on the left side of the tab (macOS style)
-* Right – the close button will be on the right side of the tab (Windows | Linux style)\
+* Left（左侧）- 关闭按钮在标签页左侧（macOS 风格）
+* Right（右侧）- 关闭按钮在标签页右侧（Windows | Linux 风格）\
 
 <DemoVideo src="/assets/terminal/tab-close-button-demo.mp4" label="Tab close button demo" />

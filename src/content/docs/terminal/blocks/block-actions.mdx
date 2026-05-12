@@ -1,118 +1,118 @@
 ---
-title: Block Actions
+title: Block 操作
 description: >-
-  Copy, bookmark, share, search, and filter Blocks using built-in actions.
+  使用内置操作复制、书签标记、分享、搜索和过滤 Blocks。
 sidebar:
-  label: "Block actions"
+  label: "Block 操作"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## Accessing block actions
+## 访问 Block 操作
 
-There are 2 ways you can access Block actions.
+有两种方式可以访问 Block 操作：
 
-1. Hover over a Block and click the kebab (three dots) button on the right-hand side.
-2. Right-click a Block.
+1. 将鼠标悬停在 Block 上，点击右侧的菜单（三个点）按钮。
+2. 右键点击 Block。
 
 <VideoEmbed url="https://www.loom.com/share/3dec25e548d4484aa3dd6437869e2bbf?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Accessing Block Actions" />
 
-## Copy input / output of block
+## 复制 Block 的输入/输出
 
-For command blocks, you can `RIGHT-CLICK` on a Block or click the context menu and copy the Block command, output, or both.
+对于命令 Block，你可以`右键点击` Block 或点击上下文菜单，复制 Block 的命令、输出或两者。
 
-For AI blocks, you can `RIGHT-CLICK` to copy the prompt, output, both or the entire conversation.
+对于 AI Block，你可以`右键点击`以复制提示词、输出、两者或整个对话。
 
 <VideoEmbed url="https://www.loom.com/share/9ad67eca0a8d47afb82cc1acba617f3c?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Copy Block Actions" />
 
-## Sharing a block
+## 分享 Block
 
-Share a block easily with coworkers or teammates by creating a web permalink. This preserves formatting and makes debugging and sharing output easy. [See Block Sharing Page.](/terminal/blocks/block-sharing/)
+通过创建网页永久链接，轻松与同事或队友分享 Block。这会保留格式，使调试和分享输出变得简单。[查看 Block 分享页面。](/terminal/blocks/block-sharing/)
 
-## Bookmarking a block
+## 为 Block 添加书签
 
-Quickly navigate to important Blocks despite where they are in the terminal history.
+无论 Block 在终端历史中的位置如何，都能快速导航到重要的 Block。
 
 <Tabs>
   <TabItem label="macOS">
-    Ways to bookmark a Block:
+    为 Block 添加书签的方式：
 
-    1. Select **Toggle bookmark** in the block context menu
-    2. Use `CMD-B` keybinding to bookmark a selected block
+    1. 在 Block 上下文菜单中选择 **Toggle bookmark**
+    2. 使用 `CMD-B` 快捷键为选中的 Block 添加书签
 
-    Navigate to a bookmarked Block, by:
+    导航到已书签标记的 Block：
 
-    * Clicking on the indicator.\
-      The indicator position reflects the approximate position of the Block in the Block history. Hovering over the indicator will give a snapshot of the Block including its prompt, command, and the last two lines of output.
-    * Pressing `OPTION-UP` and `OPTION-DOWN`
+    * 点击指示符。\
+      指示符的位置反映了该 Block 在 Block 历史记录中的大致位置。将鼠标悬停在指示符上会显示该 Block 的快照，包括其提示符、命令和输出的最后两行。
+    * 按 `OPTION-UP` 和 `OPTION-DOWN`
   </TabItem>
   <TabItem label="Windows">
-    There are Ways to bookmark a Block:
+    为 Block 添加书签的方式：
 
-    1. Select **Toggle bookmark** in the block context menu
-    2. Use `CTRL-SHIFT-B` keybinding to bookmark a selected block
+    1. 在 Block 上下文菜单中选择 **Toggle bookmark**
+    2. 使用 `CTRL-SHIFT-B` 快捷键为选中的 Block 添加书签
 
-    Navigate to a bookmarked Block, by:
+    导航到已书签标记的 Block：
 
-    * Clicking on the indicator.\
-      The indicator position reflects the approximate position of the Block in the Block history. Hovering over the indicator will give a snapshot of the Block including its prompt, command, and the last two lines of output.
-    * Pressing `ALT-UP` and `ALT-DOWN`
+    * 点击指示符。\
+      指示符的位置反映了该 Block 在 Block 历史记录中的大致位置。将鼠标悬停在指示符上会显示该 Block 的快照，包括其提示符、命令和输出的最后两行。
+    * 按 `ALT-UP` 和 `ALT-DOWN`
   </TabItem>
   <TabItem label="Linux">
-    Ways to bookmark a Block:
+    为 Block 添加书签的方式：
 
-    1. Click on the bookmark icon in the top right corner of a Block
-    2. Select **Toggle bookmark** in the block context menu
-    3. Use `CTRL-SHIFT-B` keybinding to bookmark a selected block
+    1. 点击 Block 右上角的书签图标
+    2. 在 Block 上下文菜单中选择 **Toggle bookmark**
+    3. 使用 `CTRL-SHIFT-B` 快捷键为选中的 Block 添加书签
 
-    Navigate to a bookmarked Block, by:
+    导航到已书签标记的 Block：
 
-    * Clicking on the indicator.\
-      The indicator position reflects the approximate position of the Block in the Block history. Hovering over the indicator will give a snapshot of the Block including its prompt, command, and the last two lines of output.
-    * Pressing `ALT-UP` and `ALT-DOWN`
+    * 点击指示符。\
+      指示符的位置反映了该 Block 在 Block 历史记录中的大致位置。将鼠标悬停在指示符上会显示该 Block 的快照，包括其提示符、命令和输出的最后两行。
+    * 按 `ALT-UP` 和 `ALT-DOWN`
   </TabItem>
 </Tabs>
 
 :::note
-Bookmarks only persist while the session is open, once you close the session they are lost. If you want to save the command and output for later use, [Share the Block](/terminal/blocks/block-sharing/).
+书签仅在会话打开期间持续存在，关闭会话后书签将丢失。如果你想保存命令和输出以供日后使用，请[分享该 Block](/terminal/blocks/block-sharing/)。
 :::
 
 <DemoVideo src="/assets/terminal/block-bookmarks.mp4" label="Bookmarking a Block" />
 
-## Search within a block
+## 在 Block 内搜索
 
-Quickly find important information within a Block. [See Find page](/terminal/blocks/find/)
+快速在 Block 中查找重要信息。[查看查找页面](/terminal/blocks/find/)
 
 <Tabs>
   <TabItem label="macOS">
-    With a Block selected, press "Find Within Block" or use `CMD-F` to search within a Block.
+    选中一个 Block，按"Find Within Block"或使用 `CMD-F` 在 Block 内搜索。
   </TabItem>
   <TabItem label="Windows">
-    With a Block selected, Press "Find Within Block" or use `CTRL-SHIFT-F` to search within a Block.
+    选中一个 Block，按"Find Within Block"或使用 `CTRL-SHIFT-F` 在 Block 内搜索。
   </TabItem>
   <TabItem label="Linux">
-    With a Block selected, Press "Find Within Block" or use `CTRL-SHIFT-F` to search within a Block.
+    选中一个 Block，按"Find Within Block"或使用 `CTRL-SHIFT-F` 在 Block 内搜索。
   </TabItem>
 </Tabs>
 
 <VideoEmbed url="https://www.loom.com/share/7dda0e7a6ec144cfb6410d29a586ddd0?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Search within a Block" />
 
-## Filtering a block
+## 过滤 Block
 
-Filter the output lines of a block natively in Warp to quickly focus on a subset of the block. [See Block Filtering Page](/terminal/blocks/block-filtering/).
+在 Warp 中原生过滤 Block 的输出行，快速聚焦于 Block 的某个子集。[查看 Block 过滤页面](/terminal/blocks/block-filtering/)
 
 <Tabs>
   <TabItem label="macOS">
-    * Using the keybinding `OPT-SHIFT-F` by default to toggle filtering on the selected or latest block
-    * Selecting `Toggle Block Filter` in the block context menu
+    * 默认使用快捷键 `OPT-SHIFT-F` 切换选中或最新 Block 的过滤
+    * 在 Block 上下文菜单中选择 `Toggle Block Filter`
   </TabItem>
   <TabItem label="Windows">
-    * Using the keybinding `ALT-SHIFT-F` to toggle filtering on the selected or latest block
-    * Selecting `Toggle Block Filter` in the block context menu
+    * 使用快捷键 `ALT-SHIFT-F` 切换选中或最新 Block 的过滤
+    * 在 Block 上下文菜单中选择 `Toggle Block Filter`
   </TabItem>
   <TabItem label="Linux">
-    * Using the keybinding `ALT-SHIFT-F` to toggle filtering on the selected or latest block
-    * Selecting `Toggle Block Filter` in the block context menu
+    * 使用快捷键 `ALT-SHIFT-F` 切换选中或最新 Block 的过滤
+    * 在 Block 上下文菜单中选择 `Toggle Block Filter`
   </TabItem>
 </Tabs>

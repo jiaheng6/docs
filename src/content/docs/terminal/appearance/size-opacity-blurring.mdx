@@ -1,64 +1,63 @@
 ---
-title: "Size, Opacity, & Blurring"
+title: "大小、透明度与模糊"
 description: >-
-  Configure window size, opacity, and background blurring to match your visual
-  preferences.
+  配置窗口大小、透明度和背景模糊效果，以符合你的视觉偏好。
 sidebar:
-  label: "Size, opacity, & blurring"
+  label: "大小、透明度与模糊"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-## How to use it
+## 如何使用
 
-### Window Size
+### 窗口大小
 
-To access size settings, go to **Settings** > **Appearance** > **Window**.
+前往 **Settings** > **Appearance** > **Window** 访问大小设置。
 
-* Enable "Open new windows with custom size", Then configure your preferred columns and rows.
+* 启用"Open new windows with custom size"，然后配置你首选的列数和行数。
 
 :::note
-If [Session Restoration](/terminal/sessions/session-restoration/) is enabled, Warp will restore the size of the last window closed when you quit the app. Either make sure the custom-sized window is the last one closed, or disable Session Restoration to ensure Warp launches with the custom-sized window.
+如果启用了[会话恢复](/terminal/sessions/session-restoration/)，Warp 在退出应用时将恢复最后关闭的窗口大小。请确保自定义大小的窗口是最后关闭的窗口，或者禁用会话恢复，以确保 Warp 以自定义大小的窗口启动。
 :::
 
-### Window Opacity
+### 窗口透明度
 
-To access it, go to **Settings** > **Appearance** > **Window**
+前往 **Settings** > **Appearance** > **Window** 进行设置。
 
-* The slider supports setting the opacity value between `1` and `100` where `100` is completely opaque or solid.
+* 滑块支持设置 `1` 到 `100` 之间的透明度值，其中 `100` 表示完全不透明（实心）。
 
-### Window Blurring
+### 窗口模糊
 
-After decreasing Opacity (moving the slider to a value less than `100`), you can also blur the background.
+降低透明度（将滑块移至低于 `100` 的值）后，你还可以模糊背景。
 
-* On macOS, this is done using the blur slider. Increasing the slider increases the blur radius that's applied to the background image.
-* On Windows, this is done by toggling the Acrylic background texture on or off.
+* 在 macOS 上，通过模糊滑块实现。增大滑块值会增大应用于背景图片的模糊半径。
+* 在 Windows 上，通过切换亚克力背景纹理的开关实现。
 
 :::caution
-On macOS, large blur radiuses may affect performance, especially on Retina displays.
+在 macOS 上，较大的模糊半径可能影响性能，尤其是在 Retina 显示屏上。
 
-On Linux, window blurring is not supported.
+在 Linux 上，不支持窗口模糊。
 
-On Windows, some graphics drivers may not support rendering transparent or translucent windows. See below for troubleshooting tips.
+在 Windows 上，某些显卡驱动程序可能不支持渲染透明或半透明窗口。请参阅下方的故障排除提示。
 :::
 
-## How it works
+## 工作原理
 
 <DemoVideo src="/assets/terminal/window_size_demo.mp4" label="Window Size Demo" />
 
 <VideoEmbed url="https://www.loom.com/share/22c9ef25392e4a5e80f9e01394c84dc4?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Window Opacity and Blurring Demo" />
 
-### Troubleshooting transparency on Windows
+### Windows 上透明度故障排除
 
 :::note
-At the moment, window opacity in Warp on Windows **does not work** in the following circumstances:
+目前，Warp 在 Windows 上的窗口透明度在以下情况下**无法正常工作**：
 
-* When using DirectX 12 as the rendering backend
-* When using any rendering backend with an Nvidia GPU when "Auto" or "Prefer layered" is selected as the value for "Vulkan/OpenGL present method" in NVIDIA Control Panel > Manage 3D Settings
+* 使用 DirectX 12 作为渲染后端时
+* 在 NVIDIA 控制面板 > 管理 3D 设置中，"Vulkan/OpenGL 呈现方法"选择了"自动"或"首选分层"时，无论使用哪种渲染后端，搭配 Nvidia GPU 均无效
 :::
 
-Some graphics drivers and rendering backends may not support rendering transparent windows.
+某些显卡驱动程序和渲染后端可能不支持渲染透明窗口。
 
-You can select the Vulkan or OpenGL graphics backend to render new Warp windows in the Settings menu, under `Features` > `System` > `Preferred graphics backend`.
+你可以在 Settings 菜单的 `Features` > `System` > `Preferred graphics backend` 下选择 Vulkan 或 OpenGL 图形后端来渲染新的 Warp 窗口。
 
-You can also opt to render new Warp windows with an integrated GPU, under `Features` > `System` > `Prefer rendering new windows with integrated GPU (low power)`.
+你也可以在 `Features` > `System` > `Prefer rendering new windows with integrated GPU (low power)` 下选择使用集成 GPU 渲染新的 Warp 窗口。

@@ -1,39 +1,38 @@
 ---
-title: Terminal Block Find
+title: 终端 Block 查找
 description: >-
-  Search across Blocks from the bottom up, with regex, case-sensitive, and
-  per-Block filtering options.
+  从底部向上跨 Blocks 搜索，支持正则表达式、区分大小写和按 Block 过滤选项。
 sidebar:
-  label: "Block find"
+  label: "Block 查找"
 ---
 import DemoVideo from '@components/DemoVideo.astro';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-## What is it
+## 这是什么
 
-Find searches for matches in all your Blocks from the bottom up and can even be isolated to a specific Block.
+查找功能在所有 Blocks 中从底部向上搜索匹配项，甚至可以限定在特定 Block 中搜索。
 
 :::note
-Since command outputs are contained within Blocks, you can still use the input editor when invoking find.
+由于命令输出包含在 Blocks 中，你仍可以在调用查找时使用输入编辑器。
 :::
 
-## How to access it
+## 如何访问
 
 <Tabs>
   <TabItem label="macOS">
-    1. Hitting `CMD-F` opens the find view which searches across the terminal (scoped within the current pane).
-    2. Within the find modal, you can also enable the regex toggle, find on a selected Block, and or toggle case sensitive search.
+    1. 按 `CMD-F` 打开查找视图，在终端中进行搜索（限定在当前面板内）。
+    2. 在查找模态框中，你还可以启用正则表达式切换、在选中的 Block 中查找，或切换区分大小写搜索。
   </TabItem>
   <TabItem label="Windows">
-    1. Hitting `CTRL-SHIFT-F` opens the find view which searches across the terminal (scoped within the current pane).
-    2. Within the find modal, you can also enable the regex toggle, find on a selected Block, and or toggle case sensitive search.
+    1. 按 `CTRL-SHIFT-F` 打开查找视图，在终端中进行搜索（限定在当前面板内）。
+    2. 在查找模态框中，你还可以启用正则表达式切换、在选中的 Block 中查找，或切换区分大小写搜索。
   </TabItem>
   <TabItem label="Linux">
-    1. Hitting `CTRL-SHIFT-F` opens the find view which searches across the terminal (scoped within the current pane).
-    2. Within the find modal, you can also enable the regex toggle, find on a selected Block, and or toggle case sensitive search.
+    1. 按 `CTRL-SHIFT-F` 打开查找视图，在终端中进行搜索（限定在当前面板内）。
+    2. 在查找模态框中，你还可以启用正则表达式切换、在选中的 Block 中查找，或切换区分大小写搜索。
   </TabItem>
 </Tabs>
 
-## How it works
+## 工作原理
 
 <DemoVideo src="/assets/terminal/find.mp4" label="Searching across Warp's terminal blocks with the Find view" />

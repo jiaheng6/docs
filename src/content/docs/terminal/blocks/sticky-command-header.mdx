@@ -1,50 +1,49 @@
 ---
-title: Sticky Command Header
+title: 固定命令标题
 description: >-
-  Pin the running command at the top of the screen when scrolling through
-  large Block outputs.
+  在滚动浏览大型 Block 输出时，将正在运行的命令固定在屏幕顶部。
 ---
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import VideoEmbed from '@components/VideoEmbed.astro';
 
 :::note
-For long-running commands that take up the full screen, the sticky header only shows after you start scrolling up. This is to prevent the header from blocking the top part of the output for commands like `git log` that simulate full-screen apps.
+对于占满全屏的长时间运行命令，固定标题仅在你开始向上滚动后才会显示。这是为了防止标题遮挡像 `git log` 这类模拟全屏应用的命令顶部输出内容。
 :::
 
-## How to access Sticky Command Header
+## 如何访问固定命令标题
 
 <Tabs>
   <TabItem label="macOS">
-    * Sticky Command Header is enabled by default.
-    * Toggle Sticky Command Header by going to **Settings** > **Features** > **General** > toggle “Show sticky command header”.
-    * Toggle by searching for “Sticky Command Header” within the [Command Palette](/terminal/command-palette/) or by pressing `CTRL-CMD-S`.
-    * You can also "Toggle Sticky Command Header in Active Pane" with `CTRL-S`. This won't disable the feature entirely, only minimize it on the active session.
+    * 固定命令标题默认启用。
+    * 通过前往 **Settings** > **Features** > **General** > 切换"Show sticky command header"来开关固定命令标题。
+    * 在 [Command Palette](/terminal/command-palette/) 中搜索"Sticky Command Header"或按 `CTRL-CMD-S` 来切换。
+    * 还可以使用 `CTRL-S` 来"Toggle Sticky Command Header in Active Pane"。这不会完全禁用该功能，只会在当前会话中最小化它。
   </TabItem>
   <TabItem label="Windows">
-    * Sticky Command Header is enabled by default.
-    * Toggle the Sticky Command Header by going to **Settings** > **Features** > **General** > toggle “Show sticky command header”.
-    * Toggle by searching for “Sticky Command Header” within the [Command Palette](/terminal/command-palette/) or by setting up a key bind in **Settings** > **Keyboard shortcuts**.
-    * You can also "Toggle Sticky Command Header in Active Pane" in the Command Palette or by setting up a key bind in **Settings** > **Keyboard shortcuts**. This won’t disable the feature entirely, only minimize it on the active session.
+    * 固定命令标题默认启用。
+    * 通过前往 **Settings** > **Features** > **General** > 切换"Show sticky command header"来开关固定命令标题。
+    * 在 [Command Palette](/terminal/command-palette/) 中搜索"Sticky Command Header"或在 **Settings** > **Keyboard shortcuts** 中设置键绑定来切换。
+    * 还可以在 Command Palette 中或在 **Settings** > **Keyboard shortcuts** 中设置键绑定来"Toggle Sticky Command Header in Active Pane"。这不会完全禁用该功能，只会在当前会话中最小化它。
   </TabItem>
   <TabItem label="Linux">
-    * Sticky Command Header is enabled by default.
-    * Toggle the Sticky Command Header by going to **Settings** > **Features** > **General** > toggle “Show sticky command header”.
-    * Toggle by searching for “Sticky Command Header” within the [Command Palette](/terminal/command-palette/) or by setting up a key bind in**Settings** > **Keyboard shortcuts**.
-    * You can also "Toggle Sticky Command Header in Active Pane" in the Command Palette or by setting up a key bind in**Settings** > **Keyboard shortcuts**. This won't disable the feature entirely, only minimize it on the active session.
+    * 固定命令标题默认启用。
+    * 通过前往 **Settings** > **Features** > **General** > 切换"Show sticky command header"来开关固定命令标题。
+    * 在 [Command Palette](/terminal/command-palette/) 中搜索"Sticky Command Header"或在 **Settings** > **Keyboard shortcuts** 中设置键绑定来切换。
+    * 还可以在 Command Palette 中或在 **Settings** > **Keyboard shortcuts** 中设置键绑定来"Toggle Sticky Command Header in Active Pane"。这不会完全禁用该功能，只会在当前会话中最小化它。
   </TabItem>
 </Tabs>
 
-## How to use Sticky Command Header
+## 如何使用固定命令标题
 
-* If a Block has a large output ( e.g. `seq 1 1000`), the header of the Block will show on the top of the active Window, Tab, or Pane.
-* Click on the Sticky Command Header to quickly jump to the top of the Block.
-* While active you can also minimize the Sticky Command Header on the active pane by clicking the UP/DOWN arrow in the middle of the header.
+* 如果一个 Block 有大量输出（例如 `seq 1 1000`），该 Block 的标题将显示在当前窗口、标签页或面板的顶部。
+* 点击固定命令标题可快速跳转到 Block 的顶部。
+* 激活时，你也可以通过点击标题中间的上/下箭头来最小化当前面板的固定命令标题。
 
-## How Sticky Command Header works
+## 固定命令标题的工作原理
 
 <VideoEmbed url="https://www.loom.com/share/a86967c057e44ab4bee4860ba80538b9?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" title="Sticky Command Header Demo" />
 
 <figure>
 ![Toggle active header and Jump to bottom of block demo](/assets/terminal/sticky-header-toggle-active-demo.gif)
-<figcaption>Toggle active header and Jump to bottom of block demo.</figcaption>
+<figcaption>切换活动标题并跳转到 Block 底部演示。</figcaption>
 </figure>
