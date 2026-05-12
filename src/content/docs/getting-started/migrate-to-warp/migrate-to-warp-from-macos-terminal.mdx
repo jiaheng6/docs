@@ -1,73 +1,72 @@
 ---
 title: Migrate to Warp from macOS Terminal
 description: >-
-  Switch from the default macOS Terminal app to Warp. Match your setup and
-  discover what Warp adds beyond the basics.
+  从 macOS 默认 Terminal 应用切换到 Warp。匹配你的设置，发现 Warp 在基础功能之外的扩展特性。
 ---
 
-Warp gives Terminal.app users everything they already have — shell, theme, font, prompt — plus split panes, tabs, blocks, and Agent Mode for an AI-assisted workflow. This page walks through both an agent-driven migration and the manual GUI steps.
+Warp 为 Terminal.app 用户提供了他们已有的一切——Shell、主题、字体、提示符——同时还增加了分割面板、标签页、Block 和 Agent Mode，带来 AI 辅助的工作流体验。本页介绍 Agent 驱动的迁移方式和手动 GUI 操作步骤。
 
-## What transfers automatically
+## 可自动迁移的内容
 
-Warp doesn't ship a Terminal.app importer, but it can do most of the work for you agentically. Most Terminal.app users run near-default settings, so the migration usually takes only a few minutes either way.
+Warp 不提供 Terminal.app 导入器，但可以通过 Agent 代为完成大部分工作。大多数 Terminal.app 用户使用接近默认的设置，因此无论哪种方式，迁移通常只需几分钟。
 
-## Use Warp's agent to migrate your settings (recommended)
+## 使用 Warp 的 Agent 迁移设置（推荐）
 
-The fastest way to bring over a Terminal.app theme is to ask Warp's agent to translate it directly. Warp ships a [`settings.toml` file](/terminal/settings/) and a bundled `modify-settings` skill that lets the agent read your Terminal.app preferences and write equivalent values into Warp's settings, including creating a matching [custom theme](/terminal/appearance/custom-themes/).
+迁移 Terminal.app 主题最快的方式，是让 Warp 的 Agent 直接进行翻译。Warp 提供了一个 [`settings.toml` 文件](/terminal/settings/)和内置的 `modify-settings` 技能，让 Agent 可以读取 Terminal.app 的偏好设置，并将等效值写入 Warp 的配置文件，包括创建匹配的[自定义主题](/terminal/appearance/custom-themes/)。
 
-1. In Warp, open a new tab and switch to [Agent Mode](/agent-platform/local-agents/overview/) with `⌘+I`.
-2. Paste a prompt like:
+1. 在 Warp 中打开新标签页，按 `⌘+I` 切换到 [Agent Mode](/agent-platform/local-agents/overview/)。
+2. 粘贴如下提示词：
 
-   > Read my Terminal.app preferences with `defaults read com.apple.Terminal` and port the active profile (theme, font, window size) into my Warp `settings.toml` using the `modify-settings` skill. Create a matching custom theme. Show me a diff before applying.
+   > 使用 `defaults read com.apple.Terminal` 读取我的 Terminal.app 偏好设置，使用 `modify-settings` 技能将当前配置文件（主题、字体、窗口大小）迁移到我的 Warp `settings.toml` 中，并创建匹配的自定义主题。应用前请显示差异对比。
 
-3. Review the proposed diff and approve. Warp hot-reloads `settings.toml`.
+3. 检查建议的差异并确认。Warp 会热重载 `settings.toml`。
 
-If you'd rather configure each setting manually through the Settings UI, the steps below cover the most common cases.
+如果你更倾向于通过设置界面手动配置每项设置，以下步骤涵盖最常见的情况。
 
-## What to reconfigure manually
+## 需要手动重新配置的内容
 
 ### Shell
 
-Warp auto-detects your login shell on first launch. macOS has shipped with `zsh` as the default since Catalina (2019); if you changed your shell with `chsh`, Warp picks that up too.
+Warp 首次启动时会自动检测你的登录 Shell。自 Catalina（2019 年）起，macOS 默认使用 `zsh`；如果你通过 `chsh` 更改了 Shell，Warp 也会识别。
 
-To change it later, go to **Settings** > **Features** > **Session** and pick a shell from **Startup shell for new sessions**.
+如需之后更改，前往 **Settings** > **Features** > **Session**，在 **Startup shell for new sessions** 中选择 Shell。
 
-### Theme and colors
+### 主题和颜色
 
-Terminal.app ships with a handful of profiles (Basic, Pro, Homebrew, Ocean, etc.). Match them in Warp:
+Terminal.app 内置了几个配置文件（Basic、Pro、Homebrew、Ocean 等）。在 Warp 中进行匹配：
 
-1. Open **Settings** > **Appearance** > **Themes**.
-2. Pick a preset theme. Warp's built-in library includes many themes similar to Terminal.app's defaults.
-3. For exact color matches, [create a custom theme](/terminal/appearance/custom-themes/) using the ANSI color values you can inspect in Terminal.app's **Settings** > **Profiles** > **Text** tab.
+1. 打开 **Settings** > **Appearance** > **Themes**。
+2. 选择一个预设主题。Warp 内置主题库包含许多与 Terminal.app 默认主题相似的选项。
+3. 如需精确匹配颜色，可在 Terminal.app 的 **Settings** > **Profiles** > **Text** 标签页中查看 ANSI 颜色值，然后用这些值[创建自定义主题](/terminal/appearance/custom-themes/)。
 
-### Font
+### 字体
 
-1. In **Settings** > **Appearance** > **Text, fonts, & cursor**, pick your font family and size to match what you use in Terminal.app.
+1. 在 **Settings** > **Appearance** > **Text, fonts, & cursor** 中，匹配你在 Terminal.app 中使用的字体系列和大小。
 
-### Window size and transparency
+### 窗口大小和透明度
 
-Configure in **Settings** > **Appearance** > **Size, opacity, & blurring**. See [size, opacity, and blurring](/terminal/appearance/size-opacity-blurring/).
+在 **Settings** > **Appearance** > **Size, opacity, & blurring** 中配置。详见[大小、不透明度和模糊效果](/terminal/appearance/size-opacity-blurring/)。
 
-### Prompt
+### 提示符
 
-Terminal.app uses whatever prompt your shell's PS1 (or zsh's PROMPT) defines. In Warp, choose:
+Terminal.app 使用 Shell 的 PS1（或 zsh 的 PROMPT）定义的提示符。在 Warp 中，你可以选择：
 
-1. [**Warp prompt**](/terminal/appearance/prompt/#warp-prompt) - Warp's native prompt with drag-and-drop chips for git branch, directory, and more.
-2. [**Shell prompt (PS1)**](/terminal/appearance/prompt/#custom-prompt) - keeps your existing shell prompt exactly as it appears in Terminal.app.
+1. [**Warp 提示符**](/terminal/appearance/prompt/#warp-prompt) - Warp 的原生提示符，支持拖拽式芯片，包含 Git 分支、目录等信息。
+2. [**Shell 提示符（PS1）**](/terminal/appearance/prompt/#custom-prompt) - 保持你现有的 Shell 提示符，与 Terminal.app 中完全一致。
 
-Configure in **Settings** > **Appearance** > **Prompt**.
+在 **Settings** > **Appearance** > **Prompt** 中配置。
 
-## Warp-native equivalents
+## Warp 原生等效功能
 
-Most Terminal.app features have a Warp equivalent with additional capabilities on top:
+大多数 Terminal.app 功能在 Warp 中都有等效项，并具备更强大的能力：
 
-| From Terminal.app | In Warp |
+| Terminal.app 中 | Warp 中 |
 | --- | --- |
-| Profiles | [Tab configs](/terminal/windows/tab-configs/) for layouts and startup commands; [themes](/terminal/appearance/themes/) for appearance (Warp has no single profile object) |
-| Window groups / arrangements | [Tab configs](/terminal/windows/tab-configs/) |
-| Tabs | [Tabs](/terminal/windows/tabs/), [vertical tabs](/terminal/windows/vertical-tabs/) |
-| Split panes | [Split panes](/terminal/windows/split-panes/) (Terminal.app doesn't support) |
-| Copy-on-select | **Settings** > **Features** > **Session** |
-| Inspector | [Command inspector](/terminal/editor/command-inspector/) (exit code, duration, working directory) |
+| 配置文件（Profiles） | [Tab configs](/terminal/windows/tab-configs/) 用于布局和启动命令；[主题](/terminal/appearance/themes/)用于外观（Warp 没有单一的配置文件对象） |
+| 窗口组 / 排列 | [Tab configs](/terminal/windows/tab-configs/) |
+| 标签页 | [标签页](/terminal/windows/tabs/)、[垂直标签页](/terminal/windows/vertical-tabs/) |
+| 分割面板 | [分割面板](/terminal/windows/split-panes/)（Terminal.app 不支持） |
+| 选中即复制 | **Settings** > **Features** > **Session** |
+| 检查器（Inspector） | [命令检查器](/terminal/editor/command-inspector/)（退出码、耗时、工作目录） |
 
-Beyond matching Terminal.app, Warp adds [Agent Mode](/agent-platform/local-agents/overview/) for natural-language commands, [blocks](/terminal/blocks/) for structured command output, and [Warp Drive](/knowledge-and-collaboration/warp-drive/) for shared workflows. New to Warp? Start with the [Warp quickstart](/quickstart/).
+除了与 Terminal.app 功能对等外，Warp 还增加了用于自然语言命令的 [Agent Mode](/agent-platform/local-agents/overview/)、用于结构化命令输出的 [Block](/terminal/blocks/)，以及用于共享工作流的 [Warp Drive](/knowledge-and-collaboration/warp-drive/)。初次使用 Warp？从 [Warp 快速入门](/quickstart/)开始。

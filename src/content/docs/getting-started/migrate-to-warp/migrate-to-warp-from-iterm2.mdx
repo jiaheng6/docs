@@ -1,75 +1,74 @@
 ---
 title: Migrate to Warp from iTerm2
 description: >-
-  Import your iTerm2 profile into Warp to transfer themes, fonts, keybindings,
-  hotkey windows, and more in a few clicks.
+  将 iTerm2 配置文件导入 Warp，只需几次点击即可迁移主题、字体、快捷键绑定、热键窗口等设置。
 ---
 
-Warp imports your iTerm2 profile automatically, bringing over theme, font, keybindings, hotkey window, and more in a few clicks. This page walks through the importer, what it covers, and what to reconfigure manually after.
+Warp 可自动导入你的 iTerm2 配置文件，只需几次点击即可迁移主题、字体、快捷键绑定、热键窗口等设置。本页介绍导入流程、涵盖范围，以及导入后需要手动重新配置的内容。
 
-## What transfers automatically
+## 可自动迁移的内容
 
-Warp ships a built-in iTerm2 importer that reads your default profile from `~/Library/Preferences/com.googlecode.iterm2.plist`. It imports:
+Warp 内置了 iTerm2 导入器，可从 `~/Library/Preferences/com.googlecode.iterm2.plist` 读取你的默认配置文件，并导入以下内容：
 
-* **Theme** - foreground, background, cursor, and all 16 ANSI colors (light and dark variants if configured).
-* **Font** - family and size (when the font exists on your system and is supported by Warp).
-* **Default shell** - if you've set a custom Command in your iTerm2 profile.
-* **Working directory behavior** - Warp translates iTerm2's "Reuse previous session's directory" and similar options.
-* **Window dimensions** - rows and columns.
-* **Opacity and blur.**
-* **Copy-on-select, mouse and scroll reporting, and Option-as-Meta settings.**
-* **Global hotkey** - if you use a hotkey window or hotkey activation, Warp maps it.
+* **主题** - 前景色、背景色、光标颜色及所有 16 个 ANSI 颜色（如已配置，含浅色和深色变体）。
+* **字体** - 字体系列和大小（前提是该字体已安装在你的系统上且 Warp 支持）。
+* **默认 Shell** - 如果你在 iTerm2 配置文件中设置了自定义命令。
+* **工作目录行为** - Warp 会转换 iTerm2 的"重用上一个会话的目录"等选项。
+* **窗口尺寸** - 行数和列数。
+* **不透明度和模糊效果。**
+* **选中即复制、鼠标和滚动上报，以及 Option 作为 Meta 键的设置。**
+* **全局热键** - 如果你使用了热键窗口或热键激活，Warp 会进行映射。
 
-To run the importer:
+运行导入器的步骤：
 
-1. In Warp, open the [Command Palette](/terminal/command-palette/).
-2. Search for **Import External Settings**.
-3. Select **iTerm2 Profile: Default**. Warp only imports the profile marked as your Default Bookmark in iTerm2.
-4. Choose which settings to keep or skip on the preview screen.
+1. 在 Warp 中打开 [Command Palette](/terminal/command-palette/)。
+2. 搜索 **Import External Settings**。
+3. 选择 **iTerm2 Profile: Default**。Warp 仅导入标记为 iTerm2 默认书签的配置文件。
+4. 在预览界面选择要保留或跳过的设置。
 
 <figure>
 ![Select a settings profile to import](../../../../assets/terminal/migrate-to-warp.png)
-<figcaption>Select a settings profile to import.</figcaption>
+<figcaption>选择要导入的设置配置文件。</figcaption>
 </figure>
 
-## Use Warp's agent for follow-up settings
+## 使用 Warp 的 Agent 补充迁移设置
 
-If the importer doesn't pick up something you care about — a non-default profile, an unusual keybinding, a specific setting — ask Warp's agent to translate it directly. Warp ships a [`settings.toml` file](/terminal/settings/) and a bundled `modify-settings` skill that lets the agent read your iTerm2 plist and write equivalent values into Warp's settings.
+如果导入器未能识别你关心的某项设置——非默认配置文件、非常规快捷键绑定、特定设置——可以让 Warp 的 Agent 直接进行翻译。Warp 提供了一个 [`settings.toml` 文件](/terminal/settings/)和内置的 `modify-settings` 技能，让 Agent 可以读取 iTerm2 的 plist，并将等效值写入 Warp 的设置中。
 
-1. In Warp, switch to [Agent Mode](/agent-platform/local-agents/overview/) with `⌘+I`.
-2. Paste a prompt like:
+1. 在 Warp 中，按 `⌘+I` 切换到 [Agent Mode](/agent-platform/local-agents/overview/)。
+2. 粘贴如下提示词：
 
-   > Read my iTerm2 preferences with `defaults read com.googlecode.iterm2` and port any settings that the importer didn't cover (extra profiles, custom keybindings) into my Warp `settings.toml` using the `modify-settings` skill. Show me a diff before applying.
+   > 使用 `defaults read com.googlecode.iterm2` 读取我的 iTerm2 偏好设置，并使用 `modify-settings` 技能，将导入器未能涵盖的设置（额外的配置文件、自定义快捷键绑定）迁移到我的 Warp `settings.toml` 中。应用前请显示差异对比。
 
-3. Review the proposed diff and approve. Warp hot-reloads `settings.toml`.
+3. 检查建议的差异并确认。Warp 会热重载 `settings.toml`。
 
-## What to reconfigure manually
+## 需要手动重新配置的内容
 
-A few iTerm2 features don't map directly and need a manual pass after import:
+以下几项 iTerm2 功能无法直接映射，需要在导入后手动处理：
 
-* **Multiple profiles.** Warp imports only your Default profile. If you rely on multiple iTerm2 profiles, create equivalent [tab configs](/terminal/windows/tab-configs/) in Warp.
-* **Keyboard shortcuts.** Warp's [keyboard shortcuts](/getting-started/keyboard-shortcuts/) cover most iTerm2 bindings out of the box, but custom bindings need to be recreated in **Settings** > **Keyboard shortcuts**.
-* **Split panes and arrangements.** Rebuild using [split panes](/terminal/windows/split-panes/) and [tab configs](/terminal/windows/tab-configs/).
-* **Triggers.** Warp doesn't have a direct equivalent. Reach similar outcomes through [YAML workflows](/terminal/entry/yaml-workflows/) or Agent Mode.
+* **多个配置文件。** Warp 仅导入你的默认配置文件。如果你依赖多个 iTerm2 配置文件，可在 Warp 中创建等效的 [tab configs](/terminal/windows/tab-configs/)。
+* **键盘快捷键。** Warp 的[键盘快捷键](/getting-started/keyboard-shortcuts/)开箱即涵盖了大多数 iTerm2 绑定，但自定义绑定需要在 **Settings** > **Keyboard shortcuts** 中重新创建。
+* **分割面板和布局。** 使用[分割面板](/terminal/windows/split-panes/)和 [tab configs](/terminal/windows/tab-configs/) 重新构建。
+* **触发器（Triggers）。** Warp 没有直接等效功能。可通过 [YAML 工作流](/terminal/entry/yaml-workflows/)或 Agent Mode 实现类似效果。
 
-### Choose your prompt
+### 选择你的提示符
 
-After the import, choose which [prompt](/terminal/appearance/prompt/) to use:
+导入完成后，选择要使用的[提示符](/terminal/appearance/prompt/)：
 
-1. [**Warp prompt**](/terminal/appearance/prompt/#warp-prompt) - Warp's native prompt with drag-and-drop context chips for git branch, directory, timestamps, and more. Configure in **Settings** > **Appearance** > **Prompt**.
-2. [**Shell prompt (PS1)**](/terminal/appearance/prompt/#custom-prompt) - inherits your existing shell prompt configuration unchanged. Pick this if you want Warp to match your iTerm2 prompt exactly.
+1. [**Warp 提示符**](/terminal/appearance/prompt/#warp-prompt) - Warp 的原生提示符，支持拖拽式上下文芯片，包含 Git 分支、目录、时间戳等信息。在 **Settings** > **Appearance** > **Prompt** 中配置。
+2. [**Shell 提示符（PS1）**](/terminal/appearance/prompt/#custom-prompt) - 继承你现有的 Shell 提示符配置，保持不变。如果你希望 Warp 与 iTerm2 的提示符完全一致，选择此项。
 
-## Warp-native equivalents
+## Warp 原生等效功能
 
-Features switchers commonly look for after leaving iTerm2, and where they live in Warp:
+从 iTerm2 切换后常见的功能查找，及其在 Warp 中的位置：
 
-| From iTerm2 | In Warp |
+| iTerm2 中 | Warp 中 |
 | --- | --- |
-| Hotkey window (Quake mode) | [Global hotkey](/terminal/windows/global-hotkey/) (imported automatically when detected in your iTerm2 profile) |
-| Triggers | [YAML workflows](/terminal/entry/yaml-workflows/) for repeatable actions; Agent Mode for pattern-based automation |
-| Profiles | [Tab configs](/terminal/windows/tab-configs/) for layouts; [Warp Drive](/knowledge-and-collaboration/warp-drive/) for shared team setups |
-| Autocomplete menu | [Autosuggestions](/terminal/command-completions/autosuggestions/) + [tab completions](/terminal/command-completions/completions/) |
-| Instant replay | [Session restoration](/terminal/sessions/session-restoration/) |
-| Password manager integration | [Warp Drive environment variables](/knowledge-and-collaboration/warp-drive/environment-variables/) |
+| 热键窗口（Quake 模式） | [全局热键](/terminal/windows/global-hotkey/)（当在 iTerm2 配置文件中检测到时自动导入） |
+| 触发器（Triggers） | [YAML 工作流](/terminal/entry/yaml-workflows/)用于可重复操作；Agent Mode 用于基于模式的自动化 |
+| 配置文件（Profiles） | [Tab configs](/terminal/windows/tab-configs/) 用于布局；[Warp Drive](/knowledge-and-collaboration/warp-drive/) 用于团队共享配置 |
+| 自动补全菜单 | [自动建议](/terminal/command-completions/autosuggestions/) + [Tab 补全](/terminal/command-completions/completions/) |
+| 即时回放（Instant Replay） | [会话恢复](/terminal/sessions/session-restoration/) |
+| 密码管理器集成 | [Warp Drive 环境变量](/knowledge-and-collaboration/warp-drive/environment-variables/) |
 
-For more on what you can configure after migrating, see the [Warp quickstart](/quickstart/) and [Customizing Warp](/getting-started/quickstart/customizing-warp/).
+更多迁移后的配置说明，请参见 [Warp 快速入门](/quickstart/)和[自定义 Warp](/getting-started/quickstart/customizing-warp/)。

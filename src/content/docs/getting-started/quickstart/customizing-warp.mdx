@@ -1,84 +1,83 @@
 ---
 title: Customizing Warp
 description: >-
-  A complete guide to customizing Warp: themes, vertical tabs, tab configs,
-  prompt chips, keybindings, AI models, and more.
+  自定义 Warp 的完整指南：主题、垂直标签页、tab configs、提示符芯片、快捷键绑定、AI 模型等。
 ---
 
-Warp is deeply customizable. Whether you use Warp primarily as a modern terminal or as an AI-powered development environment, you can tailor the experience to fit how you work. Configure the terminal side (themes, keybindings, vertical tabs, tab configs) and the AI side (model choice, agent autonomy, default mode) independently.
+Warp 具有高度的可定制性。无论你主要将 Warp 用作现代终端还是 AI 驱动的开发环境，都可以根据自己的工作方式来个性化体验。终端侧（主题、快捷键绑定、垂直标签页、tab configs）和 AI 侧（模型选择、Agent 自主程度、默认模式）可以独立配置。
 
-Use the quick-reference table to find what you need, or browse the sections below for more details. If you want to go further than configuration, Warp's client is open source under [AGPL v3](https://github.com/warpdotdev/warp/blob/master/LICENSE-AGPL) — see [Contributing to Warp](/support-and-community/community/contributing/) to build a custom variant or contribute changes upstream.
+使用下面的快速参考表找到你需要的内容，或浏览以下各节获取更多详情。如果你希望在配置之外进行更深度的定制，Warp 的客户端在 [AGPL v3](https://github.com/warpdotdev/warp/blob/master/LICENSE-AGPL) 下开源——详见[为 Warp 做贡献](/support-and-community/community/contributing/)，可构建自定义版本或向上游贡献变更。
 
-## Quick reference
+## 快速参考
 
-| What to customize | Where to find it | Quick action |
+| 要自定义的内容 | 位置 | 快速操作 |
 | --- | --- | --- |
-| Theme | **Settings** > **Appearance** | Pick a preset or [create a custom YAML theme](/terminal/appearance/custom-themes/) |
-| Prompt chips | Right-click prompt area > **Edit prompt** | Drag and drop context chips (directory, git branch, time, etc.) |
-| AI model | Model selector in agent conversation | Choose Claude, GPT, Gemini, or Auto |
-| Keybindings | **Settings** > **Keyboard shortcuts** | Import from another terminal or set custom shortcuts |
-| Vertical tabs | **Settings** > **Appearance** > **Tabs** | Switch to a sidebar tab layout for more horizontal space |
-| Tab configs | **Settings** > **Features** or `/` menu | Save and restore tab layouts with startup commands |
-| Settings file | **Open settings file** button in the Settings footer | Edit [`settings.toml`](/terminal/settings/) directly for version control and scripting |
-| Input format | **Settings** > **Appearance** > **Input** | Choose Standard or Classic |
-| App icon | **Settings** > **Appearance** > **Icon** | Pick a custom icon (macOS) |
-| Font & text | **Settings** > **Appearance** > **Text** | Change font, size, and cursor style |
-| Agent autonomy | **Settings** > **Agents** > **Profiles** | Set what the agent can do without asking |
-| Default mode | **Settings** > **Agents** > **Warp Agent** > **Input** | Choose whether new tabs open in terminal mode or Agent Mode |
+| 主题 | **Settings** > **Appearance** | 选择预设或[创建自定义 YAML 主题](/terminal/appearance/custom-themes/) |
+| 提示符芯片 | 右键提示符区域 > **Edit prompt** | 拖拽上下文芯片（目录、Git 分支、时间等） |
+| AI 模型 | Agent 对话中的模型选择器 | 选择 Claude、GPT、Gemini 或 Auto |
+| 快捷键绑定 | **Settings** > **Keyboard shortcuts** | 从其他终端导入或设置自定义快捷键 |
+| 垂直标签页 | **Settings** > **Appearance** > **Tabs** | 切换到侧边栏标签页布局，获得更多横向空间 |
+| Tab configs | **Settings** > **Features** 或 `/` 菜单 | 保存并恢复带有启动命令的标签页布局 |
+| 设置文件 | 设置页脚的 **Open settings file** 按钮 | 直接编辑 [`settings.toml`](/terminal/settings/) 以支持版本控制和脚本操作 |
+| 输入格式 | **Settings** > **Appearance** > **Input** | 选择标准模式或经典模式 |
+| 应用图标 | **Settings** > **Appearance** > **Icon** | 选择自定义图标（macOS） |
+| 字体和文本 | **Settings** > **Appearance** > **Text** | 更改字体、大小和光标样式 |
+| Agent 自主程度 | **Settings** > **Agents** > **Profiles** | 设置 Agent 无需询问可执行的操作 |
+| 默认模式 | **Settings** > **Agents** > **Warp Agent** > **Input** | 选择新标签页默认以终端模式还是 Agent Mode 打开 |
 
 ---
 
-## Appearance
+## 外观
 
-In Warp, navigate to **Settings** > **Appearance** to access these options and control how Warp looks:
+在 Warp 中，前往 **Settings** > **Appearance** 访问以下选项，控制 Warp 的外观：
 
-* **[Themes](/terminal/appearance/themes/)** - Choose from pre-loaded themes or create your own [custom theme](/terminal/appearance/custom-themes/) using YAML or a background image.
-* **[Prompt chips](/terminal/appearance/prompt/)** - Customize the context chips in your Warp prompt. Right-click the prompt area and select **Edit prompt** to drag and drop chips like directory, git branch, Kubernetes context, and time.
-* **[App icons](/terminal/appearance/app-icons/)** - Choose a custom app icon to distinguish Warp in your dock (macOS).
-* **[Text, fonts, and cursor](/terminal/appearance/text-fonts-cursor/)** - Change your font type, size, and cursor style.
-* **[Input position](/terminal/appearance/input-position/)** - Move your prompt and command line to the top or bottom of the window.
-* **[Size, opacity, and blurring](/terminal/appearance/size-opacity-blurring/)** - Adjust window transparency and blur effects.
-* **[Pane dimming](/terminal/appearance/pane-dimming/)** - Dim inactive panes to focus on the active one.
+* **[主题](/terminal/appearance/themes/)** - 从预载主题中选择，或使用 YAML 或背景图片[创建自定义主题](/terminal/appearance/custom-themes/)。
+* **[提示符芯片](/terminal/appearance/prompt/)** - 自定义 Warp 提示符中的上下文芯片。右键提示符区域并选择 **Edit prompt**，可拖拽目录、Git 分支、Kubernetes 上下文和时间等芯片。
+* **[应用图标](/terminal/appearance/app-icons/)** - 选择自定义应用图标，使 Warp 在 Dock 中与众不同（macOS）。
+* **[文本、字体和光标](/terminal/appearance/text-fonts-cursor/)** - 更改字体类型、大小和光标样式。
+* **[输入位置](/terminal/appearance/input-position/)** - 将提示符和命令行移到窗口顶部或底部。
+* **[大小、不透明度和模糊效果](/terminal/appearance/size-opacity-blurring/)** - 调整窗口透明度和模糊效果。
+* **[面板变暗](/terminal/appearance/pane-dimming/)** - 使非活动面板变暗，聚焦于当前面板。
 
-## Layout
+## 布局
 
-Organize your workspace with tabs, panes, and window configurations.
+使用标签页、面板和窗口配置组织你的工作区。
 
-* **[Vertical tabs](/terminal/windows/vertical-tabs/)** - Switch to a vertical sidebar layout for tabs, giving you more horizontal space and better visibility when you have many open sessions.
-* **[Tabs](/terminal/windows/tabs/)** - Organize sessions into tabs with custom titles and colors. Right-click a tab to pick a color.
-* **[Split panes](/terminal/windows/split-panes/)** - Divide any tab into multiple panels, side-by-side or stacked.
-* **[Tab configs](/terminal/windows/tab-configs/)** - Save and restore tab layouts with predefined pane arrangements and startup commands.
-* **[Global hotkey](/terminal/windows/global-hotkey/)** - Set up a dedicated hotkey window (Quake Mode) that appears and hides with a keyboard shortcut.
+* **[垂直标签页](/terminal/windows/vertical-tabs/)** - 切换到垂直侧边栏标签页布局，获得更多横向空间，在开启多个会话时也拥有更好的可见性。
+* **[标签页](/terminal/windows/tabs/)** - 使用自定义标题和颜色将会话组织到标签页中。右键标签页可选择颜色。
+* **[分割面板](/terminal/windows/split-panes/)** - 将任意标签页分割为多个并排或上下排列的面板。
+* **[Tab configs](/terminal/windows/tab-configs/)** - 保存并恢复带有预定义面板排列和启动命令的标签页布局。
+* **[全局热键](/terminal/windows/global-hotkey/)** - 设置专属热键窗口（Quake 模式），通过键盘快捷键显示和隐藏。
 
-## Input and editor
+## 输入和编辑器
 
-Configure how you type and interact with the terminal input.
+配置你在终端输入框中的输入和交互方式。
 
-* **[Standard vs Classic input](/terminal/input/classic-input/)** - Standard input provides easier access to AI features and is the default for new users. Classic input resembles a traditional terminal prompt. Switch between them in **Settings** > **Appearance** > **Input**.
-* **[Keyboard shortcuts](/getting-started/keyboard-shortcuts/)** - Warp supports common shortcuts and lets you create custom ones. Manage them from **Settings** > **Keyboard shortcuts**, or import keybindings from another terminal during [migration](/getting-started/migrate-to-warp/).
-* **[Vim keybindings](/terminal/editor/vim/)** - Enable Vim keybindings for keyboard-driven text editing in the input editor.
-* **Tab key behavior** - Configure what `Tab` does in **Settings** > **Features**. Options include accepting autosuggestions or triggering completions.
+* **[标准模式与经典模式](/terminal/input/classic-input/)** - 标准模式更便于使用 AI 功能，是新用户的默认选项；经典模式类似传统终端提示符。在 **Settings** > **Appearance** > **Input** 中切换。
+* **[键盘快捷键](/getting-started/keyboard-shortcuts/)** - Warp 支持常见快捷键，并允许你创建自定义快捷键。从 **Settings** > **Keyboard shortcuts** 管理，或在[迁移](/getting-started/migrate-to-warp/)时从其他终端导入快捷键绑定。
+* **[Vim 键盘绑定](/terminal/editor/vim/)** - 在输入编辑器中启用 Vim 键盘绑定以支持键盘驱动的文本编辑。
+* **Tab 键行为** - 在 **Settings** > **Features** 中配置 `Tab` 键的行为。可选择接受自动建议或触发补全。
 
-## AI and models
+## AI 和模型
 
-Control how Warp's agents behave and which models they use.
+控制 Warp Agent 的行为及使用的模型。
 
-* **[Model choice](/agent-platform/capabilities/model-choice/)** - Choose your preferred AI model (Claude, GPT, Gemini, or Auto) from the model selector in any agent conversation.
-* **[Agent profiles and permissions](/agent-platform/capabilities/agent-profiles-permissions/)** - Configure how much autonomy the agent has: what it can auto-execute, what requires approval, and command allowlists/denylists.
-* **Default mode for new sessions** - Choose whether new tabs open in terminal mode or Agent Mode by default. Set this in **Settings** > **Agents** > **Warp Agent** > **Input**.
+* **[模型选择](/agent-platform/capabilities/model-choice/)** - 在任意 Agent 对话的模型选择器中选择你偏好的 AI 模型（Claude、GPT、Gemini 或 Auto）。
+* **[Agent 配置文件和权限](/agent-platform/capabilities/agent-profiles-permissions/)** - 配置 Agent 的自主程度：可以自动执行哪些操作、哪些需要审批，以及命令的允许列表/拒绝列表。
+* **新会话的默认模式** - 选择新标签页默认以终端模式还是 Agent Mode 打开。在 **Settings** > **Agents** > **Warp Agent** > **Input** 中设置。
 
-## Import and sync
+## 导入和同步
 
-Bring your existing settings into Warp or keep settings synchronized across machines.
+将现有设置带入 Warp，或跨设备保持设置同步。
 
-* **[Migrate from another terminal](/getting-started/migrate-to-warp/)** - Per-source guides for switching to Warp from iTerm2, Ghostty, macOS Terminal, Windows Terminal, VS Code, Cursor, Claude Code, and more. Includes automatic settings import for iTerm2.
-* **[Settings sync](/terminal/more-features/settings-sync/)** - Sync your Warp settings across machines (Beta).
+* **[从其他终端迁移](/getting-started/migrate-to-warp/)** - 针对从 iTerm2、Ghostty、macOS Terminal、Windows Terminal、VS Code、Cursor、Claude Code 等工具切换到 Warp 的专属指南，包括 iTerm2 的自动设置导入。
+* **[设置同步](/terminal/more-features/settings-sync/)** - 跨设备同步你的 Warp 设置（Beta）。
 
 ---
 
-## Next steps
+## 下一步
 
-Now that Warp looks and feels like yours, the next step is to put it to work on a real project. Open a codebase to unlock context-aware agents, or start an agent conversation to see how terminal commands and AI work together.
+现在 Warp 已经按你的喜好配置完毕，下一步是在实际项目中使用它。打开一个代码库以解锁具有上下文感知的 Agent，或开启一个 Agent 对话，看看终端命令与 AI 如何协同工作。
 
-* **[Codebase Context](/agent-platform/capabilities/codebase-context/)** - Open a project and index your codebase so agents give you context-aware answers about your code.
-* **[Terminal and Agent modes](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)** - Learn how terminal mode and agent conversations work together.
+* **[Codebase Context](/agent-platform/capabilities/codebase-context/)** - 打开项目并索引你的代码库，让 Agent 为你提供对代码有上下文感知的答案。
+* **[终端模式与 Agent Mode](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)** - 了解终端模式和 Agent 对话如何协同工作。

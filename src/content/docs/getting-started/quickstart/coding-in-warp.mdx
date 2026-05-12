@@ -1,21 +1,21 @@
 ---
 title: Coding in Warp
 description: >-
-  Agents can generate and edit code directly from within Warp.
+  Agent 可以直接在 Warp 内部生成和编辑代码。
 ---
 
-When you enter a Git repo for the first time, Warp will enter an initialization flow to index your codebase and generate an AGENTS.md file.&#x20;
+当你第一次进入一个 Git 仓库时，Warp 会启动初始化流程，对你的代码库进行索引并生成一个 AGENTS.md 文件。&#x20;
 
-As you're in the repo, Warp will enter an advanced code generation flow that supports both single-line and multi-file changes when it detects an opportunity to write code.
+在仓库中工作时，只要 Warp 检测到有编写代码的机会，就会进入高级代码生成流程，支持单行和多文件变更。
 
-For example, Warp may write code when you prompt:
+例如，在以下情况下 Warp 可能会生成代码：
 
-* **Code creation**: “Write a function in JavaScript to debounce an input”
-* **Based on error outputs, suggest fixes**: “Fix this TypeScript error.”
-* **Edit a single file**: “Update all instances of ‘var’ to ‘let’ in this file.”
-* **Make batch changes**: “Add headers to all .py files in this directory”
+* **创建代码**："用 JavaScript 写一个防抖输入的函数"
+* **根据错误输出建议修复**："修复这个 TypeScript 错误。"
+* **编辑单个文件**："将这个文件中所有的 'var' 替换为 'let'。"
+* **批量修改**："为该目录下所有 .py 文件添加文件头"
 
-**The best way to experience this is to try it yourself —** [_open the Prompt below in Warp_](https://app.warp.dev/drive/prompt/Generate-a-custom-Warp-theme-K8oloLrCZAHuaYKfz2cNqI)
+**体验这些功能最好的方式就是亲自尝试——** [_在 Warp 中打开以下提示词_](https://app.warp.dev/drive/prompt/Generate-a-custom-Warp-theme-K8oloLrCZAHuaYKfz2cNqI)
 
 ```text
 Detect the correct Warp themes directory based on the current operating system:
@@ -23,60 +23,60 @@ Detect the correct Warp themes directory based on the current operating system:
 - On Linux, use ${XDG_DATA_HOME:-$HOME/.local/share}/warp-terminal/themes/
 - On Windows, use $env:APPDATA\warp\Warp\data\themes\
 
-Create the directory if it doesn’t already exist. 
+Create the directory if it doesn't already exist. 
 
-Then, generate a custom Warp theme named {{theme_name}} in valid YAML format, following the official structure from Warp’s documentation. Exclude the background_image field, and do not include any extra or missing fields. Save the theme as {{theme_name}}.yaml in the detected themes directory.
+Then, generate a custom Warp theme named {{theme_name}} in valid YAML format, following the official structure from Warp's documentation. Exclude the background_image field, and do not include any extra or missing fields. Save the theme as {{theme_name}}.yaml in the detected themes directory.
 
 Once the theme is created and verified, confirm completion by telling me where the theme file was saved.
 ```
 ---
 
-### Context
+### 上下文
 
 #### Codebase Context
 
-Warp can index your Git-tracked codebases to help agents understand your code and generate accurate, context-aware responses. **No code is stored on Warp servers**.
+Warp 可以对你的 Git 追踪代码库进行索引，帮助 Agent 理解你的代码，生成准确且具有上下文感知能力的响应。**代码不会存储在 Warp 服务器上**。
 
-You can view and manage your indexed codebases in **Settings** > **Code** > **Indexing and projects** under "Initialized/ indexed folders". You can also specify whether to automatically index new folders as you navigate them.
+你可以在 **Settings** > **Code** > **Indexing and projects** 的"已初始化/已索引文件夹"下查看和管理已索引的代码库。你也可以指定是否在浏览新文件夹时自动进行索引。
 
-If your codebase is large, you can exclude specific files by adding them to a `.warpindexingignore` file.
+如果你的代码库较大，可以将特定文件添加到 `.warpindexingignore` 文件中来排除它们。
 
-#### Other types of context
+#### 其他类型的上下文
 
-You can provide different types of input as context directly to the agent to guide its behavior and improve response quality. This includes:
+你可以直接向 Agent 提供不同类型的输入作为上下文，以引导其行为并提升响应质量，包括：
 
-* [Blocks](/agent-platform/local-agents/agent-context/blocks-as-context/) from your terminal output
-* [Images](/agent-platform/local-agents/agent-context/images-as-context/)
-* [Files and code](/agent-platform/local-agents/agent-context/using-to-add-context/) (using the @ symbol)
-* [Public websites](/agent-platform/local-agents/agent-context/urls-as-context/) via URLs
+* 终端输出中的 [Block](/agent-platform/local-agents/agent-context/blocks-as-context/)
+* [图片](/agent-platform/local-agents/agent-context/images-as-context/)
+* [文件和代码](/agent-platform/local-agents/agent-context/using-to-add-context/)（使用 @ 符号）
+* 通过 URL 提供的[公开网站](/agent-platform/local-agents/agent-context/urls-as-context/)
 
-#### Warp Drive as Context
+#### Warp Drive 作为上下文
 
-Agents pull directly from your [**Warp Drive**](/knowledge-and-collaboration/warp-drive/) contents to generate more accurate responses -- including your **Workflows**, **Notebooks**, **Prompts**, and **Environment Variables**.
+Agent 可直接从你的 [**Warp Drive**](/knowledge-and-collaboration/warp-drive/) 内容中获取信息，以生成更准确的响应——包括你的**工作流**、**笔记本**、**提示词**和**环境变量**。
 
-* When used, context appears under the “References” or “Derived from” section in the conversation.
-* This setting is **enabled by default** and can be managed via: **Settings** > **Agents** > **Knowledge** > **Warp Drive as Agent Mode Context**.
+* 使用时，上下文会显示在对话的"引用"或"来源"部分。
+* 此设置**默认启用**，可通过 **Settings** > **Agents** > **Knowledge** > **Warp Drive as Agent Mode Context** 进行管理。
 
 #### Rules
 
-**Rules** let you provide persistent context to Agents, enabling smarter and more personalized responses.&#x20;
+**Rules** 允许你向 Agent 提供持久上下文，使其响应更智能、更个性化。&#x20;
 
-You can create global rules (accessed through [Warp Drive](/knowledge-and-collaboration/warp-drive/) >**Personal** > **Rules**) or project scoped rules, defined in an `AGENTS.md` file. Note: the filename must be in all caps for Warp to recognize it.
+你可以创建全局 Rule（通过 [Warp Drive](/knowledge-and-collaboration/warp-drive/) > **Personal** > **Rules** 访问），也可以创建项目范围的 Rule，定义在 `AGENTS.md` 文件中。注意：文件名必须全部大写，Warp 才能识别。
 
-**Examples of Rules include:**
+**Rules 的示例包括：**
 
-* Coding standards and best practices
-* Project- or workspace-specific guidelines
-* Personal preferences for tools, formatting, or behavior
+* 编码规范和最佳实践
+* 项目或工作区特定的指导方针
+* 工具、格式或行为的个人偏好
 
-How to access project-specific Rules
+访问项目特定 Rules 的方法：
 
-1. From the file-searcher, CMD+O and search "AGENTS.md"
-2. From the file tree, click the "code" icon when in a repo
+1. 从文件搜索器，按 CMD+O 搜索"AGENTS.md"
+2. 从文件树，在仓库中点击"code"图标
 
-How to access Global Rules
+访问全局 Rules 的方法：
 
-1. From the [Warp Drive](/knowledge-and-collaboration/warp-drive/) >**Personal** > **Rules**
-2. From the [Command Palette](/terminal/command-palette/), search for "Open AI Rules"
-3. From the Settings panel, **Settings** > **Agents** > **Knowledge** > **Manage Rules**
-4. From the macOS Menu, `AI > Open Rules`
+1. 通过 [Warp Drive](/knowledge-and-collaboration/warp-drive/) > **Personal** > **Rules**
+2. 通过 [Command Palette](/terminal/command-palette/)，搜索"Open AI Rules"
+3. 通过设置面板，**Settings** > **Agents** > **Knowledge** > **Manage Rules**
+4. 通过 macOS 菜单，`AI > Open Rules`

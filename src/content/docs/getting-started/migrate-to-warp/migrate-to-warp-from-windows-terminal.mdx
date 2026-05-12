@@ -1,76 +1,75 @@
 ---
 title: Migrate to Warp from Windows Terminal
 description: >-
-  Switch from Windows Terminal to Warp on Windows. Reconfigure profiles,
-  shells, fonts, keybindings, and find Warp equivalents.
+  在 Windows 上从 Windows Terminal 切换到 Warp。迁移配置文件、Shell、字体、快捷键绑定，并找到 Warp 的等效功能。
 ---
 
-Warp on Windows covers everything you use Windows Terminal for today — profiles, PowerShell, color schemes, keybindings — with Agent Mode and blocks on top. This page walks through the migration.
+Windows 上的 Warp 涵盖了你目前使用 Windows Terminal 所需的一切——配置文件、PowerShell、配色方案、快捷键绑定——还额外提供了 Agent Mode 和 Block。本页介绍迁移流程。
 
-## What transfers automatically
+## 可自动迁移的内容
 
-Warp doesn't ship a Windows Terminal importer, but it can do most of the work for you agentically. Windows Terminal stores its settings in a single JSON file at:
+Warp 不提供 Windows Terminal 导入器，但可以通过 Agent 代为完成大部分工作。Windows Terminal 将设置存储在以下路径的单个 JSON 文件中：
 
 ```powershell
 %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 ```
 
-## Use Warp's agent to migrate your settings (recommended)
+## 使用 Warp 的 Agent 迁移设置（推荐）
 
-The fastest way to bring over your Windows Terminal setup is to ask Warp's agent to translate `settings.json` directly. Warp ships a [`settings.toml` file](/terminal/settings/) and a bundled `modify-settings` skill that lets the agent read your existing config and write equivalent values into Warp's settings, including translating your color schemes into a Warp [custom theme](/terminal/appearance/custom-themes/).
+迁移 Windows Terminal 配置最快的方式，是让 Warp 的 Agent 直接翻译 `settings.json`。Warp 提供了一个 [`settings.toml` 文件](/terminal/settings/)和内置的 `modify-settings` 技能，让 Agent 可以读取你的现有配置，并将等效设置写入 Warp 的配置文件，包括将配色方案转换为 Warp 的[自定义主题](/terminal/appearance/custom-themes/)。
 
-1. In Warp, open a new tab and switch to [Agent Mode](/agent-platform/local-agents/overview/) with `Ctrl+I`.
-2. Paste a prompt like:
+1. 在 Warp 中打开新标签页，按 `Ctrl+I` 切换到 [Agent Mode](/agent-platform/local-agents/overview/)。
+2. 粘贴如下提示词：
 
-   > Read my Windows Terminal `settings.json` at `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json` and port the active profile and color scheme into my Warp `settings.toml` using the `modify-settings` skill. Create a matching custom theme. Show me a diff before applying.
+   > 读取位于 `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json` 的 Windows Terminal `settings.json`，使用 `modify-settings` 技能将当前配置文件和配色方案迁移到我的 Warp `settings.toml` 中，并创建匹配的自定义主题。应用前请显示差异对比。
 
-3. Review the proposed diff and approve. Warp hot-reloads `settings.toml`.
+3. 检查建议的差异并确认。Warp 会热重载 `settings.toml`。
 
-If you'd rather configure each setting manually through the Settings UI, the steps below cover the most common cases.
+如果你更倾向于通过设置界面手动配置每项设置，以下步骤涵盖最常见的情况。
 
-## What to reconfigure manually
+## 需要手动重新配置的内容
 
-### Default shell
+### 默认 Shell
 
-Warp on Windows supports PowerShell (`pwsh` and `powershell.exe`), Command Prompt (`cmd`), bash, zsh, and fish. Warp auto-detects your login shell; to override, go to **Settings** > **Features** > **Session** and pick a shell from **Startup shell for new sessions**.
+Windows 上的 Warp 支持 PowerShell（`pwsh` 和 `powershell.exe`）、命令提示符（`cmd`）、bash、zsh 和 fish。Warp 会自动检测你的登录 Shell；如需覆盖，前往 **Settings** > **Features** > **Session**，在 **Startup shell for new sessions** 中选择 Shell。
 
-If you use PowerShell modules or a custom `$PROFILE`, Warp loads them the same way Windows Terminal does.
+如果你使用 PowerShell 模块或自定义 `$PROFILE`，Warp 的加载方式与 Windows Terminal 相同。
 
-### Profiles
+### 配置文件（Profiles）
 
-Windows Terminal uses profiles to group shell, theme, starting directory, and font together. Warp doesn't have a single profile concept; instead, match each dimension separately:
+Windows Terminal 使用配置文件将 Shell、主题、起始目录和字体组合在一起。Warp 没有单一的配置文件概念；而是分别配置各个维度：
 
-* **Shell** - **Settings** > **Features** > **Session**.
-* **Starting directory** - **Settings** > **Features** > **Session** > Working directory.
-* **Font family, size** - **Settings** > **Appearance** > **Text, fonts, & cursor**.
-* **Color scheme** - **Settings** > **Appearance** > **Themes**. Translate your Windows Terminal color scheme into a [custom Warp theme](/terminal/appearance/custom-themes/) using the same 16 ANSI color values.
-* **Reusable layouts** - create a [tab config](/terminal/windows/tab-configs/) for each workflow that used to be a profile.
+* **Shell** - **Settings** > **Features** > **Session**。
+* **起始目录** - **Settings** > **Features** > **Session** > Working directory。
+* **字体系列、大小** - **Settings** > **Appearance** > **Text, fonts, & cursor**。
+* **配色方案** - **Settings** > **Appearance** > **Themes**。使用相同的 16 个 ANSI 颜色值，将 Windows Terminal 配色方案转换为 [Warp 自定义主题](/terminal/appearance/custom-themes/)。
+* **可复用布局** - 为每个曾作为配置文件的工作流创建一个 [tab config](/terminal/windows/tab-configs/)。
 
-### Color scheme
+### 配色方案
 
-Windows Terminal's `schemes` array defines foreground, background, cursor, and ANSI colors. To match an existing scheme:
+Windows Terminal 的 `schemes` 数组定义了前景色、背景色、光标颜色和 ANSI 颜色。要匹配现有配色方案：
 
-1. Copy the color values from the scheme you use in your `settings.json`.
-2. Open **Settings** > **Appearance** > **Themes** in Warp and either pick a preset that matches or [create a custom theme](/terminal/appearance/custom-themes/).
+1. 从你 `settings.json` 中使用的配色方案复制颜色值。
+2. 在 Warp 中打开 **Settings** > **Appearance** > **Themes**，选择匹配的预设或[创建自定义主题](/terminal/appearance/custom-themes/)。
 
-### Keybindings
+### 快捷键绑定
 
-Warp's [default keyboard shortcuts](/getting-started/keyboard-shortcuts/) cover most Windows Terminal bindings. For custom bindings from `settings.json`'s `actions` array, add them in **Settings** > **Keyboard shortcuts**.
+Warp 的[默认键盘快捷键](/getting-started/keyboard-shortcuts/)涵盖了大多数 Windows Terminal 绑定。对于 `settings.json` 的 `actions` 数组中的自定义绑定，在 **Settings** > **Keyboard shortcuts** 中添加。
 
-### Prompt
+### 提示符
 
-If you use `oh-my-posh` or a custom PowerShell prompt, it continues to work in Warp. To choose between Warp's native prompt and your existing shell prompt, go to **Settings** > **Appearance** > **Prompt**. See [prompt](/terminal/appearance/prompt/).
+如果你使用 `oh-my-posh` 或自定义 PowerShell 提示符，在 Warp 中可以继续使用。在 Warp 的原生提示符和现有 Shell 提示符之间选择，前往 **Settings** > **Appearance** > **Prompt**。详见[提示符](/terminal/appearance/prompt/)。
 
-## Warp-native equivalents
+## Warp 原生等效功能
 
-Features Windows Terminal users commonly look for in Warp:
+Windows Terminal 用户在 Warp 中常用功能的位置：
 
-| From Windows Terminal | In Warp |
+| Windows Terminal 中 | Warp 中 |
 | --- | --- |
-| Profiles | [Tab configs](/terminal/windows/tab-configs/) + [themes](/terminal/appearance/themes/) + per-session shell settings |
-| Tabs and panes | [Tabs](/terminal/windows/tabs/), [vertical tabs](/terminal/windows/vertical-tabs/), [split panes](/terminal/windows/split-panes/) |
-| Command palette | [Command Palette](/terminal/command-palette/) (`Ctrl+Shift+P`) |
-| Oh My Posh prompts | Keep using them; pick [Shell prompt (PS1)](/terminal/appearance/prompt/#custom-prompt) in Warp |
-| Quake mode | [Global hotkey](/terminal/windows/global-hotkey/) |
+| 配置文件（Profiles） | [Tab configs](/terminal/windows/tab-configs/) + [主题](/terminal/appearance/themes/) + 每会话 Shell 设置 |
+| 标签页和面板 | [标签页](/terminal/windows/tabs/)、[垂直标签页](/terminal/windows/vertical-tabs/)、[分割面板](/terminal/windows/split-panes/) |
+| Command Palette | [Command Palette](/terminal/command-palette/)（`Ctrl+Shift+P`） |
+| Oh My Posh 提示符 | 继续使用；在 Warp 中选择 [Shell 提示符（PS1）](/terminal/appearance/prompt/#custom-prompt) |
+| Quake 模式 | [全局热键](/terminal/windows/global-hotkey/) |
 
-Beyond Windows Terminal's feature set, Warp adds [Agent Mode](/agent-platform/local-agents/overview/), [blocks](/terminal/blocks/), and [Warp Drive](/knowledge-and-collaboration/warp-drive/). See [Warp for Windows installation](/getting-started/quickstart/installation-and-setup/) if you haven't installed yet.
+除 Windows Terminal 的功能集外，Warp 还提供 [Agent Mode](/agent-platform/local-agents/overview/)、[Block](/terminal/blocks/) 和 [Warp Drive](/knowledge-and-collaboration/warp-drive/)。如果尚未安装，请参见 [Warp Windows 安装指南](/getting-started/quickstart/installation-and-setup/)。

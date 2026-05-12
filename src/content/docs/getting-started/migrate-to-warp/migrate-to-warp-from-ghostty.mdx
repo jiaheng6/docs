@@ -1,70 +1,68 @@
 ---
 title: Migrate to Warp from Ghostty
 description: >-
-  Moving to Warp from Ghostty? Here's how to bring over your themes, fonts,
-  and keybindings, plus where to find Warp's equivalents for Ghostty's native
-  features.
+  从 Ghostty 迁移到 Warp？了解如何迁移主题、字体和快捷键绑定，以及 Ghostty 原生功能在 Warp 中的对应项。
 ---
 
-Warp gives Ghostty users a fast path to bring over themes, fonts, and keybindings — plus native equivalents for the Ghostty features you rely on, from the quick terminal to native tabs and splits.
+Warp 为 Ghostty 用户提供了快速迁移主题、字体和快捷键绑定的路径，同时也为你常用的 Ghostty 功能提供了原生等效项——从快速终端到原生标签页和分割面板，一应俱全。
 
-## What transfers automatically
+## 可自动迁移的内容
 
-Warp doesn't ship a Ghostty importer, but it can do most of the work for you agentically. Ghostty stores its configuration in a plain-text key-value file at `~/.config/ghostty/config`.
+Warp 不提供 Ghostty 导入器，但可以通过 Agent 代为完成大部分工作。Ghostty 将配置存储在 `~/.config/ghostty/config` 的纯文本键值文件中。
 
-## Use Warp's agent to migrate your settings (recommended)
+## 使用 Warp 的 Agent 迁移设置（推荐）
 
-The fastest way to bring over your Ghostty setup is to ask Warp's agent to translate your config directly. Warp ships a [`settings.toml` file](/terminal/settings/) and a bundled `modify-settings` skill that lets the agent read your existing config and write equivalent values into Warp's settings, including translating your Ghostty theme into a Warp [custom theme](/terminal/appearance/custom-themes/).
+迁移 Ghostty 配置最快的方式，是让 Warp 的 Agent 直接翻译你的配置文件。Warp 提供了一个 [`settings.toml` 文件](/terminal/settings/)和内置的 `modify-settings` 技能，让 Agent 可以读取你的现有配置，并将等效设置写入 Warp 的配置文件，包括将 Ghostty 主题转换为 Warp 的[自定义主题](/terminal/appearance/custom-themes/)。
 
-1. In Warp, open a new tab and switch to [Agent Mode](/agent-platform/local-agents/overview/) with `⌘+I` (macOS) or `Ctrl+I` (Linux/Windows).
-2. Paste a prompt like:
+1. 在 Warp 中打开新标签页，按 `⌘+I`（macOS）或 `Ctrl+I`（Linux/Windows）切换到 [Agent Mode](/agent-platform/local-agents/overview/)。
+2. 粘贴如下提示词：
 
-   > Read my Ghostty config at `~/.config/ghostty/config` and any referenced theme files in `~/.config/ghostty/themes/`. Port the equivalent settings (theme, font, keybindings, shell) into my Warp `settings.toml` using the `modify-settings` skill, and create a matching custom theme. Show me a diff before applying.
+   > 读取 `~/.config/ghostty/config` 中的 Ghostty 配置，以及 `~/.config/ghostty/themes/` 中的所有引用主题文件。使用 `modify-settings` 技能将等效设置（主题、字体、快捷键绑定、Shell）迁移到我的 Warp `settings.toml` 中，并创建匹配的自定义主题。应用前请显示差异对比。
 
-3. Review the proposed diff and approve. Warp hot-reloads `settings.toml`, so changes take effect immediately.
+3. 检查建议的差异并确认。Warp 会热重载 `settings.toml`，更改立即生效。
 
-If you'd rather configure each setting manually through the Settings UI, the steps below cover the most common cases.
+如果你更倾向于通过设置界面手动配置每项设置，以下步骤涵盖最常见的情况。
 
-## What to reconfigure manually
+## 需要手动重新配置的内容
 
-### Theme and colors
+### 主题和颜色
 
-1. Open **Settings** > **Appearance** > **Themes** in Warp.
-2. Pick a built-in theme that matches your Ghostty setup, or [create a custom theme](/terminal/appearance/custom-themes/) by translating your Ghostty colors into a YAML theme file.
-3. Ghostty's theme files live in `~/.config/ghostty/themes/`. Open the file named in your Ghostty `theme` setting to copy the foreground, background, and 16 ANSI color values.
+1. 在 Warp 中打开 **Settings** > **Appearance** > **Themes**。
+2. 选择一个与你 Ghostty 设置匹配的内置主题，或通过将 Ghostty 颜色转换为 YAML 主题文件来[创建自定义主题](/terminal/appearance/custom-themes/)。
+3. Ghostty 的主题文件位于 `~/.config/ghostty/themes/`。打开 Ghostty `theme` 设置中指定的主题文件，复制前景色、背景色和 16 个 ANSI 颜色值。
 
-### Font and text
+### 字体和文本
 
-1. In **Settings** > **Appearance** > **Text, fonts, & cursor**, match your Ghostty `font-family` and `font-size` values.
-2. If you use font ligatures, ensure **Ligatures** is enabled.
+1. 在 **Settings** > **Appearance** > **Text, fonts, & cursor** 中，匹配你在 Ghostty 中使用的 `font-family` 和 `font-size` 值。
+2. 如果你使用字体连字，请确保已启用 **Ligatures**。
 
-### Keybindings
+### 快捷键绑定
 
-Warp's [default keyboard shortcuts](/getting-started/keyboard-shortcuts/) cover most Ghostty bindings. For custom bindings from your Ghostty `keybind` lines, open **Settings** > **Keyboard shortcuts** and add them manually.
+Warp 的[默认键盘快捷键](/getting-started/keyboard-shortcuts/)涵盖了大多数 Ghostty 的绑定。对于 Ghostty `keybind` 配置行中的自定义绑定，打开 **Settings** > **Keyboard shortcuts** 手动添加。
 
-### Shell and prompt
+### Shell 和提示符
 
-Warp detects your login shell automatically. To override it, go to **Settings** > **Features** > **Session** and pick a shell from **Startup shell for new sessions**.
+Warp 会自动检测你的登录 Shell。如需覆盖，前往 **Settings** > **Features** > **Session**，在 **Startup shell for new sessions** 中选择 Shell。
 
-For prompts, choose between Warp's [native prompt](/terminal/appearance/prompt/#warp-prompt) (drag-and-drop context chips) or the [shell prompt (PS1)](/terminal/appearance/prompt/#custom-prompt) if you want to keep your existing prompt configuration.
+对于提示符，可在 Warp 的[原生提示符](/terminal/appearance/prompt/#warp-prompt)（拖拽式上下文芯片）和 [Shell 提示符（PS1）](/terminal/appearance/prompt/#custom-prompt)之间选择——如果你希望保留现有的提示符配置，选择后者。
 
-### Quick terminal (Quake mode)
+### 快速终端（Quake 模式）
 
-Configure Warp's equivalent via **Settings** > **Features** > **Window** > **Global hotkey**. See [global hotkey](/terminal/windows/global-hotkey/) for the full configuration.
+通过 **Settings** > **Features** > **Window** > **Global hotkey** 配置 Warp 的等效功能。完整配置说明请参见[全局热键](/terminal/windows/global-hotkey/)。
 
-## Warp-native equivalents
+## Warp 原生等效功能
 
-Features Ghostty users commonly miss, and where they live in Warp:
+Ghostty 用户常用功能及其在 Warp 中的位置：
 
-| From Ghostty | In Warp |
+| Ghostty 中 | Warp 中 |
 | --- | --- |
-| Quick terminal / dropdown window | [Global hotkey](/terminal/windows/global-hotkey/) |
-| Native tabs and splits | [Tabs](/terminal/windows/tabs/), [vertical tabs](/terminal/windows/vertical-tabs/), [split panes](/terminal/windows/split-panes/) |
-| Command palette | [Command Palette](/terminal/command-palette/) (`⌘+P` on macOS, `Ctrl+Shift+P` on Linux) |
-| GPU-accelerated rendering | GPU-rendered natively on all supported platforms |
-| Kitty graphics protocol | Image rendering for most common workflows (see [more features](/terminal/more-features/)) |
-| Shaders and custom visual effects | Not supported; closest: [size, opacity, and blurring](/terminal/appearance/size-opacity-blurring/) + [pane dimming](/terminal/appearance/pane-dimming/) |
+| 快速终端 / 下拉窗口 | [全局热键](/terminal/windows/global-hotkey/) |
+| 原生标签页和分割面板 | [标签页](/terminal/windows/tabs/)、[垂直标签页](/terminal/windows/vertical-tabs/)、[分割面板](/terminal/windows/split-panes/) |
+| Command Palette | [Command Palette](/terminal/command-palette/)（macOS：`⌘+P`，Linux：`Ctrl+Shift+P`） |
+| GPU 加速渲染 | 所有受支持平台均原生使用 GPU 渲染 |
+| Kitty 图形协议 | 支持大多数常见工作流的图片渲染（详见[更多功能](/terminal/more-features/)） |
+| 着色器和自定义视觉效果 | 不支持；最接近的替代方案：[大小、不透明度和模糊效果](/terminal/appearance/size-opacity-blurring/) + [面板变暗](/terminal/appearance/pane-dimming/) |
 
-Beyond parity, Warp adds [Agent Mode](/agent-platform/local-agents/overview/), [Code Review](/code/code-review/), and [Warp Drive](/knowledge-and-collaboration/warp-drive/) for AI-assisted development and team collaboration.
+除同等功能外，Warp 还提供 [Agent Mode](/agent-platform/local-agents/overview/)、[Code Review](/code/code-review/) 和 [Warp Drive](/knowledge-and-collaboration/warp-drive/)，支持 AI 辅助开发和团队协作。
 
-For more on what you can configure, see [Customizing Warp](/getting-started/quickstart/customizing-warp/).
+更多可配置内容，请参见[自定义 Warp](/getting-started/quickstart/customizing-warp/)。

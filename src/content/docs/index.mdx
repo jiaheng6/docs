@@ -1,109 +1,108 @@
 ---
 title: Getting started with Warp and Oz
 description: >-
-  Get started with Warp, the Agentic Development Environment, and Oz, the
-  orchestration platform for cloud agents.
+  开始使用 Warp（智能开发环境）和 Oz（云 Agent 编排平台）。
 sidebar:
   label: Getting started with Warp and Oz
 ---
 import VideoEmbed from '@components/VideoEmbed.astro';
 
-Warp is an [open source](https://github.com/warpdotdev/warp) **Agentic Development Environment**, a modern terminal combined with powerful agents that help you build, test, deploy, and debug code. Warp's AI is powered by **Oz**, the orchestration platform for cloud agents.
+Warp 是一款[开源](https://github.com/warpdotdev/warp) **智能开发环境（Agentic Development Environment）**，将现代终端与强大的 Agent 相结合，帮助你构建、测试、部署和调试代码。Warp 的 AI 能力由 **Oz** 驱动——云 Agent 的编排平台。
 
 <figure>
 ![Warp, the Agentic Development Environment: Warp (a modern terminal built for coding with agents) and Oz (the orchestration platform for cloud agents)](../../assets/terminal/warp-oz-welcome.png)
-<figcaption>Warp terminal with Oz orchestration.</figcaption>
+<figcaption>Warp 终端与 Oz 编排平台。</figcaption>
 </figure>
 
 ---
 
 ## Warp
 
-Warp is where you work — a fast, modern terminal built for coding with agents.
+Warp 是你的工作之地——一个专为 Agent 编程打造的快速、现代终端。
 
-**Key capabilities:**
+**核心能力：**
 
-* [**Terminal and Agent modes**](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/): Switch between a clean terminal for commands and a dedicated conversation view for multi-turn agent workflows.
-* [**Modern terminal UX**](/terminal/editor/): Cursor movement, block-based navigation, multi-line editing, syntax highlighting, and rich completions. Built with Rust for high performance.
-* [**Code editor**](/code/overview/): File tree, code editor with LSP support, and interactive code review experience.
-* [**Third-Party CLI Agents**](/agent-platform/cli-agents/overview/): Run third-party CLI agents like Claude Code, Codex, and OpenCode with Warp's agent toolbelt — rich input, code review, notifications, and more.
+* [**Terminal and Agent modes**](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)：在用于执行命令的纯终端模式与专为多轮 Agent 工作流设计的对话视图之间自由切换。
+* [**现代终端用户体验**](/terminal/editor/)：光标移动、基于 Block 的导航、多行编辑、语法高亮和丰富的补全。以 Rust 构建，性能出众。
+* [**代码编辑器**](/code/overview/)：文件树、支持 LSP 的代码编辑器，以及交互式代码审查体验。
+* [**第三方 CLI Agents**](/agent-platform/cli-agents/overview/)：在 Warp 的 Agent 工具集中运行 Claude Code、Codex、OpenCode 等第三方 CLI Agent——支持富文本输入、代码审查、通知等功能。
 
 <VideoEmbed url="https://www.youtube.com/watch?v=xhkoXsE9Wqc" title="Deep dive into Warp's core features" />
 
 ---
 
-## Oz: The orchestration platform for cloud agents
+## Oz：云 Agent 编排平台
 
-Oz is the orchestration platform for cloud agents that powers all of Warp's intelligent features. Oz is designed to coordinate agents at scale—understanding your codebase, executing tasks autonomously, and adapting to your workflows. Oz is multi-model by design, giving you flexibility to choose the best LLM for each task.
+Oz 是驱动 Warp 所有智能功能的云 Agent 编排平台。Oz 专为大规模协调 Agent 而设计——理解你的代码库、自主执行任务，并适配你的工作流程。Oz 原生支持多模型，让你能够灵活选择最适合每个任务的 LLM。
 
-Oz operates in two modes:
+Oz 以两种模式运行：
 
-### Local agents
+### 本地 Agent
 
-Run directly in the Warp app for real-time, interactive coding assistance.
+直接在 Warp 应用中运行，提供实时、交互式的编程辅助。
 
-* Write and refactor code across your codebase
-* Debug issues and fix errors
-* Run commands and interpret results
-* Plan and execute multi-step tasks
+* 在整个代码库中编写和重构代码
+* 调试问题并修复错误
+* 执行命令并解读结果
+* 规划并执行多步骤任务
 
-Local agents keep you in control. You can review changes, steer the agent mid-task, and approve actions before they execute.
+本地 Agent 让你始终掌握主导权——你可以审查更改、在任务执行中途引导 Agent，并在操作执行前审批。
 
-→ [Get started with local agents](/agent-platform/local-agents/overview/)
+→ [开始使用本地 Agent](/agent-platform/local-agents/overview/)
 
-### Cloud agents
+### 云 Agent
 
-Oz Cloud Agents run in the background on Warp's infrastructure (or your own) for automation at scale.
+Oz 云 Agent 在 Warp 的基础设施（或你自己的基础设施）上后台运行，实现大规模自动化。
 
-* **Triggers**: React to events from Slack, Linear, GitHub, or custom webhooks
-* **Schedules**: Run recurring tasks like dependency updates or dead code removal
-* **Parallelism**: Run many agents concurrently across repos or tasks
-* **Observability**: Every run is tracked, auditable, and shareable with your team
+* **触发器（Triggers）**：响应来自 Slack、Linear、GitHub 或自定义 Webhook 的事件
+* **调度（Schedules）**：运行定期任务，如依赖更新或无用代码清理
+* **并行（Parallelism）**：跨仓库或跨任务同时运行多个 Agent
+* **可观测性（Observability）**：每次运行均可追踪、审计，并与团队共享
 
-Cloud agents are ideal for work that doesn't need your immediate attention, like PR reviews, issue triage, routine maintenance, and integration-driven workflows.
+云 Agent 非常适合无需立即关注的工作，例如 PR 审查、议题分类、日常维护和集成驱动的工作流。
 
-→ [Learn about cloud agents](/agent-platform/cloud-agents/overview/)
-
----
-
-## How they work together
-
-Warp and Oz provide a unified experience across local and cloud development:
-
-* **Same agent, anywhere**: Whether you're working interactively in Warp or running agents in the cloud, you're using the same underlying agent capabilities.
-* **Seamless handoff**: Start a task in the cloud and take over locally in Warp when you want hands-on control, without losing progress or context.
-* **Shared context**: [Warp Drive](/knowledge-and-collaboration/warp-drive/), [Rules](/agent-platform/capabilities/rules/), and [MCP servers](/agent-platform/capabilities/mcp/) work across both local and cloud agents, so your team's knowledge and tools are always available.
-* **Team collaboration**: Share agent sessions, review agents' actions, and steer running tasks, regardless of who started them.
+→ [了解云 Agent](/agent-platform/cloud-agents/overview/)
 
 ---
 
-## Multi-model support
+## 协同工作方式
 
-Oz is multi-model by design. You can [choose your preferred LLM](/agent-platform/capabilities/model-choice/) from a curated set of top models.
+Warp 和 Oz 在本地与云端开发之间提供统一的体验：
 
----
-
-## Open source
-
-Warp's client is open source under [AGPL v3](https://github.com/warpdotdev/warp/blob/master/LICENSE-AGPL). The source lives at [`warpdotdev/warp`](https://github.com/warpdotdev/warp), where you can read the code, file issues, and contribute alongside the Warp team. Development happens in the open with an agent-first workflow managed by Oz.
-
-→ [Contributing to Warp](/support-and-community/community/contributing/) explains how to file issues, claim work, and ship code or themes.
+* **同一 Agent，随处可用**：无论你是在 Warp 中交互式工作，还是在云端运行 Agent，底层 Agent 能力完全一致。
+* **无缝交接**：在云端启动任务，需要亲自操作时随时在 Warp 本地接管，进度和上下文不会丢失。
+* **共享上下文**：[Warp Drive](/knowledge-and-collaboration/warp-drive/)、[Rules](/agent-platform/capabilities/rules/) 和 [MCP servers](/agent-platform/capabilities/mcp/) 跨本地和云端 Agent 均可使用，团队的知识和工具始终触手可及。
+* **团队协作**：共享 Agent 会话、审查 Agent 操作，并引导正在运行的任务，无论由谁发起。
 
 ---
 
-## Privacy and security
+## 多模型支持
 
-Warp is **SOC 2 compliant** and has **Zero Data Retention** policies with all contracted LLM providers. No customer AI data is retained, stored, or used for training.
-
-Warp's AI features can be globally disabled in **Settings** > **Agents** > **Warp Agent**.
-
-→ [Read more about data privacy](https://www.warp.dev/privacy)
+Oz 原生支持多模型。你可以从精选的顶级模型中[选择你偏好的 LLM](/agent-platform/capabilities/model-choice/)。
 
 ---
 
-## Next steps
+## 开源
 
-* [**Quickstart**](/quickstart/): Get Warp installed and start coding
-* [**Warp Agents overview**](/agent-platform/local-agents/overview/): Explore all AI features available in Warp
-* [**Cloud Agents Overview**](/agent-platform/cloud-agents/overview/): Set up background automation
-* [**Oz Platform**](/agent-platform/cloud-agents/platform/): Learn about the CLI, API, SDK, and infrastructure
+Warp 的客户端以 [AGPL v3](https://github.com/warpdotdev/warp/blob/master/LICENSE-AGPL) 开源。源代码托管于 [`warpdotdev/warp`](https://github.com/warpdotdev/warp)，你可以查阅代码、提交问题，并与 Warp 团队共同贡献。开发工作在公开环境中进行，采用由 Oz 管理的 Agent 优先工作流。
+
+→ [为 Warp 做贡献](/support-and-community/community/contributing/)，了解如何提交问题、认领工作，以及贡献代码或主题。
+
+---
+
+## 隐私与安全
+
+Warp 通过 **SOC 2 合规认证**，并与所有签约 LLM 提供商执行**零数据保留**政策。用户的 AI 数据不会被保留、存储或用于训练。
+
+Warp 的 AI 功能可在 **Settings** > **Agents** > **Warp Agent** 中全局禁用。
+
+→ [了解更多数据隐私信息](https://www.warp.dev/privacy)
+
+---
+
+## 后续步骤
+
+* [**快速入门**](/quickstart/)：安装 Warp 并开始编程
+* [**Warp Agents 概览**](/agent-platform/local-agents/overview/)：探索 Warp 中所有可用的 AI 功能
+* [**云 Agent 概览**](/agent-platform/cloud-agents/overview/)：设置后台自动化
+* [**Oz 平台**](/agent-platform/cloud-agents/platform/)：了解 CLI、API、SDK 和基础设施

@@ -1,91 +1,89 @@
 ---
 title: Migrate to Warp from Claude Code
 description: >-
-  Keep using Claude Code in Warp — with rich input, code review, and
-  notifications — or switch from Claude Code to Warp's Agent Mode as your
-  primary coding agent.
+  在 Warp 中继续使用 Claude Code——享受富文本输入、代码审查和通知功能——或将 Claude Code 切换为 Warp 的 Agent Mode 作为主要编程 Agent。
 ---
 
-Claude Code is different from the other sources in this section: it's not a terminal emulator, it's a CLI agent that runs inside any terminal. Warp is an agentic development environment with a built-in [code editor](/code/code-editor/), [Code Review](/code/code-review/), [team collaboration](/knowledge-and-collaboration/warp-drive/), and [MCP](/agent-platform/capabilities/mcp/) support — so you have two paths to choose from:
+Claude Code 与本节中其他迁移来源有所不同：它不是终端模拟器，而是一个可在任何终端内运行的 CLI Agent。Warp 是一款集成了内置[代码编辑器](/code/code-editor/)、[Code Review](/code/code-review/)、[团队协作](/knowledge-and-collaboration/warp-drive/)和 [MCP](/agent-platform/capabilities/mcp/) 支持的智能开发环境——因此你有两条路可以选择：
 
-* **[Using Claude Code inside Warp](#using-claude-code-inside-warp)** - you want to keep using Claude Code as your coding agent and run it in Warp's terminal.
-* **[Switching to Agent Mode from Claude Code](#switching-to-agent-mode-from-claude-code)** - you want to replace Claude Code with Warp's built-in [Agent Mode](/agent-platform/local-agents/overview/).
+* **[在 Warp 中使用 Claude Code](#using-claude-code-inside-warp)** - 你希望继续使用 Claude Code 作为编程 Agent，并在 Warp 的终端中运行它。
+* **[从 Claude Code 切换到 Agent Mode](#switching-to-agent-mode-from-claude-code)** - 你希望用 Warp 内置的 [Agent Mode](/agent-platform/local-agents/overview/) 取代 Claude Code。
 
-## Using Claude Code inside Warp
+## 在 Warp 中使用 Claude Code
 
-Warp provides first-class support for Claude Code through its [third-party CLI agents](/agent-platform/cli-agents/overview/) integration. Open a new tab and run:
+Warp 通过[第三方 CLI Agent](/agent-platform/cli-agents/overview/) 集成，为 Claude Code 提供一流支持。打开新标签页并运行：
 
 ```bash
 claude
 ```
 
-Warp auto-detects Claude Code and unlocks IDE-level features on top of the TUI:
+Warp 会自动检测 Claude Code，并在 TUI 之上解锁 IDE 级别的功能：
 
-* **[Rich input editor](/agent-platform/cli-agents/rich-input/)** (`Ctrl+G`) - compose multi-line prompts with `@` mentions, voice input, and slash commands.
-* **[Agent notifications](/agent-platform/capabilities/agent-notifications/)** - in-app and desktop alerts when Claude Code needs your input. Requires a one-time plugin install (Warp prompts you).
-* **Inline code review** - send review comments directly to the agent from Warp's [Code Review](/code/code-review/) panel.
-* **[Vertical tabs with agent metadata](/terminal/windows/vertical-tabs/)** - track multiple Claude Code sessions across tabs with status indicators.
-* **[Remote control](/agent-platform/cli-agents/remote-control/)** - share or steer a Claude Code session from another device.
-* **[Tab Configs](/terminal/windows/tab-configs/)** - save and reopen Claude Code session layouts.
+* **[富文本输入编辑器](/agent-platform/cli-agents/rich-input/)**（`Ctrl+G`）- 使用 `@` 提及、语音输入和斜杠命令来撰写多行提示。
+* **[Agent 通知](/agent-platform/capabilities/agent-notifications/)** - 当 Claude Code 需要你输入时，发送应用内和桌面提醒。需要一次性安装插件（Warp 会提示你）。
+* **内联代码审查** - 直接从 Warp 的 [Code Review](/code/code-review/) 面板向 Agent 发送审查意见。
+* **[带 Agent 元数据的垂直标签页](/terminal/windows/vertical-tabs/)** - 通过状态指示器跨标签页追踪多个 Claude Code 会话。
+* **[远程控制](/agent-platform/cli-agents/remote-control/)** - 从另一台设备共享或引导 Claude Code 会话。
+* **[Tab Configs](/terminal/windows/tab-configs/)** - 保存并重新打开 Claude Code 会话布局。
 
-For full setup steps (notification plugin, productivity tips, troubleshooting), see [Claude Code in Warp](/agent-platform/cli-agents/claude-code/) and the [How to set up Claude Code](/guides/external-tools/how-to-set-up-claude-code/) guide.
+完整的设置步骤（通知插件、使用技巧、故障排除），请参见 [Claude Code in Warp](/agent-platform/cli-agents/claude-code/) 和[如何设置 Claude Code](/guides/external-tools/how-to-set-up-claude-code/) 指南。
 
-### Tips
+### 使用技巧
 
-* **Run Claude Code in [terminal mode](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)**, not Agent Mode. Press `⌘+I` (macOS) or `Ctrl+I` (Linux/Windows) to toggle modes if you're in Agent Mode by accident.
-* **`Shift+Enter` for newlines.** Use `Shift+Enter` to insert a newline in Claude Code's prompt. If it submits the message instead, check that you're in terminal mode (not Agent Mode) and that you're on a recent Warp version.
-* **Copy/paste handling.** Warp enables bracketed paste by default, so multi-line pastes into Claude Code work without extra configuration.
-* **Resuming after a Warp restart.** Warp's [session restoration](/terminal/sessions/session-restoration/) preserves tabs and panes, but not running CLI processes — closing Warp ends Claude Code's session. Use Claude Code's built-in resume options (e.g., `claude --resume`) to continue a conversation after reopening Warp.
+* **在[终端模式](/agent-platform/local-agents/interacting-with-agents/terminal-and-agent-modes/)下运行 Claude Code**，而非 Agent Mode。如果你不小心进入了 Agent Mode，按 `⌘+I`（macOS）或 `Ctrl+I`（Linux/Windows）切换回来。
+* **用 `Shift+Enter` 换行。** 在 Claude Code 的提示框中使用 `Shift+Enter` 插入换行符。如果它提交了消息，请检查你是否处于终端模式（而非 Agent Mode），并确认使用的是最新版 Warp。
+* **复制/粘贴处理。** Warp 默认启用括号粘贴模式，因此多行内容粘贴到 Claude Code 中无需额外配置。
+* **重启 Warp 后恢复会话。** Warp 的[会话恢复](/terminal/sessions/session-restoration/)功能可保留标签页和面板，但无法保留正在运行的 CLI 进程——关闭 Warp 会结束 Claude Code 的会话。重新打开 Warp 后，使用 Claude Code 内置的恢复选项（例如 `claude --resume`）继续对话。
 
-### API keys and authentication
+### API 密钥与身份验证
 
-Claude Code's authentication (API key or Anthropic account) is handled by Claude Code itself, not Warp. Warp does not proxy or modify Claude Code's network calls. Configure your `ANTHROPIC_API_KEY` environment variable via [Warp Drive environment variables](/knowledge-and-collaboration/warp-drive/environment-variables/) to share it across sessions without committing it to shell config files.
+Claude Code 的身份验证（API 密钥或 Anthropic 账号）由 Claude Code 本身处理，与 Warp 无关。Warp 不会代理或修改 Claude Code 的网络请求。通过 [Warp Drive 环境变量](/knowledge-and-collaboration/warp-drive/environment-variables/)配置你的 `ANTHROPIC_API_KEY` 环境变量，即可跨会话共享密钥，无需将其写入 Shell 配置文件。
 
-## Switching to Agent Mode from Claude Code
+## 从 Claude Code 切换到 Agent Mode
 
-If you're ready to replace Claude Code with Warp's built-in agent, the core workflow is:
+如果你准备用 Warp 内置 Agent 替换 Claude Code，核心工作流程如下：
 
-1. Open a new tab in Warp.
-2. To switch to switch to [Agent Mode](/agent-platform/local-agents/overview/) from terminal mode, press `⌘+Enter` (or `Ctrl+Shift+Enter`)
-3. Describe what you want in natural language.
+1. 在 Warp 中打开一个新标签页。
+2. 按 `⌘+Enter`（或 `Ctrl+Shift+Enter`）从终端模式切换到 [Agent Mode](/agent-platform/local-agents/overview/)。
+3. 用自然语言描述你想要的内容。
 
-Warp's agent reads your codebase, runs commands, and edits files the same way Claude Code does.
+Warp 的 Agent 会读取你的代码库、运行命令、编辑文件，方式与 Claude Code 完全一致。
 
-### What transfers: context and rules
+### 可迁移的内容：上下文与规则
 
-A recurring question from Claude Code users: **what files and context does Warp's agent read automatically?** Warp picks up project rules from an `AGENTS.md` (or `WARP.md`) at your repo root — the direct equivalent of Claude Code's `CLAUDE.md`. Run `/init` in Agent Mode to generate one, or rename your existing rules file and you're done — no rewriting needed.
+来自 Claude Code 用户的常见问题：**Warp 的 Agent 会自动读取哪些文件和上下文？** Warp 会从仓库根目录的 `AGENTS.md`（或 `WARP.md`）中读取项目规则——这是 Claude Code 的 `CLAUDE.md` 的直接等效文件。在 Agent Mode 中运行 `/init` 可自动生成一个，或者直接重命名你现有的规则文件即可——无需重写内容。
 
-Warp's agent also pulls context from several other explicit sources:
+Warp 的 Agent 还会从以下几类明确的来源中获取上下文：
 
-* **[Codebase Context](/agent-platform/capabilities/codebase-context/)** - when you open a directory, Warp indexes your Git-tracked files so the agent can search and reference your code without you pasting snippets.
-* **[Rules](/agent-platform/capabilities/rules/)** - global and project-scoped rules. `AGENTS.md` and `WARP.md` are automatically picked up at the project root; additional rules live in Warp Drive.
-* **[Warp Drive](/knowledge-and-collaboration/warp-drive/)** - notebooks, workflows, and environment variables you've saved are available to the agent as context.
-* **[Agent Mode context](/knowledge-and-collaboration/warp-drive/agent-mode-context/)** - pin specific files or notebooks to a conversation so the agent always has them in scope.
-* **[MCP](/agent-platform/capabilities/mcp/)** - any MCP servers you've configured give the agent access to external tools and data.
+* **[Codebase Context](/agent-platform/capabilities/codebase-context/)** - 当你打开一个目录时，Warp 会索引你的 Git 追踪文件，让 Agent 能够搜索和引用你的代码，无需你手动粘贴片段。
+* **[Rules](/agent-platform/capabilities/rules/)** - 全局和项目范围的规则。`AGENTS.md` 和 `WARP.md` 会在项目根目录自动被识别；其他规则存储在 Warp Drive 中。
+* **[Warp Drive](/knowledge-and-collaboration/warp-drive/)** - 你保存的笔记本、工作流程和环境变量均可作为上下文供 Agent 使用。
+* **[Agent Mode 上下文](/knowledge-and-collaboration/warp-drive/agent-mode-context/)** - 将特定文件或笔记本固定到对话中，使 Agent 始终将其纳入范围。
+* **[MCP](/agent-platform/capabilities/mcp/)** - 你配置的任何 MCP 服务器都会为 Agent 提供外部工具和数据的访问权限。
 
-### What to reconfigure
+### 需要重新配置的内容
 
-* **Bring over your `CLAUDE.md`.** Rename it to `AGENTS.md` (or copy it into a Warp [Rule](/agent-platform/capabilities/rules/) if you want it scoped beyond the repo). Warp applies it automatically to new conversations.
-* **Set up [MCP servers](/agent-platform/capabilities/mcp/)** you relied on in Claude Code.
-* **Pick a model** per conversation using the model selector. See [model choice](/agent-platform/capabilities/model-choice/). Warp supports Claude, GPT, Gemini, and Auto.
-* **Configure [agent profiles and permissions](/agent-platform/capabilities/agent-profiles-permissions/)** for what the agent can auto-execute.
+* **迁移你的 `CLAUDE.md`。** 将其重命名为 `AGENTS.md`（或者如果你希望其范围超出仓库，可将内容复制到 Warp [Rule](/agent-platform/capabilities/rules/) 中）。Warp 会自动将其应用到新对话中。
+* **设置你在 Claude Code 中依赖的 [MCP 服务器](/agent-platform/capabilities/mcp/)**。
+* 使用模型选择器**为每个对话选择模型**。参见[模型选择](/agent-platform/capabilities/model-choice/)。Warp 支持 Claude、GPT、Gemini 和 Auto。
+* **配置 [Agent 配置文件和权限](/agent-platform/capabilities/agent-profiles-permissions/)**，设定 Agent 可自动执行哪些操作。
 
-### Key differences from Claude Code
+### 与 Claude Code 的主要区别
 
-* **Tight terminal integration.** Agent Mode runs inside Warp and sees the full state of your terminal session — open files, command history, environment variables — without needing you to paste context.
-* **Parallel agents.** Warp runs multiple agent conversations across tabs simultaneously, each with its own state, which you can track in the Agent Management Panel.
-* **Code Review built in.** Agent-generated diffs open in Warp's [Code Review](/code/code-review/) panel, not the terminal.
-* **Cloud orchestration.** Long-running or scheduled agent work can be offloaded to [Oz](/agent-platform/cloud-agents/overview/).
+* **与终端深度集成。** Agent Mode 在 Warp 内部运行，能看到你终端会话的完整状态——已打开的文件、命令历史、环境变量——无需你手动粘贴上下文。
+* **并行 Agent。** Warp 可在多个标签页中同时运行多个 Agent 对话，每个都有独立状态，你可以在 Agent Management Panel 中进行追踪。
+* **内置 Code Review。** Agent 生成的差异内容会在 Warp 的 [Code Review](/code/code-review/) 面板中打开，而非在终端中显示。
+* **云端编排。** 长时间运行或定期执行的 Agent 工作可以转移到 [Oz](/agent-platform/cloud-agents/overview/)。
 
-## Warp-native equivalents
+## Warp 原生等效功能
 
-Claude Code concepts and their closest Warp analog:
+Claude Code 概念及其在 Warp 中最接近的对应功能：
 
-| From Claude Code | In Warp |
+| Claude Code 中 | Warp 中 |
 | --- | --- |
-| `CLAUDE.md` | `AGENTS.md` (or `WARP.md`) at the project root, picked up as a [Rule](/agent-platform/capabilities/rules/) |
-| Claude Code slash commands | Warp's own [slash commands](/agent-platform/capabilities/slash-commands/) (`/init`, `/plan`, `/model`, etc.); save your own as [Warp Drive prompts](/knowledge-and-collaboration/warp-drive/prompts/) |
-| Tool definitions | [MCP](/agent-platform/capabilities/mcp/) |
-| Resume conversation | Warp persists agent conversations per tab; pair with [tab configs](/terminal/windows/tab-configs/) to reopen the same project layout |
+| `CLAUDE.md` | 项目根目录的 `AGENTS.md`（或 `WARP.md`），作为 [Rule](/agent-platform/capabilities/rules/) 自动被识别 |
+| Claude Code 斜杠命令 | Warp 自带的[斜杠命令](/agent-platform/capabilities/slash-commands/)（`/init`、`/plan`、`/model` 等）；将自定义命令保存为 [Warp Drive 提示](/knowledge-and-collaboration/warp-drive/prompts/) |
+| 工具定义 | [MCP](/agent-platform/capabilities/mcp/) |
+| 恢复对话 | Warp 为每个标签页持久保存 Agent 对话；配合 [tab configs](/terminal/windows/tab-configs/) 可重新打开相同的项目布局 |
 
-For a deeper tour of Agent Mode, see [Coding in Warp](/getting-started/quickstart/coding-in-warp/) and the [Warp Agents docs](/agent-platform/local-agents/overview/).
+更深入地了解 Agent Mode，请参见[在 Warp 中编写代码](/getting-started/quickstart/coding-in-warp/)和 [Warp Agents 文档](/agent-platform/local-agents/overview/)。
