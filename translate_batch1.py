@@ -1,4 +1,9 @@
----
+import os
+
+base = '/home/runner/work/docs/docs/src/content/docs/agent-platform'
+
+files = {
+    'index.mdx': '''---
 title: Agents 概述
 description: >-
   Oz 是云端 Agent 的编排平台，为开发工作流提供交互式和自主 Agent 支持。
@@ -49,3 +54,13 @@ Oz 完全可编程——手动启动 Agent，或利用触发器、定时任务�
 * [集成](/agent-platform/cloud-agents/integrations/) - Slack、Linear、GitHub Actions 及自定义集成
 * [Skills as Agents](/agent-platform/cloud-agents/skills-as-agents/) - 从可复用的技能定义运行 Agent
 * [管理云端 Agent](/agent-platform/cloud-agents/managing-cloud-agents/) - 监控和管理 Agent 活动
+''',
+}
+
+for filename, content in files.items():
+    filepath = os.path.join(base, filename)
+    with open(filepath, 'w') as f:
+        f.write(content)
+    print(f'Written: {filepath}')
+
+print('Done batch 1')

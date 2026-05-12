@@ -55,38 +55,38 @@
 - [x] terminal/blocks/sticky-command-header.mdx
 
 ### command-completions（命令补全）
-- [ ] terminal/command-completions/index.mdx
-- [ ] terminal/command-completions/autosuggestions.mdx
+- [x] terminal/command-completions/index.mdx
+- [x] terminal/command-completions/autosuggestions.mdx
 - [ ] terminal/command-completions/completions.mdx
 
 ### comparisons（对比）
-- [ ] terminal/comparisons/index.mdx
-- [ ] terminal/comparisons/performance.mdx
+- [x] terminal/comparisons/index.mdx
+- [x] terminal/comparisons/performance.mdx
 - [ ] terminal/comparisons/terminal-features.mdx
 
 ### editor（编辑器）
-- [ ] terminal/editor/index.mdx
-- [ ] terminal/editor/alias-expansion.mdx
-- [ ] terminal/editor/command-inspector.mdx
-- [ ] terminal/editor/syntax-error-highlighting.mdx
+- [x] terminal/editor/index.mdx
+- [x] terminal/editor/alias-expansion.mdx
+- [x] terminal/editor/command-inspector.mdx
+- [x] terminal/editor/syntax-error-highlighting.mdx
 - [ ] terminal/editor/vim.mdx
 
 ### entry（输入）
-- [ ] terminal/entry/index.mdx
-- [ ] terminal/entry/command-corrections.mdx
-- [ ] terminal/entry/command-history.mdx
-- [ ] terminal/entry/command-search.mdx
-- [ ] terminal/entry/synchronized-inputs.mdx
-- [ ] terminal/entry/yaml-workflows.mdx
+- [x] terminal/entry/index.mdx
+- [x] terminal/entry/command-corrections.mdx
+- [x] terminal/entry/command-history.mdx
+- [x] terminal/entry/command-search.mdx
+- [x] terminal/entry/synchronized-inputs.mdx
+- [x] terminal/entry/yaml-workflows.mdx
 
 ### input（输入框）
 - [ ] terminal/input/classic-input.mdx
 - [ ] terminal/input/universal-input.mdx
 
 ### more-features（更多功能）
-- [ ] terminal/more-features/index.mdx
-- [ ] terminal/more-features/accessibility.mdx
-- [ ] terminal/more-features/audible-bell.mdx
+- [x] terminal/more-features/index.mdx
+- [x] terminal/more-features/accessibility.mdx
+- [x] terminal/more-features/audible-bell.mdx
 - [ ] terminal/more-features/files-and-links.mdx
 - [ ] terminal/more-features/full-screen-apps.mdx
 - [ ] terminal/more-features/linux.mdx
@@ -149,9 +149,9 @@
 ## agent-platform（Agent 平台）
 
 ### capabilities（能力）
-- [ ] agent-platform/capabilities/index.mdx
-- [ ] agent-platform/capabilities/agent-notifications.mdx
-- [ ] agent-platform/capabilities/agent-profiles-permissions.mdx
+- [x] agent-platform/capabilities/index.mdx
+- [x] agent-platform/capabilities/agent-notifications.mdx
+- [x] agent-platform/capabilities/agent-profiles-permissions.mdx
 - [ ] agent-platform/capabilities/codebase-context.mdx
 - [ ] agent-platform/capabilities/computer-use.mdx
 - [ ] agent-platform/capabilities/full-terminal-use.mdx
@@ -245,7 +245,7 @@
 - [ ] agent-platform/local-agents/interacting-with-agents/voice.mdx
 
 ### 其他
-- [ ] agent-platform/index.mdx
+- [x] agent-platform/index.mdx
 
 ---
 
